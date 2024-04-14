@@ -5,14 +5,14 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWPF>true</UseWPF>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>FESOVSE.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Xceed.Wpf.Toolkit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Xceed.Wpf.Toolkit.dll</HintPath>
+    <Reference Include="Xceed.Wpf.Toolkit.NET5">
+      <HintPath>bin\x64\Release\net8.0-windows\Xceed.Wpf.Toolkit.NET5.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

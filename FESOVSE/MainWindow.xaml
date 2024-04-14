@@ -17,7 +17,7 @@
                 <MenuItem x:Name ="openFile" Click="openFile_Click" Header="Open"/>
                 <MenuItem x:Name ="saveFile" Click="saveFile_Click" Header="Save"/>
             </MenuItem>
-            <MenuItem x:Name="help" Header="Help"/>
+            <!-- <MenuItem x:Name="help" Header="Help"/> -->
         </Menu>
 
         <Grid>

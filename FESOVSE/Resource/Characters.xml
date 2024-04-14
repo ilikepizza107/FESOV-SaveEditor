@@ -190,4 +190,14 @@
     <base hp="30" atk="12" skl="11" spd="11" lck="7" def="8" res="13"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
+  <character id ="1CA3034A2E615B32" name="Berkut">
+    <text displayName ="Berkut"/>
+    <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="6DC3B630776D9E51" name="Fernand">
+    <text displayName ="Fernand"/>
+    <base hp="25" atk="10" skl="7" spd="7" lck="2" def="6" res="5"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
 </root>
