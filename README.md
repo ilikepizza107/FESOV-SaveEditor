@@ -1,21 +1,17 @@
-# FESOV-SaveEditor ( Web Version Here: https://vince11.github.io/echoes-se/ Github: https://github.com/vince11/echoes-se )
-A Fire Emblem Echoes: Shadows of Valentia, Minimal Character Save Editor
-
-## For the Web Version, make sure to rename the downloaded file back to its original name. (If original file is "Chapter0_dec", make sure the downloaded file is renamed to "Chapter0_dec" if file name comes out different due to duplication).
+# A Fire Emblem Echoes: Shadows of Valentia, Minimal Character Save Editor
 
 ### Features
   * Able to edit character class, inventory and stats
   
 ### How to use
-  * Dump save file using a save manager (e.g. JKSVM) Make a back up just in case
+  * Dump save file using a save manager (e.g. Checkpoint) Make a back up just in case
   * Use FEST to decompress the save file to get "Chapter_dec" file. https://github.com/RainThunder/FEST
   * Run program, Click File -> Open, select the decompressed file and edit stuff
-  * Once finished, Click File -> Save and compress the file using FEAST
+  * Once finished, Click File -> Save and compress the file using FEST
 
 ### Resources
 
   * Hex Values of items From these people:
-    * https://docs.google.com/spreadsheets/d/1VY_4xG2Ehlj8vh_TyhuUyoRoTR9FImzQCorF3LgzuQI/edit#gid=1796432204
     * https://serenesforest.net/forums/index.php?/topic/71279-shadows-of-valentia-save-editingsave-bank/
 
   * Info on character blocks: https://gbatemp.net/threads/research-fe-sov-save-discussion.471890/
