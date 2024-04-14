@@ -28,4 +28,8 @@ A Fire Emblem Echoes: Shadows of Valentia, Minimal Character Save Editor
 
   * Extended WPFToolkit for the numeric up downs (apparently WPF doesn't have it): http://wpftoolkit.codeplex.com/
   
+### Building
 
+To build from the CLI, change directory to the ./FESOVSE folder, then enter `dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true --self-contained true`
+
+An .exe will be built to ./FESOVSE/bin/Release/net8.0-windows/win-x64/publish/
