@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using FESOVSE.Extension;
 using Xceed.Wpf.Toolkit;
+using Theme.WPF.Themes;
 
 namespace FESOVSE
 {
@@ -24,6 +25,21 @@ namespace FESOVSE
         {
             InitializeComponent();
             initControls();
+        }
+
+        private void ChangeTheme(object sender, RoutedEventArgs e)
+        {
+            switch (((MenuItem)sender).Uid)
+            {
+                case "0":
+                    ThemesController.SetTheme(ThemeType.DarkTheme);
+                    break;
+                case "1":
+                    ThemesController.SetTheme(ThemeType.LightTheme);
+                    break;
+            }
+
+            e.Handled = true;
         }
 
         private void openFile_Click(object sender, RoutedEventArgs e)

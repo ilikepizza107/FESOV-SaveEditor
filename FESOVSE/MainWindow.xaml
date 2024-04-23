@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:FESOVSE"
         xmlns:sp="clr-namespace:FESOVSE.XMLProperties"
         mc:Ignorable="d"
-        Title="FE SOV Save Editor" Height="480" Width="720" ResizeMode="CanMinimize">
+        Title="FE SOV Save Editor" Height="480" Width="720" ResizeMode="CanMinimize"
+        Style="{DynamicResource CustomWindowStyle}">
 
 
     <StackPanel>
@@ -16,6 +17,18 @@
             <MenuItem Header="File">
                 <MenuItem x:Name ="openFile" Click="openFile_Click" Header="Open"/>
                 <MenuItem x:Name ="saveFile" Click="saveFile_Click" Header="Save"/>
+            </MenuItem>
+            <MenuItem Header="Themes">
+                <MenuItem Header="Dark" Click="ChangeTheme" Uid="0">
+                    <MenuItem.Icon>
+                        <Rectangle Stroke="#FF404040" Fill="#FF2A2A2A" StrokeThickness="2" StrokeLineJoin="Round"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Light" Click="ChangeTheme" Uid="1">
+                    <MenuItem.Icon>
+                        <Rectangle Stroke="#FF848484" Fill="#FFE8E8E8" StrokeThickness="2" StrokeLineJoin="Round"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <!-- <MenuItem x:Name="help" Header="Help"/> -->
         </Menu>
