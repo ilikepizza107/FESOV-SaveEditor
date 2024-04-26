@@ -190,9 +190,73 @@
     <base hp="30" atk="12" skl="11" spd="11" lck="7" def="8" res="13"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
+  <!--Begin Chars that are normally inaccessable in the main game-->
+  <!--Prologue Chars-->
+  <character id ="1BE8A267613B1336" name="Alm (Child)">
+    <text displayName ="Alm (Child)"/>
+    <base hp="18" atk="6" skl="4" spd="3" lck="7" def="3" res="4"/>
+    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40"/>
+  </character>
+  <character id ="15D36D6A03847337" name="Celica (Child)">
+    <text displayName ="Celica (Child)"/>
+    <base hp="15" atk="4" skl="5" spd="4" lck="8" def="2" res="7"/>
+    <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40"/>
+  </character>
+  <character id ="15D36D6A03847337" name="Gray (Child)">
+    <text displayName ="Gray (Child)"/>
+    <base hp="17" atk="4" skl="3" spd="43" lck="2" def="3" res="2"/>
+    <max hp="52" atk="42" skl="39" spd="40" lck="40" def="39" res="40"/>
+  </character>
+  <character id ="09328C53E7172E2C" name="Tobin (Child)">
+    <text displayName ="Tobin (Child)"/>
+    <base hp="16" atk="5" skl="2" spd="4" lck="4" def="2" res="4"/>
+    <max hp="52" atk="39" skl="42" spd="39" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="F3A71669216ACA36" name="Kliff (Child)">
+    <text displayName ="Kliff (Child)"/>
+    <base hp="16" atk="5" skl="1" spd="2" lck="10" def="2" res="8"/>
+    <max hp="52" atk="40" skl="39" spd="41" lck="39" def="41" res="40"/>
+  </character>
+  <character id ="845C5368D2336B36" name="Faye (Child)">
+    <text displayName ="Faye (Child)"/>
+    <base hp="14" atk="4" skl="1" spd="2" lck="6" def="2" res="6"/>
+    <max hp="52" atk="41" skl="39" spd="40" lck="39" def="41" res="40"/>
+  </character>
+  <!--Amiibo-->
+  <!--Boss Characters-->
   <character id ="1CA3034A2E615B32" name="Berkut">
     <text displayName ="Berkut"/>
     <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="CEAD034AB0685B32" name="Berkut (Duma)">
+    <text displayName ="Berkut (Duma)"/>
+    <base hp="52" atk="24" skl="16" spd="15" lck="0" def="18" res="6"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="4CED3728A671F806" name="Jedah">
+    <text displayName ="Jedah"/>
+    <base hp="52" atk="21" skl="17" spd="16" lck="0" def="15" res="9"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="5B9BF6AB770C2FC6" name="Slayde">
+    <text displayName ="Slayde"/>
+    <base hp="28" atk="12" skl="5" spd="8" lck="0" def="8" res="5"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="658D222A4B24EB07" name="Desaix">
+    <text displayName ="Desaix"/>
+    <base hp="40" atk="22" skl="6" spd="4" lck="0" def="18" res="7"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="D2315C39AC1D46E2" name="Jerome">
+    <text displayName ="Jerome"/>
+    <base hp="45" atk="20" skl="9" spd="14" lck="0" def="15" res="6"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="804756116202B3FB" name="Rinea">
+    <text displayName ="Rinea"/>
+    <base hp="40" atk="20" skl="19" spd="16" lck="0" def="10" res="16"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
   <character id ="6DC3B630776D9E51" name="Fernand">
@@ -202,7 +266,27 @@
   </character>
   <character id ="83E159B6DF9F36C2" name="Rudolf">
     <text displayName ="Rudolf"/>
-    <base hp="52" atk="30" skl="26" spd="24" lck="13" def="25" res="16"/>
+    <base hp="52" atk="28" skl="17" spd="22" lck="0" def="23" res="8"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="E88C792C8E281209" name="Marla">
+    <text displayName ="Marla"/>
+    <base hp="28" atk="14" skl="14" spd="10" lck="0" def="6" res="14"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="EC51E31A54E01457" name="Nuibaba">
+    <text displayName ="Nuibaba"/>
+    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="1702212AED3BEA07" name="Duma">
+    <text displayName ="Duma"/>
+    <base hp="182" atk="30" skl="10" spd="10" lck="0" def="20" res="20"/>
+    <max hp="200" atk="32" skl="15" spd="10" lck="0" def="20" res="20"/>
+  </character>
+  <character id ="82BC3519FEB25A19" name="The Creation">
+    <text displayName ="The Creation"/>
+    <base hp="180" atk="20" skl="20" spd="20" lck="0" def="15" res="15"/>
+    <max hp="185" atk="22" skl="22" spd="22" lck="0" def="17" res="15"/>
   </character>
 </root>
