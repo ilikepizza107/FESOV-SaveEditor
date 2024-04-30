@@ -16,9 +16,9 @@ namespace FESOVSE.Extension
                 for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
                 {
                     DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
-                    if (child != null && child is T t)
+                    if (child != null && child is T)
                     {
-                        yield return t;
+                        yield return (T)child;
                     }
 
                     foreach (T childOfChild in FindVisualChildren<T>(child))
