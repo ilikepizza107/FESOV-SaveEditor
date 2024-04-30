@@ -139,6 +139,13 @@ namespace FESOVSE
             {
                 path = fileName;
                 DecryptWorkData();
+                byte[] ChapterHexDataBytes = new byte[ChapterHexData.Length];
+                for (int i = 0; i < ChapterHexData.Length;  i++)
+                {
+                    ChapterHexDataBytes[i] = Convert.ToByte(ChapterHexData[i]);
+                }
+                ChapterHexDataBytes = _saveFile;
+                loadFile();
             }
 
             internal void SaveChapterData()
@@ -185,8 +192,10 @@ namespace FESOVSE
                 if (ofd.ShowDialog() == true)
                 {
                     path = ofd.FileName;
+                    string fileName = ofd.FileName;
                     if (path.Contains("Chapter") && path.Contains("dec")) loadFile(); //check if file is the right file, load if true
-                    else System.Windows.MessageBox.Show("Not a Chapter file OR a decrypted Chapter file");
+                    else if (path.Contains("Chapter")) LoadChapterData(fileName);
+                    else System.Windows.MessageBox.Show("Not a Chapter file");
                 }
 
             }
@@ -203,24 +212,47 @@ namespace FESOVSE
             }
 
 
-            #region Utility Functions
+        #region Utility Functions
 
-            /* checks if a sequence of bytes is in the save file */
-            private int hasData(int blockSize, byte[] data, int start = 0)
+        /* checks if a sequence of bytes is in the save file */
+        private int hasData(int blockSize, byte[] data, int start = 0)
+        {
+            // Check if start index is within bounds
+            if (start < 0 || start >= _saveFile.Length)
             {
-                int maxLength = start + blockSize; //max size of search space
-                for (int i = start; i + data.Length < maxLength; i++)
-                {
-                    bool isSame = true;
-                    for (int j = 0; j < data.Length; j++)
-                    {
-                        if (_saveFile[i + j] != data[j]) isSame = false;
-                    }
-                    if (isSame) return i; //if data is found return address of data
-
-                }
-                return -1; //if dota does not exist, return -1
+                return -1; // Invalid start index
             }
+
+            // Calculate max length
+            int maxLength = start + blockSize;
+
+            // Ensure maxLength does not exceed array length
+            if (maxLength > _saveFile.Length)
+            {
+                maxLength = _saveFile.Length;
+            }
+
+            // Loop through the search space
+            for (int i = start; i + data.Length <= maxLength; i++)
+            {
+                bool isSame = true;
+                // Loop through the data to check
+                for (int j = 0; j < data.Length; j++)
+                {
+                    // Check if index is within bounds
+                    if (i + j >= _saveFile.Length || _saveFile[i + j] != data[j])
+                    {
+                        isSame = false;
+                        break;
+                    }
+                }
+                if (isSame)
+                {
+                    return i; // Return index if data is found
+                }
+            }
+            return -1; // Return -1 if data is not found within the search space
+        }
 
             /* converts a string of hex into byte array */
             private byte[] hexToBytes(string hexStr)
