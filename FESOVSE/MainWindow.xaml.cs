@@ -188,7 +188,7 @@ namespace FESOVSE
         private void loadClasses()
         {
             var charClassDB = new Data.CharacterClassDatabase();
-            var allClasses = charClassDB.GetAll();
+            var allClasses = charClassDB.getAll();
             cbClass.ItemsSource = allClasses;
             cbClass.DisplayMemberPath = "Name";
             cbClass.SelectedValuePath = "ClassID";
