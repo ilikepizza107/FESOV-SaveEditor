@@ -215,44 +215,44 @@ namespace FESOVSE
         #region Utility Functions
 
         /* checks if a sequence of bytes is in the save file */
-        private int hasData(int blockSize, byte[] data, int start = 0)
-        {
-            // Check if start index is within bounds
-            if (start < 0 || start >= _saveFile.Length)
+            private int hasData(int blockSize, byte[] data, int start = 0)
             {
-                return -1; // Invalid start index
-            }
-
-            // Calculate max length
-            int maxLength = start + blockSize;
-
-            // Ensure maxLength does not exceed array length
-            if (maxLength > _saveFile.Length)
-            {
-                maxLength = _saveFile.Length;
-            }
-
-            // Loop through the search space
-            for (int i = start; i + data.Length <= maxLength; i++)
-            {
-                bool isSame = true;
-                // Loop through the data to check
-                for (int j = 0; j < data.Length; j++)
+                // Check if start index is within bounds
+                if (start < 0 || start >= _saveFile.Length)
                 {
-                    // Check if index is within bounds
-                    if (i + j >= _saveFile.Length || _saveFile[i + j] != data[j])
+                    return -1; // Invalid start index
+                }
+
+                // Calculate max length
+                int maxLength = start + blockSize;
+
+                // Ensure maxLength does not exceed array length
+                if (maxLength > _saveFile.Length)
+                {
+                    maxLength = _saveFile.Length;
+                }
+
+                // Loop through the search space
+                for (int i = start; i + data.Length <= maxLength; i++)
+                {
+                    bool isSame = true;
+                    // Loop through the data to check
+                    for (int j = 0; j < data.Length; j++)
                     {
-                        isSame = false;
-                        break;
+                        // Check if index is within bounds
+                        if (i + j >= _saveFile.Length || _saveFile[i + j] != data[j])
+                        {
+                            isSame = false;
+                            break;
+                        }
+                    }
+                    if (isSame)
+                    {
+                        return i; // Return index if data is found
                     }
                 }
-                if (isSame)
-                {
-                    return i; // Return index if data is found
-                }
+                return -1; // Return -1 if data is not found within the search space
             }
-            return -1; // Return -1 if data is not found within the search space
-        }
 
             /* converts a string of hex into byte array */
             private byte[] hexToBytes(string hexStr)
