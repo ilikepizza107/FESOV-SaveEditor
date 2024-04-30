@@ -6,16 +6,16 @@ namespace FESOVSE.Data
 {
     class CharacterClassDatabase
     {
-        XDocument data;
+        readonly XDocument data;
 
         public CharacterClassDatabase()
         {
             string xml = Properties.Resources.Classes;
-            System.IO.StringReader myXml = new System.IO.StringReader(xml);
+            System.IO.StringReader myXml = new(xml);
             data = XDocument.Load(myXml);
         }
 
-        private CharacterClass FromElement(XElement row)
+        private static CharacterClass FromElement(XElement row)
         {
             var id = row.Attribute("id").Value;
             var name = row.Attribute("name").Value;
@@ -26,10 +26,10 @@ namespace FESOVSE.Data
             };
         }
 
-        public List<CharacterClass> getAll()
+        public List<CharacterClass> GetAll()
         {
             IEnumerable<XElement> elements = from x in data.Root.Descendants("class") select x;
-            List<CharacterClass> cc = new List<CharacterClass>();
+            List<CharacterClass> cc = [];
             foreach(XElement e in elements)
             {
                 cc.Add(FromElement(e));
