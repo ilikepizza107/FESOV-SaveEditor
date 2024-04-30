@@ -15,8 +15,8 @@
 
         <Menu x:Name="menu" Height="20" Margin="0,0,0,5">
             <MenuItem Header="File">
-                <MenuItem x:Name ="openFile" Click="openFile_Click" Header="Open"/>
-                <MenuItem x:Name ="saveFile" Click="saveFile_Click" Header="Save"/>
+                <MenuItem x:Name ="openFile" Click="OpenFile_Click" Header="Open"/>
+                <MenuItem x:Name ="saveFile" Click="SaveFile_Click" Header="Save"/>
             </MenuItem>
             <MenuItem Header="Themes">
                 <MenuItem Header="Dark" Click="ChangeTheme" Uid="0">
