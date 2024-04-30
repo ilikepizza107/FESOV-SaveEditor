@@ -284,6 +284,16 @@
     <base hp="40" atk="22" skl="6" spd="4" lck="0" def="18" res="7"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
+  <character id ="87E01C272DC16D06" name="Grieth">
+    <text displayName ="Grieth"/>
+    <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="52351E2AAC17E807" name="Dolth">
+    <text displayName ="Dolth"/>
+    <base hp="42" atk="17" skl="12" spd="12" lck="0" def="10" res="9"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
   <character id ="EC51E31A54E01457" name="Nuibaba">
     <text displayName ="Nuibaba"/>
     <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
@@ -314,14 +324,24 @@
     <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
-  <character id ="E88C792C8E281209" name="Marla">
-    <text displayName ="Marla"/>
+  <character id ="E88C792C8E281209" name="Marla (Act 4)">
+    <text displayName ="Marla (Act 4)"/>
     <base hp="28" atk="14" skl="14" spd="10" lck="0" def="6" res="14"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="4EB417733E18576B" name="Marla (Act 5)">
+    <text displayName ="Marla (Act 5)"/>
+    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
   <character id ="7EA30429F0435E07" name="Tatarrah">
     <text displayName ="Tatarrah"/>
     <base hp="39" atk="13" skl="9" spd="9" lck="0" def="10" res="8"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="8FFE1D8A89ECEC7E" name="Delthea (Witch)">
+    <text displayName ="Delthea (Witch)"/>
+    <base hp="24" atk="11" skl="13" spd="9" lck="5" def="5" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
   <character id ="CB5CDB12EBD5862A" name="Jamil">
@@ -369,9 +389,59 @@
     <base hp="30" atk="11" skl="11" spd="14" lck="0" def="7" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
+  <character id ="8C2D1E6854322B7D" name="Wolff">
+    <text displayName ="Wolff"/>
+    <base hp="32" atk="13" skl="7" spd="7" lck="0" def="7" res="2"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="B5C598E875352CB0" name="Garcia">
+    <text displayName ="Garcia"/>
+    <base hp="36" atk="14" skl="10" spd="9" lck="0" def="8" res="9"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="CD73CF2BDF79BE08" name="Hestia (Act 4)">
+    <text displayName ="Hestia (Act 4)"/>
+    <base hp="31" atk="16" skl="15" spd="11" lck="0" def="7" res="14"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="E3091A150F59E82E" name="Hestia (Act 5)">
+    <text displayName ="Hestia (Act 5)"/>
+    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="3DBF835D99496596" name="Xaizor">
+    <text displayName ="Xaizor"/>
+    <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="6495E526D6BA5206" name="Gharn">
+    <text displayName ="Gharn"/>
+    <base hp="47" atk="17" skl="13" spd="13" lck="0" def="14" res="8"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
   <character id ="B79CFBBE2B7D645F" name="Aurum">
     <text displayName ="Aurum"/>
     <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="D9F3D17AF51E11F6" name="Argentum">
+    <text displayName ="Argentum"/>
+    <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="16F7EA2A58F24D08" name="Hades">
+    <text displayName ="Hades"/>
+    <base hp="51" atk="23" skl="12" spd="17" lck="0" def="18" res="7"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="8BDF3EE573DDABB8" name="Cerberus">
+    <text displayName ="Cerberus"/>
+    <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="E71065CAAFA9A1FC" name="Naberius">
+    <text displayName ="Naberius"/>
+    <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
   <character id ="804756116202B3FB" name="Rinea">
