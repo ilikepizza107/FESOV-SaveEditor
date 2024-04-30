@@ -144,7 +144,7 @@ namespace FESOVSE
                 {
                     ChapterHexDataBytes[i] = Convert.ToByte(ChapterHexData[i]);
                 }
-                ChapterHexDataBytes = _saveFile;
+                _saveFile = ChapterHexDataBytes;
                 loadFile();
             }
 
