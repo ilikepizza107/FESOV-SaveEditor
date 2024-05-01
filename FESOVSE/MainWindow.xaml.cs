@@ -139,13 +139,18 @@ namespace FESOVSE
             {
                 path = fileName;
                 DecryptWorkData();
-                byte[] ChapterHexDataBytes = new byte[ChapterHexData.Length];
-                for (int i = 0; i < ChapterHexData.Length;  i++)
+                ChapterHexData = ChapterHexData.Replace(" ", "");
+                byte[] ChapterHexDataBytes = new byte[ChapterHexData.Length / 2];
+                for (int i = 0; i < ChapterHexDataBytes.Length; i++)
                 {
-                    ChapterHexDataBytes[i] = Convert.ToByte(ChapterHexData[i]);
+                    string subStr = ChapterHexData.Substring(i * 2, 2);
+                    ChapterHexDataBytes[i] = Convert.ToByte(subStr, 16);
                 }
                 _saveFile = ChapterHexDataBytes;
-                loadFile();
+                loadUnits();
+                loadItems();
+                loadClasses();
+                bindEvents();
             }
 
             internal void SaveChapterData()
@@ -202,10 +207,14 @@ namespace FESOVSE
 
             private void saveFile_Click(object sender, RoutedEventArgs e)
             {
-                if (path != null)
+                if (path.Contains("Chapter") && path.Contains("dec"))
                 {
                     File.WriteAllBytes(path, _saveFile);
                     System.Windows.MessageBox.Show("File Saved Successfully");
+                }
+                else if (path.Contains("Chapter")) 
+                {
+                    SaveChapterData();
                 }
                 else System.Windows.MessageBox.Show("No File Found");
 
