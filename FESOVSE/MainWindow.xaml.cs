@@ -155,8 +155,22 @@ namespace FESOVSE
 
             internal void SaveChapterData()
             {
+                string _saveFileString = Convert.ToHexString(_saveFile);
+                StringBuilder spacedHex = new StringBuilder();
+
+                for (int i = 0; i < _saveFileString.Length; i += 2)
+                {
+                    spacedHex.Append(_saveFileString.Substring(i, 2));
+                    if (i < _saveFileString.Length - 2)
+                    {
+                        spacedHex.Append(" ");
+                    }
+                }
+
+                ChapterHexData = spacedHex.ToString();
                 WorkData = ChapterHexData;
                 EncryptWorkData();
+
             }
 
             public string ChapterHexData { get; set; }
@@ -215,6 +229,7 @@ namespace FESOVSE
                 else if (path.Contains("Chapter")) 
                 {
                     SaveChapterData();
+                    System.Windows.MessageBox.Show("File Saved Successfully");
                 }
                 else System.Windows.MessageBox.Show("No File Found");
 
