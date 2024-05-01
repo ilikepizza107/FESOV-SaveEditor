@@ -469,7 +469,7 @@
   <item id="3C" hex="950606EDB97A37F3" name="Rusted Lance (Steel)">
     <description maxStars="0" isDLC ="false"/>
   </item>
-  <item id="3D" hex="B8A7D6CEC4E6C517" name="Rusted Lance (Sol)">
+  <item id="3D" hex="804338857AAC4203" name="Rusted Lance (Sol)">
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="3E" hex="BC0606EDBC7A37F3" name="Rusted Lance (Venin)">
@@ -500,6 +500,9 @@
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="F8" hex="3AD1E38FA0454CF6" name="Eleven Shield">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="49" hex="093C75B9077CF245" name="Rusted Ring (Mage)">
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="48" hex="6C456BB9E4B8EC45" name="Rusted Ring (Demon)">
