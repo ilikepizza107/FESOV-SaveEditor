@@ -23,6 +23,8 @@
     (Learned some file organisations and basic save editor code stuff)
 
   * Extended WPFToolkit for the numeric up downs (apparently WPF doesn't have it): http://wpftoolkit.codeplex.com/
+
+  * Dark and Light mode themes modified from here: https://github.com/AngryCarrot789/WPFDarkTheme
   
 ### Building
 
