@@ -4,7 +4,12 @@
   * Able to edit character class, inventory and stats
   
 ### How to use
-  * Dump save file using a save manager (e.g. Checkpoint) Make a back up just in case
+  * Dump save file using a save manager (e.g. Checkpoint) Make a backup just in case
+
+From here, you can either:
+  * Run program, Click File -> Open, select the file and edit stuff
+
+Or:
   * Use FEST to decompress the save file to get "Chapter_dec" file. https://github.com/RainThunder/FEST
   * Run program, Click File -> Open, select the decompressed file and edit stuff
   * Once finished, Click File -> Save and compress the file using FEST
