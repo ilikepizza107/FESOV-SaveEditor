@@ -259,8 +259,8 @@
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
   <!--Boss Characters-->
-  <character id ="1CA3034A2E615B32" name="Berkut">
-    <text displayName ="Berkut"/>
+  <character id ="1CA3034A2E615B32" name="Berkut (Boss)">
+    <text displayName ="Berkut (Boss)"/>
     <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
@@ -458,5 +458,11 @@
     <text displayName ="The Creation"/>
     <base hp="180" atk="20" skl="20" spd="20" lck="0" def="15" res="15"/>
     <max hp="185" atk="22" skl="22" spd="22" lck="0" def="17" res="15"/>
+  </character>
+  <!--Modded Characters-->
+  <character id ="681E69CA0082A4FC" name="Berkut">
+    <text displayName ="Berkut"/>
+    <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
 </root>
