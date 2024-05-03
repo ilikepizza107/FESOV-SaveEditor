@@ -87,10 +87,13 @@
   <item id="1F" hex="1F48B42EA552DB74" name="Kriemhild">
     <description maxStars="0" isDLC ="false"/>
   </item>
-  <item id="20" hex="A07CB674EEE584D2" name="Romphaia">
+  <item id="20" hex="A07CB674EEE584D2" name="Rhomphaia">
     <description maxStars="3" isDLC ="false"/>
   </item>
   <item id="21" hex="8B61DDC1AB01ADCF" name="Saunion">
+    <description maxStars="3" isDLC ="false"/>
+  </item>
+  <item id="23" hex="4E77C9847AF8C8F6" name="Splitting Axe">
     <description maxStars="3" isDLC ="false"/>
   </item>
   <item id="24" hex="8D6FDC6133AD930B" name="Devil Axe">
@@ -129,6 +132,9 @@
   <item id="F0" hex="9EFEB2D268133B6C" name="Venin Bow">
     <description maxStars="0" isDLC ="false"/>
   </item>
+  <item id="F1" hex="14FFB2D2A2133B6C" name="Venin Axe">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
   <item id="81" hex="5CCB45C184B59D66" name="Leather Shield">
     <description maxStars="0" isDLC ="false"/>
   </item>
@@ -163,6 +169,9 @@
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="8C" hex="E831F31C701AE174" name="Royal Shield">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="8D" hex="DC7CDFB464F92C60" name="Silver Platter">
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="F2" hex="03809AB0FB940128" name="Sage's Shield">
@@ -201,13 +210,28 @@
   <item id="98" hex="CE37AFD73EFDB3B9" name="Keepsake Ring">
     <description maxStars="0" isDLC ="false"/>
   </item>
+  <item id="99" hex="C818A90E6CD76CD4" name="Handmade Doll">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
   <item id="9A" hex="79D52D915932B0A7" name="Gossamer Hair">
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="9B" hex="9336F9E83BFE0F31" name="Dragon Scale">
     <description maxStars="0" isDLC ="false"/>
   </item>
+  <item id="9C" hex="EA3BEC54DC07360E" name="Lima Armlet">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="9D" hex="860E4B86460F507D" name="A Son's Journal">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
   <item id="9E" hex="56B9322A84DDC0CF" name="Bear Carving">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="9F" hex="12B9332AC090C1CF" name="Mila Carving">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="A0" hex="405226AC98786CE4" name="Duma Carving">
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="A1" hex="73CC5BB88F7B7E32" name="Coral Fragment">
@@ -426,7 +450,6 @@
   <item id="B4" hex="3F8B6185A74E25D8" name="Lukas Shield">
     <description maxStars="0" isDLC ="true"/>
   </item>
-
   <item id="30" hex="141E9F96B2D20A40" name="Exalted Falchion">
     <description maxStars="0" isDLC ="false"/>
   </item>
@@ -502,7 +525,25 @@
   <item id="F8" hex="3AD1E38FA0454CF6" name="Eleven Shield">
     <description maxStars="0" isDLC ="false"/>
   </item>
-  <item id="49" hex="093C75B9077CF245" name="Rusted Ring (Mage)">
+  <item id="F9" hex="363AD832C0413F57" name="Boiled Chicken">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="FA" hex="373AD832C1413F57" name="Moist Bread">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="FB" hex="383AD832C2413F57" name="Spicy Chicken">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="FC" hex="393AD832C3413F57" name="Mille Crepe">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="FD" hex="3A3AD832C4413F57" name="Chicken Link">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="FE" hex="3B3AD832C5413F57" name="Pure Honey">
+    <description maxStars="0" isDLC ="false"/>
+  </item>
+  <item id="F4" hex="093C75B9077CF245" name="Rusted Ring (Mage)">
     <description maxStars="0" isDLC ="false"/>
   </item>
   <item id="48" hex="6C456BB9E4B8EC45" name="Rusted Ring (Demon)">
