@@ -274,8 +274,8 @@
     <base hp="29" atk="8" skl="1" spd="2" lck="0" def="2" res="0"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
-  <character id ="6DC3B630776D9E51" name="Fernand">
-    <text displayName ="Fernand"/>
+  <character id ="6DC3B630776D9E51" name="Fernand (Boss)">
+    <text displayName ="Fernand (Boss)"/>
     <base hp="25" atk="10" skl="7" spd="7" lck="2" def="6" res="5"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
@@ -463,6 +463,11 @@
   <character id ="681E69CA0082A4FC" name="Berkut">
     <text displayName ="Berkut"/>
     <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+  </character>
+  <character id ="18FAC1CB269FEBAD" name="Fernand">
+    <text displayName ="Fernand"/>
+    <base hp="25" atk="10" skl="7" spd="7" lck="2" def="6" res="5"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
 </root>
