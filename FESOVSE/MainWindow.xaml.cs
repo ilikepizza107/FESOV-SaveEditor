@@ -307,8 +307,8 @@ namespace FESOVSE
             /* find the location of the inventory of character */
             private int findItemAddress(int charIDStart)
             {
-                byte[] itemByte = { 2, 1 }; //items are labelled with 02 01 afaik
-                int charBlockSize = 180; //search space for a character block, char block changes depending on skills,supports etc
+                byte[] itemByte = { 2, 1 }; //items are labelled with 02 01
+                int charBlockSize = 184; //search space for a character block, char block changes depending on skills,supports etc
                                          //so this is just an assumable, if character's block is smaller it will get the next block's
                                          //works well if each character holds an item
                 return hasData(charBlockSize, itemByte, charIDStart);
