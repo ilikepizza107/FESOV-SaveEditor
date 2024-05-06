@@ -386,18 +386,20 @@ namespace FESOVSE
 
             }
 
-            #endregion
+        #endregion
 
-            #region Updating Panel Functions
+        #region Updating Panel Functions
 
-            /* updating the window screen */
-            private void updateDescription(object sender, SelectionChangedEventArgs e)
+        /* updating the window screen */
+        private void updateDescription(object sender, SelectionChangedEventArgs e)
+        {
+            unBindEvents();
+
+            cbItem.IsHitTestVisible = true; //enable control
+            var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
+
+            if (character != null) // check if character is not null
             {
-                unBindEvents();
-
-                cbItem.IsHitTestVisible = true; //enable control
-                var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
-
                 if (character.ItemAddress != -1) //if character is holding an item
                 {
                     string itemHex = getBytesValue(character.ItemAddress + 6, 8);
@@ -428,6 +430,7 @@ namespace FESOVSE
                 bindEvents();
 
             }
+        }
             /* update the forge combo box based on current item in item combo box*/
             private void updateForgeBox(int maxForges, int currentForge = 0)
             {
@@ -502,12 +505,14 @@ namespace FESOVSE
 
                 bindEvents();
             }
-            /* fired when forge combo box changed */
-            private void forgeBoxChanged(object sender, EventArgs e)
-            {
-                unBindEvents();
+        /* fired when forge combo box changed */
+        private void forgeBoxChanged(object sender, EventArgs e)
+        {
+            unBindEvents();
 
-                Data.Character character = (Data.Character)unitList.SelectedItem;
+            Data.Character character = (Data.Character)unitList.SelectedItem;
+            if (cbForge.SelectedItem != null)
+            {
                 byte forgeVal = Convert.ToByte(cbForge.SelectedItem.ToString(), 16); //get the value changed
                 byte val = _saveFile[character.ItemAddress + 5]; //forge offset 5 after 02 01, the leftmost 4 bits only
                 val = (byte)(val & 0x0F); //clear leftmost 4 bits
@@ -516,6 +521,7 @@ namespace FESOVSE
 
                 bindEvents();
             }
+        }
 
             private void statChanged(object sender, EventArgs e)
             {
