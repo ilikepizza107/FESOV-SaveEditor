@@ -48,7 +48,7 @@
             </ComboBox>
         </StackPanel>
 
-        <Grid Visibility="Collapsed">
+        <Grid Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -57,7 +57,7 @@
             <TextBlock Text="Unit Properties" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
 
-        <Grid Height="400" Visibility="Collapsed">
+        <Grid Height="400" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -203,7 +203,7 @@
                 
         <!-- End of Unit Editing -->
 
-        <Grid Visibility="Visible">
+        <Grid Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -212,7 +212,7 @@
             <TextBlock Text="Item Properties" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
 
-        <Grid Height="400" Visibility="Visible">
+        <Grid Height="400" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -243,6 +243,8 @@
                 </StackPanel>
             </Border>
         </Grid>
+        
+    <!-- End of Convoy Editing -->
 
     </StackPanel>
 </Window>
