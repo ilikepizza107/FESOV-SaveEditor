@@ -42,10 +42,13 @@
                 </TransformGroup>
             </StackPanel.RenderTransform>
             <TextBlock Text="Mode" FontWeight="DemiBold" Margin="5 5"/>
-            <ComboBox x:Name="cbMode" Margin="5 0"/>
+            <ComboBox x:Name="cbMode" Margin="5 0">
+                <ComboBoxItem Content="Unit Editing"/>
+                <ComboBoxItem Content="Convoy Editing"/>
+            </ComboBox>
         </StackPanel>
 
-        <Grid>
+        <Grid Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -54,7 +57,7 @@
             <TextBlock Text="Description" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
 
-        <Grid Height="400">
+        <Grid Height="400" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -195,10 +198,21 @@
                         </StackPanel>
                     </Grid>
                 </StackPanel>
-
-
             </Border>
         </Grid>
+                
+        <!-- End of Unit Editing -->
+
+        <Grid Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Items" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
+            <TextBlock Text="Description" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
+        </Grid>
+        
+
 
     </StackPanel>
 </Window>
