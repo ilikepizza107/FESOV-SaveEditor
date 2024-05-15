@@ -6,7 +6,7 @@
         xmlns:wpfExt="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:sp="clr-namespace:FESOVSE.XMLProperties"
         mc:Ignorable="d"
-        Title="FE SOV Save Editor" Height="480" Width="720" ResizeMode="CanMinimize"
+        Title="FE SOV Save Editor" Height="520" Width="720" ResizeMode="CanMinimize"
         Style="{DynamicResource CustomWindowStyle}">
 
 
@@ -31,6 +31,19 @@
             </MenuItem>
             <!-- <MenuItem x:Name="help" Header="Help"/> -->
         </Menu>
+
+        <StackPanel Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-10"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <TextBlock Text="Mode" FontWeight="DemiBold" Margin="5 5"/>
+            <ComboBox x:Name="cbMode" Margin="5 0"/>
+        </StackPanel>
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -70,7 +83,7 @@
                             <ComboBox x:Name="cbForge" Margin="5 0"/>
                         </StackPanel>
                     </Grid>
-                    
+
                     <!-- Contains Stats and Class Panels-->
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -174,7 +187,7 @@
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True"/>
                             </Grid>
                         </StackPanel>
-                        
+
                         <!-- Class Panel -->
                         <StackPanel Grid.Column="1">
                             <TextBlock Text="Class" FontWeight="DemiBold" Margin="5 5"/>
@@ -182,8 +195,8 @@
                         </StackPanel>
                     </Grid>
                 </StackPanel>
-                
-                
+
+
             </Border>
         </Grid>
 
