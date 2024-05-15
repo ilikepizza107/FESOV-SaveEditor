@@ -54,7 +54,7 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Units" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
-            <TextBlock Text="Description" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
+            <TextBlock Text="Unit Properties" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
 
         <Grid Height="400" Visibility="Collapsed">
@@ -208,11 +208,41 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Items" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
-            <TextBlock Text="Description" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
+            <TextBlock Text="Item Select" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
+            <TextBlock Text="Item Properties" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
-        
 
+        <Grid Height="400" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="0">
+                <ListBox x:Name="itemList">
+                </ListBox>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="1">
+                <!-- Item Properties Panel -->
+                <StackPanel>
+                    <!-- Item and Forges Panel-->
+                    <Grid Margin="0 5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Selected Item" FontWeight="DemiBold" Margin="5 5"/>
+                            <ComboBox x:Name="cnItem" Margin="5 0"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Forges" FontWeight="DemiBold" Margin="5 5"/>
+                            <ComboBox x:Name="cnForge" Margin="5 0"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
 
     </StackPanel>
 </Window>
