@@ -19,6 +19,34 @@ namespace FESOVSE
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MainWindow()
+        {
+            InitializeComponent();
+            initControls();
+        }
+
+        private void cbMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (UnitGrid1 != null && UnitGrid2 != null && ItemGrid1 != null && ItemGrid2 != null)
+            {
+                ComboBoxItem selectedModeItem = (ComboBoxItem)cbMode.SelectedItem;
+                string selectedMode = selectedModeItem.Content.ToString();
+                if (selectedMode == "Unit Editing")
+                {
+                    UnitGrid1.Visibility = Visibility.Visible;
+                    UnitGrid2.Visibility = Visibility.Visible;
+                    ItemGrid1.Visibility = Visibility.Collapsed;
+                    ItemGrid2.Visibility = Visibility.Collapsed;
+                }
+                else if (selectedMode == "Convoy Editing")
+                {
+                    UnitGrid1.Visibility = Visibility.Collapsed;
+                    UnitGrid2.Visibility = Visibility.Collapsed;
+                    ItemGrid1.Visibility = Visibility.Visible;
+                    ItemGrid2.Visibility = Visibility.Visible;
+                }
+            }
+        }
         private void DecryptWorkData()
             {
                 if (File.Exists(path))
@@ -182,12 +210,6 @@ namespace FESOVSE
             private string path; //location of the save file
             private IEnumerable<IntegerUpDown> upDwnBoxes; //list of numeric updownboxes contained in window
 
-            public MainWindow()
-            {
-                InitializeComponent();
-                initControls();
-            }
-
             private void ChangeTheme(object sender, RoutedEventArgs e)
             {
                 switch (((MenuItem)sender).Uid)
@@ -236,7 +258,7 @@ namespace FESOVSE
             }
 
 
-        #region Utility Functions
+            #region Utility Functions
 
         /* checks if a sequence of bytes is in the save file */
             private int hasData(int blockSize, byte[] data, int start = 0)
@@ -388,7 +410,7 @@ namespace FESOVSE
 
         #endregion
 
-        #region Updating Panel Functions
+            #region Updating Panel Functions
 
         /* updating the window screen */
         private void updateDescription(object sender, SelectionChangedEventArgs e)

@@ -42,13 +42,13 @@
                 </TransformGroup>
             </StackPanel.RenderTransform>
             <TextBlock Text="Mode" FontWeight="DemiBold" Margin="5 5"/>
-            <ComboBox x:Name="cbMode" Margin="5 0">
+            <ComboBox x:Name="cbMode" Margin="5 0" SelectedIndex="0" SelectionChanged="cbMode_SelectionChanged">
                 <ComboBoxItem Content="Unit Editing"/>
                 <ComboBoxItem Content="Convoy Editing"/>
             </ComboBox>
         </StackPanel>
 
-        <Grid Visibility="Visible">
+        <Grid Visibility="Visible" x:Name="UnitGrid1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -57,7 +57,7 @@
             <TextBlock Text="Unit Properties" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
 
-        <Grid Height="400" Visibility="Visible">
+        <Grid Height="400" Visibility="Visible" x:Name="UnitGrid2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
@@ -203,16 +203,16 @@
                 
         <!-- End of Unit Editing -->
 
-        <Grid Visibility="Collapsed">
+        <Grid Visibility="Collapsed" x:Name="ItemGrid1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Item Select" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
+            <TextBlock Text="Items" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
             <TextBlock Text="Item Properties" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
 
-        <Grid Height="400" Visibility="Collapsed">
+        <Grid Height="400" Visibility="Collapsed" x:Name="ItemGrid2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
