@@ -29,7 +29,8 @@ namespace FESOVSE.Data
                 ItemID = itemID,
                 Hex = itemHex,
                 MaxForges = (int)maxForges,
-                isDLC = (bool)isdlc
+                isDLC = (bool)isdlc,
+                ConvoyStartAddress = -1
             };
         }
 

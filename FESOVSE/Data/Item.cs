@@ -7,5 +7,8 @@
         public string Hex { get; set; }
         public int MaxForges { get; set; }
         public bool isDLC { get; set; }
+        public int ConvoyStartAddress { get; set; }
+        public int ConvoyItemAddress { get; set; }
+
     }
 }

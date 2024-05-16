@@ -176,6 +176,7 @@ namespace FESOVSE
                 }
                 _saveFile = ChapterHexDataBytes;
                 loadUnits();
+                loadConvoy();
                 loadItems();
                 loadClasses();
                 bindEvents();
@@ -260,7 +261,7 @@ namespace FESOVSE
 
             #region Utility Functions
 
-        /* checks if a sequence of bytes is in the save file */
+            /* checks if a sequence of bytes is in the save file */
             private int hasData(int blockSize, byte[] data, int start = 0)
             {
                 // Check if start index is within bounds
@@ -335,6 +336,13 @@ namespace FESOVSE
                                          //works well if each character holds an item
                 return hasData(charBlockSize, itemByte, charIDStart);
             }
+            
+            private int findConvoyItemAddress(int itemIDStart)
+            {
+                byte[] itemByte = { 2, 1 };
+                int convoyBlockSize = 2800; // addresses are 14 bytes long x 200 total items between Alm and Celica
+                return hasData(convoyBlockSize, itemByte, itemIDStart);
+            }
 
             #endregion
 
@@ -345,6 +353,8 @@ namespace FESOVSE
                 cbItem.IsHitTestVisible = false; //disable controls at setup
                 cbForge.IsHitTestVisible = false;
                 cbClass.IsHitTestVisible = false;
+                cnItem.IsHitTestVisible = false;
+                cnForge.IsHitTestVisible = false;
                 upDwnBoxes = this.FindVisualChildren<IntegerUpDown>();
 
             }
@@ -353,6 +363,7 @@ namespace FESOVSE
             {
                 _saveFile = File.ReadAllBytes(path);
                 loadUnits();
+                loadConvoy();
                 loadItems();
                 loadClasses();
                 bindEvents();
@@ -389,6 +400,37 @@ namespace FESOVSE
 
             }
 
+            private void loadConvoy() //about the same as loadUnits() right now
+            {
+                //getting the pointer to character stored at 0xCC
+                int convoyBlockAddress = 0;
+                for (int i = 0; i < 4; i++)
+                {
+                    convoyBlockAddress = (_saveFile[0xD0 + i] << (i * 8)) | convoyBlockAddress;
+                    //its just 2 bytes but I take 4 anyway
+                }
+
+                var itemDB = new Data.ItemDatabase(); //init database of characters from xml file
+                var items = itemDB.getAll(); //list of all units
+                var currentItems = new List<Data.Item>(); //units that are currently available in game
+                foreach (Data.Item c in items)
+                {
+                    byte[] iID = hexToBytes(c.ItemID);
+                    int f = hasData(_saveFile.Length - convoyBlockAddress, iID, convoyBlockAddress); //check if character is available
+                    if (f != -1)
+                    {
+                        c.ConvoyStartAddress = f; //set character's start address for easy access (offset of start of character id)
+                        c.ConvoyItemAddress = findItemAddress(f + 30); //also set the item address as its different depending on character (no specific offset)
+                        currentItems.Add(c);
+                    }
+                }
+                //enabling data source for the control
+                itemList.ItemsSource = currentItems;
+                itemList.DisplayMemberPath = "Name";
+                itemList.SelectedValuePath = "Hex";
+
+            }
+
             private void loadItems()
             {
                 var itemDB = new Data.ItemDatabase();
@@ -396,6 +438,9 @@ namespace FESOVSE
                 cbItem.ItemsSource = items;
                 cbItem.DisplayMemberPath = "Name";
                 cbItem.SelectedValuePath = "Hex";
+                cnItem.ItemsSource = items;
+                cnItem.DisplayMemberPath = "Name";
+                cnItem.SelectedValuePath = "Hex";
             }
 
             private void loadClasses()
@@ -418,7 +463,9 @@ namespace FESOVSE
             unBindEvents();
 
             cbItem.IsHitTestVisible = true; //enable control
+            cnItem.IsHitTestVisible=true;
             var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
+            var item = (Data.Item)itemList.SelectedItem;
 
             if (character != null) // check if character is not null
             {
@@ -452,21 +499,59 @@ namespace FESOVSE
                 bindEvents();
 
             }
+            if (item != null) 
+            {
+                if (item.ConvoyItemAddress != -1)
+                {
+                    string itemHex = getBytesValue(item.ConvoyItemAddress + 6, 8);
+                    cnItem.SelectedValue = itemHex;
+                    if (cnItem.SelectedValue == null) //disable combobox if item is not in database
+                    {                                 //will remove once resource is complete
+                        cnItem.IsHitTestVisible = false;
+                        cnForge.IsHitTestVisible = false;
+                    }
+                    else
+                    {
+                        var currentItem = (Data.Item)cnItem.SelectedItem;
+                        int currentForge = _saveFile[item.ConvoyItemAddress + 5] >> 4; // forge offset +5 after 02 01
+                        updateForgeBox(currentItem.MaxForges, currentForge);
+                    }
+                }
+                else
+                {
+                    //disable forge and item comboboxes if no held item
+                    cnItem.SelectedIndex = -1;
+                    cnForge.SelectedIndex = -1;
+                    cnItem.IsHitTestVisible = false;
+                    cnForge.IsHitTestVisible = false;
+                }
+
+                    bindEvents();
+            }
+        
         }
-            /* update the forge combo box based on current item in item combo box*/
+        /* update the forge combo box based on current item in item combo box*/
             private void updateForgeBox(int maxForges, int currentForge = 0)
             {
-                cbForge.Items.Clear();
-                if (maxForges != 0)
+            cbForge.Items.Clear();
+            cnForge.Items.Clear();
+            if (maxForges != 0)
+            {
+                for (int i = 0; i <= maxForges; i++)
                 {
-                    for (int i = 0; i <= maxForges; i++)
-                    {
-                        cbForge.Items.Add(i);
-                    }
-                    cbForge.IsHitTestVisible = true;
-                    cbForge.SelectedIndex = currentForge;
+                    cbForge.Items.Add(i);
+                    cnForge.Items.Add(i);
                 }
-                else cbForge.IsHitTestVisible = false;
+                cbForge.IsHitTestVisible = true;
+                cbForge.SelectedIndex = currentForge;
+                cnForge.IsHitTestVisible = true;
+                cnForge.SelectedIndex = currentForge;
+            }
+            else
+            {
+                cbForge.IsHitTestVisible = false;
+                cnForge.IsHitTestVisible = false;
+            }
             }
             /* updates the numeric updowns based on character's current stat*/
             private void updateStatBox()
@@ -592,6 +677,9 @@ namespace FESOVSE
                 unitList.SelectionChanged -= updateDescription;
                 cbForge.SelectionChanged -= forgeBoxChanged;
                 cbClass.SelectionChanged -= classChanged;
+                cnItem.SelectionChanged -= itemBoxChanged;
+                itemList.SelectionChanged -= updateDescription;
+                cnForge.SelectionChanged -= forgeBoxChanged;
                 foreach (IntegerUpDown x in upDwnBoxes)
                 {
                     x.ValueChanged -= statChanged;
@@ -604,6 +692,9 @@ namespace FESOVSE
                 unitList.SelectionChanged += updateDescription;
                 cbForge.SelectionChanged += forgeBoxChanged;
                 cbClass.SelectionChanged += classChanged;
+                cnItem.SelectionChanged += itemBoxChanged;
+                itemList.SelectionChanged += updateDescription;
+                cnForge.SelectionChanged += forgeBoxChanged;
                 foreach (IntegerUpDown x in upDwnBoxes)
                 {
                     x.ValueChanged += statChanged;
