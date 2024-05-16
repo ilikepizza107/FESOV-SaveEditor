@@ -208,7 +208,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Convoy" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
+            <TextBlock Text="Items" Grid.Column="0" FontWeight="Bold" Margin="5 0"/>
             <TextBlock Text="Item Properties" Grid.Column="1" FontWeight="Bold" Margin="5 0"/>
         </Grid>
 
