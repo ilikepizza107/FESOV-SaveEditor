@@ -400,7 +400,7 @@ namespace FESOVSE
 
             }
 
-            private void loadConvoy() //about the same as loadUnits() right now
+            private void loadConvoy()
             {
                 //getting the pointer to character stored at 0xCC
                 int convoyBlockAddress = 0;
@@ -415,12 +415,12 @@ namespace FESOVSE
                 var currentItems = new List<Data.Item>(); //units that are currently available in game
                 foreach (Data.Item c in items)
                 {
-                    byte[] iID = hexToBytes(c.ItemID);
-                    int f = hasData(_saveFile.Length - convoyBlockAddress, iID, convoyBlockAddress); //check if character is available
+                    byte[] iID = hexToBytes(c.Hex);
+                    int f = hasData(_saveFile.Length - convoyBlockAddress, iID, convoyBlockAddress); //check if item is available
                     if (f != -1)
                     {
-                        c.ConvoyStartAddress = f; //set character's start address for easy access (offset of start of character id)
-                        c.ConvoyItemAddress = findItemAddress(f + 30); //also set the item address as its different depending on character (no specific offset)
+                        c.ConvoyStartAddress = convoyBlockAddress + f; //set items's start address for easy access (offset of start of item id)
+                        c.ConvoyItemAddress = findConvoyItemAddress(f); //also set the item address as its different depending on character (no specific offset)
                         currentItems.Add(c);
                     }
                 }
