@@ -178,6 +178,7 @@ namespace FESOVSE
                 loadUnits();
                 loadItems();
                 loadClasses();
+                loadConvoy();
                 bindEvents();
             }
 
@@ -336,6 +337,13 @@ namespace FESOVSE
                 return hasData(charBlockSize, itemByte, charIDStart);
             }
 
+            private int findConvoyItemAddress(int itemIDStart)
+            {
+                byte[] itemByte = { 2, 1 }; //items are labelled with 02 01
+                int convoyBlockSize = 2800; // addresses are 14 bytes long x 200 total items between Alm and Celica
+                return hasData(convoyBlockSize, itemByte, itemIDStart);
+            }
+
             #endregion
 
             #region Setup Functions
@@ -355,6 +363,7 @@ namespace FESOVSE
                 loadUnits();
                 loadItems();
                 loadClasses();
+                loadConvoy();
                 bindEvents();
             }
 
@@ -408,9 +417,38 @@ namespace FESOVSE
 
             }
 
+        private void loadConvoy()
+        {
+            //getting the pointer to character stored at 0xD0
+            int convoyStartAddress = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                convoyStartAddress = (_saveFile[0xD0 + i] << (i * 8)) | convoyStartAddress;
+                //its just 2 bytes but I take 4 anyway
+            }
+
+            var itemDB = new Data.ItemDatabase();
+            var convoyItems = itemDB.getAll();
+            var currentItems = new List<Data.Item>();
+            foreach (Data.Item c in convoyItems)
+            {
+                byte[] iID = hexToBytes(c.ItemID);
+                int f = hasData(_saveFile.Length - convoyStartAddress, iID, convoyStartAddress); //check if character is available
+                if (f != -1)
+                {
+                    c.ConvoyBlockAddress = findConvoyItemAddress(f); //set character's start address for easy access (offset of start of character id)
+                    currentItems.Add(c);
+                }
+                //enabling data source for the control
+                itemList.ItemsSource = convoyItems;
+                itemList.DisplayMemberPath = "Name";
+                itemList.SelectedValuePath = "Hex";
+            }
+        }
+
         #endregion
 
-            #region Updating Panel Functions
+        #region Updating Panel Functions
 
         /* updating the window screen */
         private void updateDescription(object sender, SelectionChangedEventArgs e)
