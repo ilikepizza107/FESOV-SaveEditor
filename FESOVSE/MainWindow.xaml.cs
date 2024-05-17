@@ -402,7 +402,7 @@ namespace FESOVSE
 
             private void loadConvoy()
             {
-                //getting the pointer to character stored at 0xCC
+                //getting the pointer to character stored at 0xD0
                 int convoyBlockAddress = 0;
                 for (int i = 0; i < 4; i++)
                 {
@@ -410,9 +410,9 @@ namespace FESOVSE
                     //its just 2 bytes but I take 4 anyway
                 }
 
-                var itemDB = new Data.ItemDatabase(); //init database of characters from xml file
-                var items = itemDB.getAll(); //list of all units
-                var currentItems = new List<Data.Item>(); //units that are currently available in game
+                var itemDB = new Data.ItemDatabase(); //init database of items from xml file
+                var items = itemDB.getAll(); //list of all items
+                var currentItems = new List<Data.Item>(); //items that are currently in the convoy
                 foreach (Data.Item c in items)
                 {
                     byte[] iID = hexToBytes(c.Hex);
