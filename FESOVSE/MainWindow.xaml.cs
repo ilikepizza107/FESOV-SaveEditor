@@ -301,8 +301,49 @@ namespace FESOVSE
                 return -1; // Return -1 if data is not found within the search space
             }
 
-            /* converts a string of hex into byte array */
-            private byte[] hexToBytes(string hexStr)
+        private List<int> hasDataConvoy(int blockSize, byte[] data, int start = 0)
+        {
+            List<int> indices = new List<int>();
+
+            // Check if start index is within bounds
+            if (start < 0 || start >= _saveFile.Length)
+            {
+                return indices; // Invalid start index, return empty list
+            }
+
+            // Calculate max length
+            int maxLength = start + blockSize;
+
+            // Ensure maxLength does not exceed array length
+            if (maxLength > _saveFile.Length)
+            {
+                maxLength = _saveFile.Length;
+            }
+
+            // Loop through the search space
+            for (int i = start; i + data.Length <= maxLength; i++)
+            {
+                bool isSame = true;
+                // Loop through the data to check
+                for (int j = 0; j < data.Length; j++)
+                {
+                    // Check if index is within bounds
+                    if (i + j >= _saveFile.Length || _saveFile[i + j] != data[j])
+                    {
+                        isSame = false;
+                        break;
+                    }
+                }
+                if (isSame)
+                {
+                    indices.Add(i); // Add index if data is found
+                }
+            }
+            return indices; // Return list of indices where data is found
+        }
+
+        /* converts a string of hex into byte array */
+        private byte[] hexToBytes(string hexStr)
             {
                 byte[] byteVal = new byte[hexStr.Length / 2];
                 for (int i = 0; i < byteVal.Length; i++)
@@ -336,19 +377,20 @@ namespace FESOVSE
                                          //works well if each character holds an item
                 return hasData(charBlockSize, itemByte, charIDStart);
             }
-            
-            private int findConvoyItemAddress(int itemIDStart)
-            {
-                byte[] itemByte = { 2, 1 };
-                int convoyBlockSize = 2800; // addresses are 14 bytes long x 200 total items between Alm and Celica
-                return hasData(convoyBlockSize, itemByte, itemIDStart);
-            }
 
-            #endregion
+        private int findConvoyItemAddress(int itemIDStart)
+        {
+            byte[] itemByte = { 2, 1 };
+            int convoyBlockSize = 2800; // Addresses are 14 bytes long x 200 total items between Alm and Celica
+            List<int> matches = hasDataConvoy(convoyBlockSize, itemByte, itemIDStart);
+            return matches.Count > 0 ? matches[0] : -1; // Return the first match or -1 if none found
+        }
 
-            #region Setup Functions
+        #endregion
 
-            private void initControls()
+        #region Setup Functions
+
+        private void initControls()
             {
                 cbItem.IsHitTestVisible = false; //disable controls at setup
                 cbForge.IsHitTestVisible = false;
@@ -400,38 +442,45 @@ namespace FESOVSE
 
             }
 
-            private void loadConvoy()
+        private void loadConvoy()
+        {
+            // Getting the pointer to character stored at 0xD0
+            int convoyBlockAddress = 0;
+            for (int i = 0; i < 4; i++)
             {
-                //getting the pointer to character stored at 0xD0
-                int convoyBlockAddress = 0;
-                for (int i = 0; i < 4; i++)
-                {
-                    convoyBlockAddress = (_saveFile[0xD0 + i] << (i * 8)) | convoyBlockAddress;
-                    //its just 2 bytes but I take 4 anyway
-                }
-
-                var itemDB = new Data.ItemDatabase(); //init database of items from xml file
-                var items = itemDB.getAll(); //list of all items
-                var currentItems = new List<Data.Item>(); //items that are currently in the convoy
-                foreach (Data.Item c in items)
-                {
-                    byte[] iID = hexToBytes(c.Hex);
-                    int f = hasData(_saveFile.Length - convoyBlockAddress, iID, convoyBlockAddress); //check if item is available
-                    if (f != -1)
-                    {
-                        c.ConvoyStartAddress = convoyBlockAddress + f; //set items's start address for easy access (offset of start of item id)
-                        c.ConvoyItemAddress = findConvoyItemAddress(f); //also set the item address as its different depending on character (no specific offset)
-                        currentItems.Add(c);
-                    }
-                }
-                //enabling data source for the control
-                itemList.ItemsSource = currentItems;
-                itemList.DisplayMemberPath = "Name";
-                itemList.SelectedValuePath = "Hex";
-
+                convoyBlockAddress = (_saveFile[0xD0 + i] << (i * 8)) | convoyBlockAddress;
+                // It's just 2 bytes but I take 4 anyway
             }
 
-            private void loadItems()
+            var itemDB = new Data.ItemDatabase(); // Init database of items from XML file
+            var items = itemDB.getAll(); // List of all items
+            var currentItems = new List<Data.Item>(); // Items that are currently in the convoy
+
+            foreach (Data.Item c in items)
+            {
+                byte[] iID = hexToBytes(c.Hex);
+                List<int> matches = hasDataConvoy(_saveFile.Length - convoyBlockAddress, iID, convoyBlockAddress); // Check if item is available
+                foreach (int match in matches)
+                {
+                    Data.Item newItem = new Data.Item
+                    {
+                        // Clone item c to avoid modifying the original item
+                        Name = c.Name,
+                        Hex = c.Hex,
+                        ConvoyStartAddress = convoyBlockAddress + match, // Set item's start address for easy access (offset of start of item id)
+                        ConvoyItemAddress = findConvoyItemAddress(match) // Also set the item address as it's different depending on character (no specific offset)
+                    };
+                    currentItems.Add(newItem);
+                }
+            }
+
+            // Enabling data source for the control
+            itemList.ItemsSource = currentItems;
+            itemList.DisplayMemberPath = "Name";
+            itemList.SelectedValuePath = "Hex";
+        }
+
+        private void loadItems()
             {
                 var itemDB = new Data.ItemDatabase();
                 var items = itemDB.getAll();
