@@ -467,12 +467,13 @@ namespace FESOVSE
                         // Clone item c to avoid modifying the original item
                         Name = c.Name,
                         Hex = c.Hex,
-                        ConvoyStartAddress = convoyBlockAddress + match, // Set item's start address for easy access (offset of start of item id)
-                        ConvoyItemAddress = findConvoyItemAddress(match) // Also set the item address as it's different depending on character (no specific offset)
+                        ConvoyItemAddress = findConvoyItemAddress(match)
                     };
                     currentItems.Add(newItem);
                 }
             }
+
+            currentItems = currentItems.OrderBy(item => item.ConvoyItemAddress).ToList();
 
             // Enabling data source for the control
             itemList.ItemsSource = currentItems;
