@@ -378,14 +378,6 @@ namespace FESOVSE
                 return hasData(charBlockSize, itemByte, charIDStart);
             }
 
-        private int findConvoyItemAddress(int itemIDStart)
-        {
-            byte[] itemByte = { 2, 1 };
-            int convoyBlockSize = 2800; // Addresses are 14 bytes long x 200 total items between Alm and Celica
-            List<int> matches = hasDataConvoy(convoyBlockSize, itemByte, itemIDStart);
-            return matches.Count > 0 ? matches[0] : -1; // Return the first match or -1 if none found
-        }
-
         #endregion
 
         #region Setup Functions
@@ -467,7 +459,7 @@ namespace FESOVSE
                         // Clone item c to avoid modifying the original item
                         Name = c.Name,
                         Hex = c.Hex,
-                        ConvoyItemAddress = findConvoyItemAddress(match)
+                        ConvoyItemAddress = match - 6
                     };
                     currentItems.Add(newItem);
                 }
