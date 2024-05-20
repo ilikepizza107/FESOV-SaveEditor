@@ -626,24 +626,26 @@ namespace FESOVSE
             int counter = -2;
             foreach (IntegerUpDown iUD in upDwnBoxes)
             {
-                if (counter == -2) iUD.Value = level;
-                else if (counter == -1) iUD.Value = exp;
-                else
                 {
-                    //calculates stat using character base and value from save file
-                    //character stats = value from save file + base stats
-                    iUD.Minimum = character.BaseStats[counter];
-                    if (maxMod != null)
+                    if (counter >= 0 && counter < character.BaseStats.Count
+                        && counter < character.MaxStats.Count
+                        && (maxMod == null || maxMod.MaxMod == null || counter < maxMod.MaxMod.Count))
                     {
-                        iUD.Maximum = character.MaxStats[counter] + maxMod.MaxMod[counter];
+                        //calculates stat using character base and value from save file
+                        //character stats = value from save file + base stats
+                        iUD.Minimum = character.BaseStats[counter];
+                        if (maxMod != null && maxMod.MaxMod != null)
+                        {
+                            iUD.Maximum = character.MaxStats[counter] + maxMod.MaxMod[counter];
+                        }
+                        else
+                        {
+                            iUD.Maximum = character.MaxStats[counter];
+                        }
+                        iUD.Value = _saveFile[statAddress + counter] + character.BaseStats[counter];
                     }
-                    else
-                    {
-                        iUD.Maximum = character.MaxStats[counter];
-                    }
-                    iUD.Value = _saveFile[statAddress + counter] + character.BaseStats[counter];
+                    counter++;
                 }
-                counter++;
             }
         }
 
