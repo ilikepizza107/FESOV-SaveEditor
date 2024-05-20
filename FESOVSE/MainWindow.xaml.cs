@@ -454,14 +454,8 @@ namespace FESOVSE
                 List<int> matches = hasDataConvoy(_saveFile.Length - convoyBlockAddress, iID, convoyBlockAddress); // Check if item is available
                 foreach (int match in matches)
                 {
-                    Data.Item newItem = new Data.Item
-                    {
-                        // Clone item c to avoid modifying the original item
-                        Name = c.Name,
-                        Hex = c.Hex,
-                        ConvoyItemAddress = match - 6
-                    };
-                    currentItems.Add(newItem);
+                    c.ConvoyItemAddress = match - 6;
+                    currentItems.Add(c);
                 }
             }
 
@@ -680,7 +674,9 @@ namespace FESOVSE
         {
             unBindEvents();
 
+            Data.Item oldItem = (Data.Item)itemList.SelectedItem;
             Data.Item currentItem = (Data.Item)cnItem.SelectedItem;
+            currentItem.ConvoyItemAddress = oldItem.ConvoyItemAddress;
             byte[] itemHex = hexToBytes(currentItem.Hex);
             byte[] itemID = hexToBytes(currentItem.ItemID);
             byte[] itemMiddleHex;
