@@ -382,7 +382,7 @@ namespace FESOVSE
 
         #region Setup Functions
 
-        private void initControls()
+            private void initControls()
             {
                 cbItem.IsHitTestVisible = false; //disable controls at setup
                 cbForge.IsHitTestVisible = false;
@@ -473,7 +473,7 @@ namespace FESOVSE
             itemList.SelectedValuePath = "Hex";
         }
 
-        private void loadItems()
+            private void loadItems()
             {
                 var itemDB = new Data.ItemDatabase();
                 var items = itemDB.getAll();
@@ -505,9 +505,7 @@ namespace FESOVSE
             unBindEvents();
 
             cbItem.IsHitTestVisible = true; //enable control
-            cnItem.IsHitTestVisible=true;
             var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
-            var item = (Data.Item)itemList.SelectedItem;
 
             if (character != null) // check if character is not null
             {
@@ -540,8 +538,17 @@ namespace FESOVSE
                 updateClassBox();
                 bindEvents();
 
-            }
-            if (item != null) 
+            }        
+        }
+
+        private void convoyUpdateDescription(object sender, SelectionChangedEventArgs e)
+        {
+            unBindEvents();
+
+            cnItem.IsHitTestVisible = true;
+            var item = (Data.Item)itemList.SelectedItem;
+
+            if (item != null)
             {
                 if (item.ConvoyItemAddress != -1)
                 {
@@ -556,7 +563,7 @@ namespace FESOVSE
                     {
                         var currentItem = (Data.Item)cnItem.SelectedItem;
                         int currentForge = _saveFile[item.ConvoyItemAddress + 5] >> 4; // forge offset +5 after 02 01
-                        updateForgeBox(currentItem.MaxForges, currentForge);
+                        convoyUpdateForgeBox(currentItem.MaxForges, currentForge);
                     }
                 }
                 else
@@ -567,36 +574,50 @@ namespace FESOVSE
                     cnItem.IsHitTestVisible = false;
                     cnForge.IsHitTestVisible = false;
                 }
-
-                    bindEvents();
+                bindEvents();
             }
-        
         }
+
+
         /* update the forge combo box based on current item in item combo box*/
-            private void updateForgeBox(int maxForges, int currentForge = 0)
+        private void updateForgeBox(int maxForges, int currentForge = 0)
             {
             cbForge.Items.Clear();
-            cnForge.Items.Clear();
             if (maxForges != 0)
             {
                 for (int i = 0; i <= maxForges; i++)
                 {
                     cbForge.Items.Add(i);
-                    cnForge.Items.Add(i);
                 }
                 cbForge.IsHitTestVisible = true;
                 cbForge.SelectedIndex = currentForge;
+            }
+            else
+            {
+                cbForge.IsHitTestVisible = false;
+            }
+        }
+
+        private void convoyUpdateForgeBox(int maxForges, int currentForge = 0)
+        {
+            cnForge.Items.Clear();
+            if (maxForges != 0)
+            {
+                for (int i = 0; i <= maxForges; i++)
+                {
+                    cnForge.Items.Add(i);
+                }
                 cnForge.IsHitTestVisible = true;
                 cnForge.SelectedIndex = currentForge;
             }
             else
             {
-                cbForge.IsHitTestVisible = false;
                 cnForge.IsHitTestVisible = false;
             }
-            }
-            /* updates the numeric updowns based on character's current stat*/
-            private void updateStatBox()
+        }
+
+        /* updates the numeric updowns based on character's current stat*/
+        private void updateStatBox()
             {
                 Data.Character character = (Data.Character)unitList.SelectedItem;
                 int level = _saveFile[character.StartAddress - 2]; //level offset 2 bytes before character id
@@ -654,6 +675,30 @@ namespace FESOVSE
 
                 bindEvents();
             }
+
+        private void convoyItemBoxChanged(object sender, EventArgs e)
+        {
+            unBindEvents();
+
+            Data.Item currentItem = (Data.Item)cnItem.SelectedItem;
+            byte[] itemHex = hexToBytes(currentItem.Hex);
+            byte[] itemID = hexToBytes(currentItem.ItemID);
+            byte[] itemMiddleHex;
+            if (currentItem.isDLC) itemMiddleHex = hexToBytes("010008"); //I see this pattern if its a dlc
+            else itemMiddleHex = hexToBytes("000000"); //default value, no forges, etc.
+            IEnumerable<byte> itemVal = itemID.Concat(itemMiddleHex).Concat(itemHex); //combine the bytes to form 12 bytes of item value
+            int start = currentItem.ConvoyItemAddress + 2;
+            foreach (byte b in itemVal)
+            {
+                _saveFile[start] = b; //insert the new value in file
+                start++;
+            }
+
+            convoyUpdateForgeBox(currentItem.MaxForges); //disable/enable forge box depending on current item
+
+            bindEvents();
+        }
+
         /* fired when forge combo box changed */
         private void forgeBoxChanged(object sender, EventArgs e)
         {
@@ -672,7 +717,24 @@ namespace FESOVSE
             }
         }
 
-            private void statChanged(object sender, EventArgs e)
+        private void convoyForgeBoxChanged(object sender, EventArgs e)
+        {
+            unBindEvents();
+
+            Data.Item currentItem = (Data.Item)itemList.SelectedItem;
+            if (cnForge.SelectedItem != null)
+            {
+                byte forgeVal = Convert.ToByte(cnForge.SelectedItem.ToString(), 16); //get the value changed
+                byte val = _saveFile[currentItem.ConvoyItemAddress + 5]; //forge offset 5 after 02 01, the leftmost 4 bits only
+                val = (byte)(val & 0x0F); //clear leftmost 4 bits
+                val = (byte)(val | (forgeVal << 4)); //add the new value to leftmost 4 bits
+                _saveFile[currentItem.ConvoyItemAddress + 5] = val;
+
+                bindEvents();
+            }
+        }
+
+        private void statChanged(object sender, EventArgs e)
             {
                 unBindEvents();
 
@@ -719,9 +781,9 @@ namespace FESOVSE
                 unitList.SelectionChanged -= updateDescription;
                 cbForge.SelectionChanged -= forgeBoxChanged;
                 cbClass.SelectionChanged -= classChanged;
-                cnItem.SelectionChanged -= itemBoxChanged;
-                itemList.SelectionChanged -= updateDescription;
-                cnForge.SelectionChanged -= forgeBoxChanged;
+                cnItem.SelectionChanged -= convoyItemBoxChanged;
+                itemList.SelectionChanged -= convoyUpdateDescription;
+                cnForge.SelectionChanged -= convoyForgeBoxChanged;
                 foreach (IntegerUpDown x in upDwnBoxes)
                 {
                     x.ValueChanged -= statChanged;
@@ -734,9 +796,9 @@ namespace FESOVSE
                 unitList.SelectionChanged += updateDescription;
                 cbForge.SelectionChanged += forgeBoxChanged;
                 cbClass.SelectionChanged += classChanged;
-                cnItem.SelectionChanged += itemBoxChanged;
-                itemList.SelectionChanged += updateDescription;
-                cnForge.SelectionChanged += forgeBoxChanged;
+                cnItem.SelectionChanged += convoyItemBoxChanged;
+                itemList.SelectionChanged += convoyUpdateDescription;
+                cnForge.SelectionChanged += convoyForgeBoxChanged;
                 foreach (IntegerUpDown x in upDwnBoxes)
                 {
                     x.ValueChanged += statChanged;
