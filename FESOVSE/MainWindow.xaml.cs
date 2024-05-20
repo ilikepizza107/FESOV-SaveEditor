@@ -454,8 +454,13 @@ namespace FESOVSE
                 List<int> matches = hasDataConvoy(_saveFile.Length - convoyBlockAddress, iID, convoyBlockAddress); // Check if item is available
                 foreach (int match in matches)
                 {
-                    c.ConvoyItemAddress = match - 6;
-                    currentItems.Add(c);
+                    Data.Item newItem = new Data.Item
+                    {
+                        Name = c.Name,
+                        Hex = c.Hex,
+                        ConvoyItemAddress = match - 6
+                    };
+                    currentItems.Add(newItem);
                 }
             }
 
