@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -19,12 +20,27 @@ namespace FESOVSE.Data
         {
             var id = row.Attribute("id").Value;
             var name = row.Attribute("name").Value;
+
+            // Check if the "maxmod" element exists
+            var maxModElement = row.Element("maxmod");
+
+            List<int> mm = new List<int>();
+            if (maxModElement != null)
+            {
+                foreach (XAttribute xa in maxModElement.Attributes())
+                {
+                    mm.Add(Int32.Parse(xa.Value));
+                }
+            }
+
             return new CharacterClass
             {
                 ClassID = id,
-                Name = name
+                Name = name,
+                MaxMod = mm
             };
         }
+
 
         public List<CharacterClass> getAll()
         {

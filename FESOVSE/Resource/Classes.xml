@@ -38,16 +38,36 @@
   <class id="185A06A44A912675" name="Lord (Roy)"/>
   <class id="503F90DB3CD08E74" name="Lord (CorrinM)"/>
   <class id="0E3E90DB0CCF8E74" name="Lord (CorrinF)"/>
-  <class id="D964005DA93AA3A3" name="Conqueror (DLC)"/>
-  <class id="81F6224C9BE113CE" name="Rigain (DLC)"/>
-  <class id="7460F8D7AC561E25" name="Spartan (DLC)"/>
-  <class id="D6402D042A30E3D3" name="Oliphantier (DLC)"/>
-  <class id="572032FD3F4049A8" name="Exemplar (DLC)"/>
-  <class id="E78EF6EE29DD61B3" name="Guru (DLC)"/>
-  <class id="E5588604F5D2C4FE" name="Harrier (DLC)"/>
-  <class id="398FBB505747C11F" name="Skogul (DLC)"/>
-  <class id="D0537D79EED22FFD" name="Yasha (DLC)"/>
-  <class id="CEAF96134A701BC4" name="Enchantress (DLC)"/>
+  <class id="D964005DA93AA3A3" name="Conqueror (DLC)">
+    <maxmod hp="0" atk="4" skl="3" spd="1" lck="5" def="2" res="0"/>
+  </class>
+  <class id="81F6224C9BE113CE" name="Rigain (DLC)">
+    <maxmod hp="0" atk="2" skl="2" spd="2" lck="5" def="2" res="2"/>
+  </class>
+  <class id="7460F8D7AC561E25" name="Spartan (DLC)">
+    <maxmod hp="0" atk="5" skl="0" spd="0" lck="0" def="5" res="0"/>
+  </class>
+  <class id="D6402D042A30E3D3" name="Oliphantier (DLC)">
+	<maxmod hp="0" atk="1" skl="2" spd="1" lck="0" def="0" res="0"/>
+  </class>
+  <class id="572032FD3F4049A8" name="Exemplar (DLC)">
+	<maxmod hp="0" atk="1" skl="0" spd="0" lck="2" def="0" res="5"/>
+  </class>
+  <class id="E78EF6EE29DD61B3" name="Guru (DLC)">
+	<maxmod hp="0" atk="1" skl="2" spd="1" lck="1" def="0" res="1"/>
+  </class>
+  <class id="E5588604F5D2C4FE" name="Harrier (DLC)">
+    <maxmod hp="0" atk="0" skl="1" spd="1" lck="2" def="0" res="2"/>
+  </class>
+  <class id="398FBB505747C11F" name="Skogul (DLC)">
+	<maxmod hp="0" atk="2" skl="1" spd="1" lck="2" def="2" res="0"/>
+  </class>
+  <class id="D0537D79EED22FFD" name="Yasha (DLC)">
+	<maxmod hp="0" atk="1" skl="4" spd="4" lck="0" def="0" res="1"/>
+  </class>
+  <class id="CEAF96134A701BC4" name="Enchantress (DLC)">
+	<maxmod hp="0" atk="3" skl="0" spd="1" lck="2" def="0" res="3"/>
+  </class>
   <class id="02825A5FA20BD095" name="Fiend"/>
   <class id="0D0D28E04D0CA05D" name="Brigand"/>
   <class id="BE0BFAD1864030EB" name="Arcanist"/>

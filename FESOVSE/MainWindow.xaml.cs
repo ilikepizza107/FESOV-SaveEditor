@@ -617,27 +617,36 @@ namespace FESOVSE
 
         /* updates the numeric updowns based on character's current stat*/
         private void updateStatBox()
+        {
+            Data.Character character = (Data.Character)unitList.SelectedItem;
+            Data.CharacterClass maxMod = (Data.CharacterClass)cbClass.SelectedItem;
+            int level = _saveFile[character.StartAddress - 2]; //level offset 2 bytes before character id
+            int exp = _saveFile[character.StartAddress - 1]; //exp offset 1 byte before character id
+            int statAddress = character.StartAddress + 21; //character stats offset 21 bytes after character id
+            int counter = -2;
+            foreach (IntegerUpDown iUD in upDwnBoxes)
             {
-                Data.Character character = (Data.Character)unitList.SelectedItem;
-                int level = _saveFile[character.StartAddress - 2]; //level offset 2 bytes before character id
-                int exp = _saveFile[character.StartAddress - 1]; //exp offset 1 byte before character id
-                int statAddress = character.StartAddress + 21; //character stats offset 21 bytes after character id
-                int counter = -2;
-                foreach (IntegerUpDown iUD in upDwnBoxes)
+                if (counter == -2) iUD.Value = level;
+                else if (counter == -1) iUD.Value = exp;
+                else
                 {
-                    if (counter == -2) iUD.Value = level;
-                    else if (counter == -1) iUD.Value = exp;
+                    //calculates stat using character base and value from save file
+                    //character stats = value from save file + base stats
+                    iUD.Minimum = character.BaseStats[counter];
+                    if (maxMod != null)
+                    {
+                        iUD.Maximum = character.MaxStats[counter] + maxMod.MaxMod[counter];
+                    }
                     else
                     {
-                        //calculates stat using character base and value from save file
-                        //character stats = value from save file + base stats
-                        iUD.Minimum = character.BaseStats[counter];
                         iUD.Maximum = character.MaxStats[counter];
-                        iUD.Value = _saveFile[statAddress + counter] + character.BaseStats[counter];
                     }
-                    counter++;
+                    iUD.Value = _saveFile[statAddress + counter] + character.BaseStats[counter];
                 }
+                counter++;
             }
+        }
+
             /* updates class box based on selected character*/
             private void updateClassBox()
             {
@@ -773,6 +782,8 @@ namespace FESOVSE
                     _saveFile[index] = b; //insert new value of class into save file
                     index++;
                 }
+
+                updateStatBox();
 
                 bindEvents();
             }
