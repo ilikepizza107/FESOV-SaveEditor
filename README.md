@@ -1,4 +1,4 @@
-# A Fire Emblem Echoes: Shadows of Valentia Save Editor
+# Fire Emblem Echoes: Shadows of Valentia Save Editor
 
 ### Features
   * Edit every character's class, inventory, and stats
