@@ -692,6 +692,8 @@ namespace FESOVSE
 
             convoyUpdateForgeBox(currentItem.MaxForges); //disable/enable forge box depending on current item
 
+            loadConvoy();
+
             bindEvents();
         }
 
