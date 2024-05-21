@@ -549,6 +549,7 @@ namespace FESOVSE
 
             if (item != null)
             {
+                itemList.SelectedItem = item;
                 if (item.ConvoyItemAddress != -1)
                 {
                     string itemHex = getBytesValue(item.ConvoyItemAddress + 6, 8);
@@ -686,32 +687,32 @@ namespace FESOVSE
                 bindEvents();
             }
 
-        private void convoyItemBoxChanged(object sender, EventArgs e)
-        {
-            unBindEvents();
-
-            Data.Item oldItem = (Data.Item)itemList.SelectedItem;
-            Data.Item currentItem = (Data.Item)cnItem.SelectedItem;
-            currentItem.ConvoyItemAddress = oldItem.ConvoyItemAddress;
-            byte[] itemHex = hexToBytes(currentItem.Hex);
-            byte[] itemID = hexToBytes(currentItem.ItemID);
-            byte[] itemMiddleHex;
-            if (currentItem.isDLC) itemMiddleHex = hexToBytes("010008"); //I see this pattern if its a dlc
-            else itemMiddleHex = hexToBytes("000000"); //default value, no forges, etc.
-            IEnumerable<byte> itemVal = itemID.Concat(itemMiddleHex).Concat(itemHex); //combine the bytes to form 12 bytes of item value
-            int start = currentItem.ConvoyItemAddress + 2;
-            foreach (byte b in itemVal)
+            private void convoyItemBoxChanged(object sender, EventArgs e)
             {
-                _saveFile[start] = b; //insert the new value in file
-                start++;
+                unBindEvents();
+
+                Data.Item oldItem = (Data.Item)itemList.SelectedItem;
+                Data.Item currentItem = (Data.Item)cnItem.SelectedItem;
+                currentItem.ConvoyItemAddress = oldItem.ConvoyItemAddress;
+                byte[] itemHex = hexToBytes(currentItem.Hex);
+                byte[] itemID = hexToBytes(currentItem.ItemID);
+                byte[] itemMiddleHex;
+                if (currentItem.isDLC) itemMiddleHex = hexToBytes("010008"); //I see this pattern if its a dlc
+                else itemMiddleHex = hexToBytes("000000"); //default value, no forges, etc.
+                IEnumerable<byte> itemVal = itemID.Concat(itemMiddleHex).Concat(itemHex); //combine the bytes to form 12 bytes of item value
+                int start = currentItem.ConvoyItemAddress + 2;
+                foreach (byte b in itemVal)
+                {
+                    _saveFile[start] = b; //insert the new value in file
+                    start++;
+                }
+
+                convoyUpdateForgeBox(currentItem.MaxForges); //disable/enable forge box depending on current item
+
+                loadConvoy();
+
+                bindEvents();
             }
-
-            convoyUpdateForgeBox(currentItem.MaxForges); //disable/enable forge box depending on current item
-
-            loadConvoy();
-
-            bindEvents();
-        }
 
         /* fired when forge combo box changed */
         private void forgeBoxChanged(object sender, EventArgs e)
@@ -735,20 +736,22 @@ namespace FESOVSE
         {
             unBindEvents();
 
-            Data.Item currentItem = (Data.Item)itemList.SelectedItem;
-            if (cnForge.SelectedItem != null)
-            {
-                byte forgeVal = Convert.ToByte(cnForge.SelectedItem.ToString(), 16); //get the value changed
-                byte val = _saveFile[currentItem.ConvoyItemAddress + 5]; //forge offset 5 after 02 01, the leftmost 4 bits only
-                val = (byte)(val & 0x0F); //clear leftmost 4 bits
-                val = (byte)(val | (forgeVal << 4)); //add the new value to leftmost 4 bits
-                _saveFile[currentItem.ConvoyItemAddress + 5] = val;
+                itemList.SelectedItem = cnItem;
+                Data.Item currentItem = (Data.Item)cnItem.SelectedItem;
+                
+                if (cnForge.SelectedItem != null)
+                {
+                    byte forgeVal = Convert.ToByte(cnForge.SelectedItem.ToString(), 16); //get the value changed
+                    byte val = _saveFile[currentItem.ConvoyItemAddress + 5]; //forge offset 5 after 02 01, the leftmost 4 bits only
+                    val = (byte)(val & 0x0F); //clear leftmost 4 bits
+                    val = (byte)(val | (forgeVal << 4)); //add the new value to leftmost 4 bits
+                    _saveFile[currentItem.ConvoyItemAddress + 5] = val;
 
-                bindEvents();
+                    bindEvents();
+                }
             }
-        }
 
-        private void statChanged(object sender, EventArgs e)
+            private void statChanged(object sender, EventArgs e)
             {
                 unBindEvents();
 
