@@ -9,6 +9,13 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>FESOVSE.Program</StartupObject>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <Title>Fire Emblem Echoes: Shadows of Valentia Save Editor</Title>
+    <Authors>ilikepizza107, vince11</Authors>
+    <Description>A save editor GUI for Fire Emblem Echoes: Shadows of Valentia</Description>
+    <RepositoryUrl>https://github.com/ilikepizza107/FESOV-SaveEditor</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>Icon.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Xceed.Wpf.Toolkit.NET5">
@@ -17,6 +24,15 @@
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Icon\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Characters.xml">
