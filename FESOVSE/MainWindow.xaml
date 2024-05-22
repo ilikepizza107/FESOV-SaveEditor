@@ -45,6 +45,7 @@
             <ComboBox x:Name="cbMode" Margin="5 0" SelectedIndex="0" SelectionChanged="cbMode_SelectionChanged">
                 <ComboBoxItem Content="Unit Editing"/>
                 <ComboBoxItem Content="Convoy Editing"/>
+                <ComboBoxItem Content="Silver/Gold Mark Editing"/>
             </ComboBox>
         </StackPanel>
 
@@ -245,6 +246,60 @@
         </Grid>
         
     <!-- End of Convoy Editing -->
+        
+    <!-- Start of Silver/Gold Mark Editing -->
+        <Grid Height="400" Visibility="Collapsed" x:Name="MoneyGrid1">
+            <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="1">
+                <!-- Panel -->
+                <StackPanel>
+                    <!-- Alm Money Panel-->
+                    <Grid Margin="0 30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Silver Marks (Alm)" FontWeight="DemiBold" Margin="5 5"/>
+                            <wpfExt:IntegerUpDown x:Name="aSMarks" Margin="5 0"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Gold Marks (Alm)" FontWeight="DemiBold" Margin="5 5"/>
+                            <wpfExt:IntegerUpDown x:Name="aGMarks" Margin="5 0"/>
+                        </StackPanel>
+                    </Grid>
+                    <!-- Celica Money Panel -->
+                    <Grid Margin="0 30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Silver Marks (Celica)" FontWeight="DemiBold" Margin="5 5"/>
+                            <wpfExt:IntegerUpDown x:Name="cSMarks" Margin="5 0"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Gold Marks (Celica)" FontWeight="DemiBold" Margin="5 5"/>
+                            <wpfExt:IntegerUpDown x:Name="cGMarks" Margin="5 0"/>
+                        </StackPanel>
+                    </Grid>
+                    <!-- Total (Act 6) Money Panel -->
+                    <Grid Margin="0 30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Silver Marks (Act 6)" FontWeight="DemiBold" Margin="5 5"/>
+                            <wpfExt:IntegerUpDown x:Name="bSMarks" Margin="5 0"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Gold Marks (Act 6)" FontWeight="DemiBold" Margin="5 5"/>
+                            <wpfExt:IntegerUpDown x:Name="bGMarks" Margin="5 0"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
 
     </StackPanel>
 </Window>

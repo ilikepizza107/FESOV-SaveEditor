@@ -27,7 +27,7 @@ namespace FESOVSE
 
         private void cbMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (UnitGrid1 != null && UnitGrid2 != null && ItemGrid1 != null && ItemGrid2 != null)
+            if (UnitGrid1 != null && UnitGrid2 != null && ItemGrid1 != null && ItemGrid2 != null && MoneyGrid1 != null)
             {
                 ComboBoxItem selectedModeItem = (ComboBoxItem)cbMode.SelectedItem;
                 string selectedMode = selectedModeItem.Content.ToString();
@@ -37,6 +37,7 @@ namespace FESOVSE
                     UnitGrid2.Visibility = Visibility.Visible;
                     ItemGrid1.Visibility = Visibility.Collapsed;
                     ItemGrid2.Visibility = Visibility.Collapsed;
+                    MoneyGrid1.Visibility = Visibility.Collapsed;
                 }
                 else if (selectedMode == "Convoy Editing")
                 {
@@ -44,6 +45,15 @@ namespace FESOVSE
                     UnitGrid2.Visibility = Visibility.Collapsed;
                     ItemGrid1.Visibility = Visibility.Visible;
                     ItemGrid2.Visibility = Visibility.Visible;
+                    MoneyGrid1.Visibility = Visibility.Collapsed;
+                }
+                else if (selectedMode == "Silver/Gold Mark Editing")
+                {
+                    UnitGrid1.Visibility = Visibility.Collapsed;
+                    UnitGrid2.Visibility = Visibility.Collapsed;
+                    ItemGrid1.Visibility = Visibility.Collapsed;
+                    ItemGrid2.Visibility = Visibility.Collapsed;
+                    MoneyGrid1.Visibility = Visibility.Visible;
                 }
             }
         }
