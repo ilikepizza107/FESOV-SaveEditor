@@ -413,6 +413,7 @@ namespace FESOVSE
                 loadConvoy();
                 loadItems();
                 loadClasses();
+                loadMarks();
                 bindEvents();
             }
 
@@ -505,6 +506,13 @@ namespace FESOVSE
                 cbClass.DisplayMemberPath = "Name";
                 cbClass.SelectedValuePath = "ClassID";
 
+            }
+
+            private void loadMarks()
+            {
+                int moneyAddress = 0;
+                byte[] data = _saveFile;
+                byte[] startPattern = new byte[] { 0x73, 0x74, 0x61, 0x72, 0x74 };
             }
 
         #endregion
