@@ -244,18 +244,21 @@ namespace FESOVSE
 
             private void saveFile_Click(object sender, RoutedEventArgs e)
             {
-                if (path.Contains("Chapter") && path.Contains("dec"))
+                if (path == null)
                 {
-                    File.WriteAllBytes(path, _saveFile);
-                    System.Windows.MessageBox.Show("File Saved Successfully");
+                    System.Windows.MessageBox.Show("No File Found");
                 }
                 else if (path.Contains("Chapter")) 
                 {
                     SaveChapterData();
                     System.Windows.MessageBox.Show("File Saved Successfully");
                 }
+                else if (path.Contains("Chapter") && path.Contains("dec"))
+                {
+                    File.WriteAllBytes(path, _saveFile);
+                    System.Windows.MessageBox.Show("File Saved Successfully");
+                }
                 else System.Windows.MessageBox.Show("No File Found");
-
             }
 
 
@@ -533,8 +536,8 @@ namespace FESOVSE
                     cbForge.IsHitTestVisible = false;
                 }
 
-                updateStatBox();
                 updateClassBox();
+                updateStatBox(); 
                 bindEvents();
 
             }        
@@ -627,26 +630,25 @@ namespace FESOVSE
             int counter = -2;
             foreach (IntegerUpDown iUD in upDwnBoxes)
             {
+                if (counter == -2) iUD.Value = level;
+                else if (counter == -1) iUD.Value = exp;
+                else if (counter >= 0 && counter < character.BaseStats.Count
+                        && counter < character.MaxStats.Count)
                 {
-                    if (counter >= 0 && counter < character.BaseStats.Count
-                        && counter < character.MaxStats.Count
-                        && (maxMod == null || maxMod.MaxMod == null || counter < maxMod.MaxMod.Count))
-                    {
-                        //calculates stat using character base and value from save file
-                        //character stats = value from save file + base stats
-                        iUD.Minimum = character.BaseStats[counter];
-                        if (maxMod != null && maxMod.MaxMod != null)
-                        {
-                            iUD.Maximum = character.MaxStats[counter] + maxMod.MaxMod[counter];
-                        }
-                        else
-                        {
-                            iUD.Maximum = character.MaxStats[counter];
-                        }
-                        iUD.Value = _saveFile[statAddress + counter] + character.BaseStats[counter];
-                    }
-                    counter++;
+                   //calculates stat using character base and value from save file
+                   //character stats = value from save file + base stats
+                   iUD.Minimum = character.BaseStats[counter];
+                   if (maxMod != null && maxMod.MaxMod != null && counter < maxMod.MaxMod.Count)
+                   {
+                       iUD.Maximum = character.MaxStats[counter] + maxMod.MaxMod[counter];
+                   }
+                   else
+                   {
+                       iUD.Maximum = character.MaxStats[counter];
+                   }
+                   iUD.Value = _saveFile[statAddress + counter] + character.BaseStats[counter];
                 }
+                counter++;
             }
         }
 
