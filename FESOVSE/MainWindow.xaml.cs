@@ -189,6 +189,7 @@ namespace FESOVSE
                 loadConvoy();
                 loadItems();
                 loadClasses();
+                loadMarks();
                 bindEvents();
             }
 
@@ -508,12 +509,23 @@ namespace FESOVSE
 
             }
 
-            private void loadMarks()
+        private void loadMarks()
+        {
+            int startStringAddress = 0;
+            byte[] startBytes = hexToBytes("7374617274"); // "start" hex value
+            int startIndex = hasData(_saveFile.Length - startStringAddress, startBytes, 0);
+            if (startIndex == -1) return; // not found
+            int startStringNumberAddress = startIndex + 5; //this is the "1, 2, 6" that follows the "start"
+            byte startNumberByte = _saveFile[startStringNumberAddress]; //store that value into a byte
+            if (startNumberByte == 0x36) //if the number after "start" is 6...
             {
-                int moneyAddress = 0;
-                byte[] data = _saveFile;
-                byte[] startPattern = new byte[] { 0x73, 0x74, 0x61, 0x72, 0x74 };
+                // only search for 5 consecutive 00s after the level hex
             }
+            else if (startNumberByte == 0x31 || startNumberByte == 0x32) //if the number after "start" is 1 or 2...
+            {
+                // search for 9 consecutive 00s after the level hex
+            }
+        }
 
         #endregion
 
