@@ -517,6 +517,51 @@ namespace FESOVSE
             if (startIndex == -1) return; // not found
             int startStringNumberAddress = startIndex + 5; //this is the "1, 2, 6" that follows the "start"
             byte startNumberByte = _saveFile[startStringNumberAddress]; //store that value into a byte
+
+            int levelHexLength = 0;
+
+            while(true) 
+            { 
+                if (startStringNumberAddress + 1 + levelHexLength + 9 >= _saveFile.Length) break; //prevent out of bounds
+                int consecutiveZeroes = 0;
+                for (int i = 0; i < 9; i++) 
+                {
+                    if (_saveFile[startStringNumberAddress + 1 + levelHexLength + i] != 0x00) break; //adding 1 here because after "startX" there will always be an 0x00
+                    consecutiveZeroes++;
+                }
+                if (consecutiveZeroes == 9)
+                {
+                    break; // found 9 consecutive 00s
+                }
+                levelHexLength++;
+            }
+            int levelHexAddress = startStringNumberAddress + levelHexLength;
+            int aGMarkAddress = levelHexAddress + 10;
+            int aSMarkAddress = aGMarkAddress + 2;
+            int cGMarkAddress = aSMarkAddress + 2;
+            int cSMarkAddress = cGMarkAddress + 2;
+
+            byte[] aGMarkBytes = new byte[2];
+            Array.Copy(_saveFile, aGMarkAddress, aGMarkBytes, 0, 2);
+            int aGMark = BitConverter.ToInt16(aGMarkBytes, 0);
+
+            byte[] aSMarkBytes = new byte[2];
+            Array.Copy(_saveFile, aSMarkAddress, aSMarkBytes, 0, 2);
+            int aSMark = BitConverter.ToInt16(aSMarkBytes, 0);
+
+            byte[] cGMarkBytes = new byte[2];
+            Array.Copy(_saveFile, cGMarkAddress, cGMarkBytes, 0, 2);
+            int cGMark = BitConverter.ToInt16(cGMarkBytes, 0);
+
+            byte[] cSMarkBytes = new byte[2];
+            Array.Copy(_saveFile, cSMarkAddress, cSMarkBytes, 0, 2);
+            int cSMark = BitConverter.ToInt16(cSMarkBytes, 0);
+
+            aGMarks.Value = aGMark;
+            aSMarks.Value = aSMark;
+            cGMarks.Value = cGMark;
+            cSMarks.Value = cSMark;
+
             if (startNumberByte == 0x36) //if the number after "start" is 6...
             {
                 // only search for 5 consecutive 00s after the level hex
