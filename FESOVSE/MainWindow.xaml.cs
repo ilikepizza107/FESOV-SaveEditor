@@ -519,57 +519,94 @@ namespace FESOVSE
             byte startNumberByte = _saveFile[startStringNumberAddress]; //store that value into a byte
 
             int levelHexLength = 0;
-
-            while(true) 
-            { 
-                if (startStringNumberAddress + 1 + levelHexLength + 9 >= _saveFile.Length) break; //prevent out of bounds
-                int consecutiveZeroes = 0;
-                for (int i = 0; i < 9; i++) 
-                {
-                    if (_saveFile[startStringNumberAddress + 1 + levelHexLength + i] != 0x00) break; //adding 1 here because after "startX" there will always be an 0x00
-                    consecutiveZeroes++;
-                }
-                if (consecutiveZeroes == 9)
-                {
-                    break; // found 9 consecutive 00s
-                }
-                levelHexLength++;
-            }
-            int levelHexAddress = startStringNumberAddress + levelHexLength;
-            int aGMarkAddress = levelHexAddress + 10;
-            int aSMarkAddress = aGMarkAddress + 2;
-            int cGMarkAddress = aSMarkAddress + 2;
-            int cSMarkAddress = cGMarkAddress + 2;
-
-            byte[] aGMarkBytes = new byte[2];
-            Array.Copy(_saveFile, aGMarkAddress, aGMarkBytes, 0, 2);
-            int aGMark = BitConverter.ToInt16(aGMarkBytes, 0);
-
-            byte[] aSMarkBytes = new byte[2];
-            Array.Copy(_saveFile, aSMarkAddress, aSMarkBytes, 0, 2);
-            int aSMark = BitConverter.ToInt16(aSMarkBytes, 0);
-
-            byte[] cGMarkBytes = new byte[2];
-            Array.Copy(_saveFile, cGMarkAddress, cGMarkBytes, 0, 2);
-            int cGMark = BitConverter.ToInt16(cGMarkBytes, 0);
-
-            byte[] cSMarkBytes = new byte[2];
-            Array.Copy(_saveFile, cSMarkAddress, cSMarkBytes, 0, 2);
-            int cSMark = BitConverter.ToInt16(cSMarkBytes, 0);
-
-            aGMarks.Value = aGMark;
-            aSMarks.Value = aSMark;
-            cGMarks.Value = cGMark;
-            cSMarks.Value = cSMark;
-
             if (startNumberByte == 0x36) //if the number after "start" is 6...
             {
-                // only search for 5 consecutive 00s after the level hex
+                aGMarks.IsHitTestVisible = false;
+                aSMarks.IsHitTestVisible = false;
+                cGMarks.IsHitTestVisible = false;
+                cSMarks.IsHitTestVisible = false; //disable the individual editors, as they're together now
+                while (true) //only search for 5 consecutive 00s
+                {
+                    if (startStringNumberAddress + 1 + levelHexLength + 5 >= _saveFile.Length) break; //prevent out of bounds
+                    int consecutiveZeroes = 0;
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (_saveFile[startStringNumberAddress + 1 + levelHexLength + i] != 0x00) break; //adding 1 here because after "startX" there will always be an 0x00
+                        consecutiveZeroes++;
+                    }
+                    if (consecutiveZeroes == 5)
+                    {
+                        break; // found 5 consecutive 00s
+                    }
+                    levelHexLength++;
+                }
             }
             else if (startNumberByte == 0x31 || startNumberByte == 0x32) //if the number after "start" is 1 or 2...
             {
-                // search for 9 consecutive 00s after the level hex
+                bGMarks.IsHitTestVisible = false;
+                bSMarks.IsHitTestVisible = false; //disable the joint bank account, as they're seperate right now
+                while (true)
+                {
+                    if (startStringNumberAddress + 1 + levelHexLength + 9 >= _saveFile.Length) break; //prevent out of bounds
+                    int consecutiveZeroes = 0;
+                    for (int i = 0; i < 9; i++)
+                    {
+                        if (_saveFile[startStringNumberAddress + 1 + levelHexLength + i] != 0x00) break; //adding 1 here because after "startX" there will always be an 0x00
+                        consecutiveZeroes++;
+                    }
+                    if (consecutiveZeroes == 9)
+                    {
+                        break; // found 9 consecutive 00s
+                    }
+                    levelHexLength++;
+                }
             }
+            int levelHexAddress = startStringNumberAddress + levelHexLength;
+            if (startNumberByte == 0x36) //if the number after "start" is 6...
+            {
+                int bGMarkAddress = levelHexAddress + 6;
+                int bSMarkAddress = bGMarkAddress + 2;
+
+                byte[] bGMarkBytes = new byte[2];
+                Array.Copy(_saveFile, bGMarkAddress, bGMarkBytes, 0, 2);
+                int bGMark = BitConverter.ToInt16(bGMarkBytes, 0);
+
+                byte[] bSMarkBytes = new byte[2];
+                Array.Copy(_saveFile, bSMarkAddress, bSMarkBytes, 0, 2);
+                int bSMark = BitConverter.ToInt16(bSMarkBytes, 0);
+
+                bGMarks.Value = bGMark;
+                bSMarks.Value = bSMark;
+            }
+            else if (startNumberByte == 0x31 || startNumberByte == 0x32) //if the number after "start" is 1 or 2...
+            {
+                int aGMarkAddress = levelHexAddress + 10;
+                int aSMarkAddress = aGMarkAddress + 2;
+                int cGMarkAddress = aSMarkAddress + 2;
+                int cSMarkAddress = cGMarkAddress + 2;
+
+                byte[] aGMarkBytes = new byte[2];
+                Array.Copy(_saveFile, aGMarkAddress, aGMarkBytes, 0, 2);
+                int aGMark = BitConverter.ToInt16(aGMarkBytes, 0);
+
+                byte[] aSMarkBytes = new byte[2];
+                Array.Copy(_saveFile, aSMarkAddress, aSMarkBytes, 0, 2);
+                int aSMark = BitConverter.ToInt16(aSMarkBytes, 0);
+
+                byte[] cGMarkBytes = new byte[2];
+                Array.Copy(_saveFile, cGMarkAddress, cGMarkBytes, 0, 2);
+                int cGMark = BitConverter.ToInt16(cGMarkBytes, 0);
+
+                byte[] cSMarkBytes = new byte[2];
+                Array.Copy(_saveFile, cSMarkAddress, cSMarkBytes, 0, 2);
+                int cSMark = BitConverter.ToInt16(cSMarkBytes, 0);
+
+                aGMarks.Value = aGMark;
+                aSMarks.Value = aSMark;
+                cGMarks.Value = cGMark;
+                cSMarks.Value = cSMark;
+            }
+
         }
 
         #endregion
