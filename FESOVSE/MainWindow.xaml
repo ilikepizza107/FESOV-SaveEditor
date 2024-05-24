@@ -105,7 +105,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Level" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown sp:StatProperty.Stat="Level"
+                                <wpfExt:IntegerUpDown x:Name="Level" sp:StatProperty.Stat="Level"
                             Increment="1"  Grid.Column="1"
                             Maximum="20" Minimum="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
@@ -116,7 +116,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Experience" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="Experience"
+                                <wpfExt:IntegerUpDown  x:Name="Experience" sp:StatProperty.Stat="Experience"
                             Increment="1"  Grid.Column="1"
                             Maximum="99" Minimum="0" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
@@ -127,7 +127,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="HP" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="HP"
+                                <wpfExt:IntegerUpDown  x:Name="HP" sp:StatProperty.Stat="HP"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
                             <!-- Attack Panel-->
@@ -137,7 +137,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Attack" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="Attack"
+                                <wpfExt:IntegerUpDown  x:Name="Attack" sp:StatProperty.Stat="Attack"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
                             <!-- Skill Panel-->
@@ -147,7 +147,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Skill" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="Skill"
+                                <wpfExt:IntegerUpDown  x:Name="Skill" sp:StatProperty.Stat="Skill"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
                             <!-- Speed Panel-->
@@ -157,7 +157,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Speed" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="Speed"
+                                <wpfExt:IntegerUpDown  x:Name="Speed" sp:StatProperty.Stat="Speed"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
                             <!-- Luck Panel-->
@@ -167,7 +167,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Luck" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="Luck"
+                                <wpfExt:IntegerUpDown  x:Name="Luck" sp:StatProperty.Stat="Luck"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
                             <!-- Defense Panel-->
@@ -177,7 +177,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Defense" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="Defense"
+                                <wpfExt:IntegerUpDown  x:Name="Defense" sp:StatProperty.Stat="Defense"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
                             <!-- Resistance Panel-->
@@ -187,7 +187,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Text="Resistance" FontWeight="DemiBold"/>
-                                <wpfExt:IntegerUpDown  sp:StatProperty.Stat="Resistance"
+                                <wpfExt:IntegerUpDown  x:Name="Resistance" sp:StatProperty.Stat="Resistance"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
                         </StackPanel>

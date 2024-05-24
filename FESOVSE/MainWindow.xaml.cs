@@ -23,6 +23,27 @@ namespace FESOVSE
         {
             InitializeComponent();
             initControls();
+            statUpDowns = new[]
+            {
+                (IntegerUpDown)this.FindName("Level"),
+                (IntegerUpDown)this.FindName("Experience"),
+                (IntegerUpDown)this.FindName("HP"),
+                (IntegerUpDown)this.FindName("Attack"),
+                (IntegerUpDown)this.FindName("Skill"),
+                (IntegerUpDown)this.FindName("Speed"),
+                (IntegerUpDown)this.FindName("Luck"),
+                (IntegerUpDown)this.FindName("Defense"),
+                (IntegerUpDown)this.FindName("Resistance")
+            };
+            markUpDowns = new[]
+            {
+                (IntegerUpDown)this.FindName("aSMarks"),
+                (IntegerUpDown)this.FindName("aGMarks"),
+                (IntegerUpDown)this.FindName("cSMarks"),
+                (IntegerUpDown)this.FindName("cGMarks"),
+                (IntegerUpDown)this.FindName("bSMarks"),
+                (IntegerUpDown)this.FindName("bGMarks")
+            };
         }
 
         private void cbMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -220,7 +241,8 @@ namespace FESOVSE
 
             private byte[] _saveFile; //contents of the save file
             private string path; //location of the save file
-            private IEnumerable<IntegerUpDown> upDwnBoxes; //list of numeric updownboxes contained in window
+            private IEnumerable<IntegerUpDown> statUpDowns;
+            private IEnumerable<IntegerUpDown> markUpDowns;
 
             private void ChangeTheme(object sender, RoutedEventArgs e)
             {
@@ -409,7 +431,7 @@ namespace FESOVSE
                 cSMarks.IsHitTestVisible = false;
                 bGMarks.IsHitTestVisible = false;
                 bSMarks.IsHitTestVisible = false;
-                upDwnBoxes = this.FindVisualChildren<IntegerUpDown>();
+                statUpDowns = this.FindVisualChildren<IntegerUpDown>();
 
             }
             /* reading file and loading database into controls*/
@@ -523,6 +545,13 @@ namespace FESOVSE
         public int bSMarkAddress;
         private void loadMarks()
         {
+            aGMarkAddress = 0;
+            aSMarkAddress = 0;
+            cGMarkAddress = 0;
+            bGMarkAddress = 0;
+            cSMarkAddress = 0;
+            bGMarkAddress = 0;
+            bSMarkAddress = 0; //reset the mark address
             int startStringAddress = 0;
             byte[] startBytes = hexToBytes("7374617274"); // "start" hex value
             int startIndex = hasData(_saveFile.Length - startStringAddress, startBytes, 0);
@@ -758,7 +787,7 @@ namespace FESOVSE
             int exp = _saveFile[character.StartAddress - 1]; //exp offset 1 byte before character id
             int statAddress = character.StartAddress + 21; //character stats offset 21 bytes after character id
             int counter = -2;
-            foreach (IntegerUpDown iUD in upDwnBoxes)
+            foreach (IntegerUpDown iUD in statUpDowns)
             {
                 if (counter == -2) iUD.Value = level;
                 else if (counter == -1) iUD.Value = exp;
@@ -885,9 +914,6 @@ namespace FESOVSE
 
             private void statChanged(object sender, EventArgs e)
             {
-                if (cbMode.SelectedItem.ToString() != "Unit Editing")
-                    return;
-
                 unBindEvents();
 
                 Data.Character character = (Data.Character)unitList.SelectedItem;
@@ -909,7 +935,52 @@ namespace FESOVSE
                 bindEvents();
             }
 
-            private void classChanged(object sender, EventArgs e)
+        private void markChanged(object sender, EventArgs e)
+        {
+            unBindEvents();
+
+            IntegerUpDown markBox = (IntegerUpDown)sender; //get the control that fired the event
+            short value = (short)markBox.Value;
+            byte[] markInsert = BitConverter.GetBytes(value);
+
+            foreach (byte b in markInsert)
+            {
+                if (markBox == bGMarks)
+                {
+                    _saveFile[bGMarkAddress] = b;
+                    bGMarkAddress++;
+                }
+                else if (markBox == bSMarks)
+                {
+                    _saveFile[bSMarkAddress] = b;
+                    bSMarkAddress++;
+                }
+                else if (markBox == aGMarks)
+                {
+                    _saveFile[aGMarkAddress] = b;
+                    aGMarkAddress++;
+                }
+                else if (markBox == aSMarks)
+                {
+                    _saveFile[aSMarkAddress] = b;
+                    aSMarkAddress++;
+                }
+                else if (markBox == cGMarks)
+                {
+                    _saveFile[cGMarkAddress] = b;
+                    cGMarkAddress++;
+                }
+                else if (markBox == cSMarks)
+                {
+                    _saveFile[cSMarkAddress] = b;
+                    cSMarkAddress++;
+                }
+                bindEvents();
+                loadMarks(); //running this to get the correct addresses before we start next time
+            }
+        }
+
+        private void classChanged(object sender, EventArgs e)
             {
                 unBindEvents();
 
@@ -938,13 +1009,14 @@ namespace FESOVSE
                 cnItem.SelectionChanged -= convoyItemBoxChanged;
                 itemList.SelectionChanged -= convoyUpdateDescription;
                 cnForge.SelectionChanged -= convoyForgeBoxChanged;
-                if (cbMode.SelectedItem.ToString() == "Unit Editing")
+                foreach (IntegerUpDown x in statUpDowns)
                 {
-                    foreach (IntegerUpDown x in upDwnBoxes)
-                    {
-                        x.ValueChanged -= statChanged;
-                    }
-                }                
+                    x.ValueChanged -= statChanged;
+                }
+                foreach (IntegerUpDown x in markUpDowns)
+                {
+                    x.ValueChanged -= markChanged;
+                }
             }
 
             private void bindEvents()
@@ -956,12 +1028,13 @@ namespace FESOVSE
                 cnItem.SelectionChanged += convoyItemBoxChanged;
                 itemList.SelectionChanged += convoyUpdateDescription;
                 cnForge.SelectionChanged += convoyForgeBoxChanged;
-                if (cbMode.SelectedItem.ToString() == "Unit Editing")
+                foreach (IntegerUpDown x in statUpDowns)
                 {
-                    foreach (IntegerUpDown x in upDwnBoxes)
-                    {
-                        x.ValueChanged -= statChanged;
-                    }
+                    x.ValueChanged += statChanged;
+                }
+                foreach (IntegerUpDown x in markUpDowns)
+                {
+                    x.ValueChanged += markChanged;
                 }
             }
 
