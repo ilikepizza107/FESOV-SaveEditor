@@ -394,7 +394,7 @@ namespace FESOVSE
 
         #endregion
 
-        #region Setup Functions
+            #region Setup Functions
 
             private void initControls()
             {
