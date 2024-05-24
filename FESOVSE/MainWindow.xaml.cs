@@ -515,6 +515,12 @@ namespace FESOVSE
 
             }
 
+        public int aGMarkAddress;
+        public int aSMarkAddress;
+        public int cGMarkAddress;
+        public int cSMarkAddress;
+        public int bGMarkAddress;
+        public int bSMarkAddress;
         private void loadMarks()
         {
             int startStringAddress = 0;
@@ -576,8 +582,8 @@ namespace FESOVSE
             int levelHexAddress = startStringNumberAddress + levelHexLength;
             if (startNumberByte == 0x36) //if the number after "start" is 6...
             {
-                int bGMarkAddress = levelHexAddress + 6;
-                int bSMarkAddress = bGMarkAddress + 2;
+                bGMarkAddress = levelHexAddress + 6;
+                bSMarkAddress = bGMarkAddress + 2;
 
                 byte[] bGMarkBytes = new byte[2];
                 Array.Copy(_saveFile, bGMarkAddress, bGMarkBytes, 0, 2);
@@ -592,10 +598,10 @@ namespace FESOVSE
             }
             else if (startNumberByte == 0x31 || startNumberByte == 0x32) //if the number after "start" is 1 or 2...
             {
-                int aGMarkAddress = levelHexAddress + 10;
-                int aSMarkAddress = aGMarkAddress + 2;
-                int cGMarkAddress = aSMarkAddress + 2;
-                int cSMarkAddress = cGMarkAddress + 2;
+                aGMarkAddress = levelHexAddress + 10;
+                aSMarkAddress = aGMarkAddress + 2;
+                cGMarkAddress = aSMarkAddress + 2;
+                cSMarkAddress = cGMarkAddress + 2;
 
                 byte[] aGMarkBytes = new byte[2];
                 Array.Copy(_saveFile, aGMarkAddress, aGMarkBytes, 0, 2);
