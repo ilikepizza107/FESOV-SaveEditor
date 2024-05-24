@@ -414,7 +414,18 @@ namespace FESOVSE
                 return hasData(charBlockSize, itemByte, charIDStart);
             }
 
-        #endregion
+            private void resetMarkAddress()
+            {
+                // Reset addresses to their original values
+                bGMarkAddress = staticBGMarkAddress;
+                bSMarkAddress = staticBSMarkAddress;
+                aGMarkAddress = staticAGMarkAddress;
+                aSMarkAddress = staticASMarkAddress;
+                cGMarkAddress = staticCGMarkAddress;
+                cSMarkAddress = staticCSMarkAddress;
+            }
+
+            #endregion
 
             #region Setup Functions
 
@@ -537,12 +548,18 @@ namespace FESOVSE
 
             }
 
-        public int aGMarkAddress;
-        public int aSMarkAddress;
-        public int cGMarkAddress;
-        public int cSMarkAddress;
-        public int bGMarkAddress;
-        public int bSMarkAddress;
+        private int aGMarkAddress;
+        private int aSMarkAddress;
+        private int cGMarkAddress;
+        private int cSMarkAddress;
+        private int bGMarkAddress;
+        private int bSMarkAddress;
+        private int staticBGMarkAddress;
+        private int staticBSMarkAddress;
+        private int staticAGMarkAddress;
+        private int staticASMarkAddress;
+        private int staticCGMarkAddress;
+        private int staticCSMarkAddress;
         private void loadMarks()
         {
             aGMarkAddress = 0;
@@ -653,7 +670,13 @@ namespace FESOVSE
                 cGMarks.Value = cGMark;
                 cSMarks.Value = cSMark;
             }
-
+            // Backup original addresses
+            staticBGMarkAddress = bGMarkAddress;
+            staticBSMarkAddress = bSMarkAddress;
+            staticAGMarkAddress = aGMarkAddress;
+            staticASMarkAddress = aSMarkAddress;
+            staticCGMarkAddress = cGMarkAddress;
+            staticCSMarkAddress = cSMarkAddress;
         }
 
         #endregion
@@ -939,6 +962,8 @@ namespace FESOVSE
         {
             unBindEvents();
 
+            resetMarkAddress(); //reset the mark addresses before we put the new value in
+
             IntegerUpDown markBox = (IntegerUpDown)sender; //get the control that fired the event
             short value = (short)markBox.Value;
             byte[] markInsert = BitConverter.GetBytes(value);
@@ -976,7 +1001,6 @@ namespace FESOVSE
                     cSMarkAddress++;
                 }
                 bindEvents();
-                loadMarks(); //running this to get the correct addresses before we start next time
             }
         }
 
