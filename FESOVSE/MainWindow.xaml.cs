@@ -531,6 +531,8 @@ namespace FESOVSE
                 aSMarks.IsHitTestVisible = false;
                 cGMarks.IsHitTestVisible = false;
                 cSMarks.IsHitTestVisible = false; //disable the individual editors, as they're together now
+                bGMarks.IsHitTestVisible = true;
+                bSMarks.IsHitTestVisible = true;
                 while (true) //only search for 5 consecutive 00s
                 {
                     if (startStringNumberAddress + 1 + levelHexLength + 5 >= _saveFile.Length) break; //prevent out of bounds
@@ -551,6 +553,10 @@ namespace FESOVSE
             {
                 bGMarks.IsHitTestVisible = false;
                 bSMarks.IsHitTestVisible = false; //disable the joint bank account, as they're seperate right now
+                aGMarks.IsHitTestVisible = true;
+                aSMarks.IsHitTestVisible = true;
+                cGMarks.IsHitTestVisible = true;
+                cSMarks.IsHitTestVisible = true;
                 while (true)
                 {
                     if (startStringNumberAddress + 1 + levelHexLength + 9 >= _saveFile.Length) break; //prevent out of bounds
@@ -873,6 +879,9 @@ namespace FESOVSE
 
             private void statChanged(object sender, EventArgs e)
             {
+                if (cbMode.SelectedItem.ToString() != "Unit Editing")
+                    return;
+
                 unBindEvents();
 
                 Data.Character character = (Data.Character)unitList.SelectedItem;
@@ -923,10 +932,13 @@ namespace FESOVSE
                 cnItem.SelectionChanged -= convoyItemBoxChanged;
                 itemList.SelectionChanged -= convoyUpdateDescription;
                 cnForge.SelectionChanged -= convoyForgeBoxChanged;
-                foreach (IntegerUpDown x in upDwnBoxes)
+                if (cbMode.SelectedItem.ToString() == "Unit Editing")
                 {
-                    x.ValueChanged -= statChanged;
-                }
+                    foreach (IntegerUpDown x in upDwnBoxes)
+                    {
+                        x.ValueChanged -= statChanged;
+                    }
+                }                
             }
 
             private void bindEvents()
@@ -938,9 +950,12 @@ namespace FESOVSE
                 cnItem.SelectionChanged += convoyItemBoxChanged;
                 itemList.SelectionChanged += convoyUpdateDescription;
                 cnForge.SelectionChanged += convoyForgeBoxChanged;
-                foreach (IntegerUpDown x in upDwnBoxes)
+                if (cbMode.SelectedItem.ToString() == "Unit Editing")
                 {
-                    x.ValueChanged += statChanged;
+                    foreach (IntegerUpDown x in upDwnBoxes)
+                    {
+                        x.ValueChanged -= statChanged;
+                    }
                 }
             }
 
