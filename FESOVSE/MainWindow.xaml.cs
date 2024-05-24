@@ -403,6 +403,12 @@ namespace FESOVSE
                 cbClass.IsHitTestVisible = false;
                 cnItem.IsHitTestVisible = false;
                 cnForge.IsHitTestVisible = false;
+                aGMarks.IsHitTestVisible = false;
+                aSMarks.IsHitTestVisible = false;
+                cGMarks.IsHitTestVisible = false;
+                cSMarks.IsHitTestVisible = false;
+                bGMarks.IsHitTestVisible = false;
+                bSMarks.IsHitTestVisible = false;
                 upDwnBoxes = this.FindVisualChildren<IntegerUpDown>();
 
             }
