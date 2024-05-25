@@ -8,7 +8,21 @@
         mc:Ignorable="d"
         Title="FE SOV Save Editor" Height="520" Width="720" ResizeMode="CanMinimize"
         Style="{DynamicResource CustomWindowStyle}">
-
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <RoutedUICommand x:Key="Open"/>
+            <RoutedUICommand x:Key="Save"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="O" Command="{StaticResource Open}"/>
+        <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Open}" Executed="openShortcut"/>
+        <CommandBinding Command="{StaticResource Save}" Executed="saveShortcut"/>
+    </Window.CommandBindings>
 
     <StackPanel>
 

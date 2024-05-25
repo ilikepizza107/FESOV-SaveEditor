@@ -11,6 +11,7 @@ using Xceed.Wpf.Toolkit;
 using Theme.WPF.Themes;
 using System.Globalization;
 using Fire_Emblem_Save_Tool;
+using System.Windows.Input;
 
 namespace FESOVSE
 {
@@ -275,6 +276,11 @@ namespace FESOVSE
 
             }
 
+            public void openShortcut (Object sender, RoutedEventArgs e)
+            {
+                openFile_Click((object)sender, e);
+            }
+
             private void saveFile_Click(object sender, RoutedEventArgs e)
             {
                 if (path == null)
@@ -294,6 +300,10 @@ namespace FESOVSE
                 else System.Windows.MessageBox.Show("No File Found");
             }
 
+            public void saveShortcut(Object sender, ExecutedRoutedEventArgs e)
+            {
+                saveFile_Click((object)sender, e);
+            }
 
             #region Utility Functions
 
