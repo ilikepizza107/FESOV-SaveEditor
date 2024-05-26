@@ -18,7 +18,7 @@ Or:
 
 ### Resources
 
-  * Hex Values of items From these people:
+  * Hex Values of some items from these people:
     * https://serenesforest.net/forums/index.php?/topic/71279-shadows-of-valentia-save-editingsave-bank/
 
   * Info on character blocks: https://gbatemp.net/threads/research-fe-sov-save-discussion.471890/
@@ -29,9 +29,7 @@ Or:
 
   * Inspired by FeTwiddler by Soaprman: https://github.com/Soaprman/FEFTwiddler 
 
-    (Learned some file organizations and basic save editor code stuff)
-
-  * Extended WPFToolkit for the numeric up downs (apparently WPF doesn't have it): https://github.com/xceedsoftware/wpftoolkit
+  * Extended WPFToolkit for the numeric up downs: https://github.com/xceedsoftware/wpftoolkit
 
   * Dark and Light mode themes modified from here: https://github.com/AngryCarrot789/WPFDarkTheme
   
