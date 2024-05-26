@@ -3,6 +3,7 @@
 ### Features
   * Edit every character's class, inventory, and stats
   * Edit the convoy's contents
+  * Edit both protagonists' silver and gold marks
   
 ### How to use
   * Dump save file using a save manager (e.g. Checkpoint) Make a backup just in case
@@ -23,12 +24,14 @@ Or:
   * Info on character blocks: https://gbatemp.net/threads/research-fe-sov-save-discussion.471890/
 
   * Serenes Forest for character base and max stats: https://serenesforest.net/fire-emblem-echoes-shadows-valentia/
+ 
+  * Fire Emblem Wiki for Overclass max stat changes: https://fireemblemwiki.org/wiki/Class_change/Nintendo_3DS_games#Fire_Emblem_Echoes:_Shadows_of_Valentia
 
   * Inspired by FeTwiddler by Soaprman: https://github.com/Soaprman/FEFTwiddler 
 
-    (Learned some file organisations and basic save editor code stuff)
+    (Learned some file organizations and basic save editor code stuff)
 
-  * Extended WPFToolkit for the numeric up downs (apparently WPF doesn't have it): http://wpftoolkit.codeplex.com/
+  * Extended WPFToolkit for the numeric up downs (apparently WPF doesn't have it): https://github.com/xceedsoftware/wpftoolkit
 
   * Dark and Light mode themes modified from here: https://github.com/AngryCarrot789/WPFDarkTheme
   
