@@ -13,15 +13,21 @@
         <ResourceDictionary>
             <RoutedUICommand x:Key="Open"/>
             <RoutedUICommand x:Key="Save"/>
+            <RoutedUICommand x:Key="Max"/>
+            <RoutedUICommand x:Key="Min"/>
         </ResourceDictionary>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Modifiers="Ctrl" Key="O" Command="{StaticResource Open}"/>
         <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
+        <KeyBinding Modifiers="Ctrl" Key="M" Command="{StaticResource Max}"/>
+        <KeyBinding Modifiers="Ctrl+Shift" Key="M" Command="{StaticResource Min}"/>
     </Window.InputBindings>
     <Window.CommandBindings>
         <CommandBinding Command="{StaticResource Open}" Executed="openShortcut"/>
         <CommandBinding Command="{StaticResource Save}" Executed="saveShortcut"/>
+        <CommandBinding Command="{StaticResource Max}" Executed="maxShortcut"/>
+        <CommandBinding Command="{StaticResource Min}" Executed="minShortcut"/>
     </Window.CommandBindings>
 
     <StackPanel>

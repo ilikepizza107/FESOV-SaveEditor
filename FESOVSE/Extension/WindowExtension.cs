@@ -28,5 +28,18 @@ namespace FESOVSE.Extension
                 }
             }
         }
+        public static T FindParent<T>(this DependencyObject child) where T : DependencyObject
+        {
+            DependencyObject parentObject = VisualTreeHelper.GetParent(child);
+
+            if (parentObject == null) return null;
+
+            if (parentObject is T parent)
+            {
+                return parent;
+            }
+
+            return FindParent<T>(parentObject);
+        }
     }
 }
