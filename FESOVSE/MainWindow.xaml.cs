@@ -211,6 +211,7 @@ namespace FESOVSE
                 loadConvoy();
                 loadItems();
                 loadClasses();
+                loadUnitDatabase();
                 loadMarks();
                 bindEvents();
             }
@@ -471,6 +472,9 @@ namespace FESOVSE
                 cbClass.IsHitTestVisible = false;
                 cnItem.IsHitTestVisible = false;
                 cnForge.IsHitTestVisible = false;
+                cbUnits.IsHitTestVisible = false;
+                cbAdd.IsHitTestVisible = false;
+                cbRem.IsHitTestVisible = false;
                 aGMarks.IsHitTestVisible = false;
                 aSMarks.IsHitTestVisible = false;
                 cGMarks.IsHitTestVisible = false;
@@ -488,6 +492,7 @@ namespace FESOVSE
                 loadConvoy();
                 loadItems();
                 loadClasses();
+                loadUnitDatabase();
                 loadMarks();
                 bindEvents();
             }
@@ -581,6 +586,18 @@ namespace FESOVSE
                 cbClass.DisplayMemberPath = "Name";
                 cbClass.SelectedValuePath = "ClassID";
 
+            }
+
+            private void loadUnitDatabase()
+            {
+                cbUnits.IsHitTestVisible = true;
+                cbAdd.IsHitTestVisible = true;
+                cbRem.IsHitTestVisible = true;
+                var unitDB = new Data.CharacterDatabase();
+                var allUnits = unitDB.getAll();
+                cbUnits.ItemsSource = allUnits;
+                cbUnits.DisplayMemberPath = "Name";
+                cbUnits.SelectedValuePath = "Hex";
             }
 
             private int aGMarkAddress;

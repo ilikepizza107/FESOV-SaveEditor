@@ -170,6 +170,7 @@
     <base hp="32" atk="15" skl="18" spd="16" lck="8" def="10" res="12"/>
     <max hp="52" atk="37" skl="43" spd="39" lck="39" def="42" res="40"/>
   </character>
+  <!--DLC Characters-->
   <character id ="96DC98FDD2571105" name="Emma">
     <text displayName ="Emma"/>
     <base hp="31" atk="11" skl="12" spd="13" lck="13" def="8" res="14"/>

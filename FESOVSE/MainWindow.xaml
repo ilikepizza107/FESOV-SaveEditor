@@ -83,12 +83,16 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-
-            <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="0">
-                <ListBox x:Name="unitList">
-                </ListBox>
-            </Border>
-
+            <StackPanel>
+                <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="0">
+                    <ListBox x:Name="unitList" VerticalAlignment="Top" Height="300"/>
+                </Border>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom">
+                <ComboBox x:Name="cbUnits" Width="169.5" BorderBrush="Black" BorderThickness="0.5" Height="20" Margin="0,0,0,10"/>
+                <Button x:Name="cbAdd" Width="169.5" Height="20" Content="Add Unit" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,10"/>
+                <Button x:Name="cbRem" Width="169.5" Height="20" Content="Remove Selected Unit" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
+            </StackPanel>
             <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="1">
                 <!-- Unit Description Panel -->
                 <StackPanel>
