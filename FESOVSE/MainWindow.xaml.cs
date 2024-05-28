@@ -1101,8 +1101,35 @@ namespace FESOVSE
             {
                 charBlockAddress = (_saveFile[0xCC + i] << (i * 8)) | charBlockAddress;
             }
-            int unitTotal = _saveFile[charBlockAddress + 6];
-
+            int unitTotal = _saveFile[charBlockAddress + 6]; //save this for later, we'll need to edit it
+            if (unitList.SelectedItem == null)
+            {
+                bindEvents();
+            }
+            var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
+            int charBlockStartAddress = character.StartAddress - 3; //get the start address of the char block (the "15" byte)
+            
+            //now we grab the character block start and end
+            byte[] charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
+            int charBlockEndLength = charBlockEnd.Length;
+            int charBlockEndAddress = -1;
+            for (int i = charBlockStartAddress; i <= _saveFile.Length - charBlockEndLength; i++) 
+            {
+                bool match = true;
+                for (int j = 0; j < charBlockEndLength; j++) 
+                {
+                    if (_saveFile[i + j] != charBlockEnd[j])
+                    {
+                        match = false;
+                        break;
+                    }
+                }
+                if (match)
+                {
+                    charBlockEndAddress = i + 2; //+2 because I want it to end on the third "00" and not the "15"
+                    break;
+                }
+            }
 
             bindEvents();
         }
