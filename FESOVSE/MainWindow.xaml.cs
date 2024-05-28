@@ -1195,7 +1195,15 @@ namespace FESOVSE
             }
 
             //now we grab the character block start and end
-            byte[] charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
+            byte[] charBlockEnd;
+            if (currentIndex == unitList.Items.Count -1 ) //if selected unit is the last one on the list
+            {
+                charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0xFF, 0x4E, 0x41, 0x52, 0x54 }; //pattern before the next pointer, signaling end of character block entirely
+            }
+            else 
+            {
+                charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
+            }
             int charBlockEndLength = charBlockEnd.Length;
             int charBlockEndAddress = -1;
             for (int i = charBlockStartAddress; i <= _saveFile.Length - charBlockEndLength; i++) 
