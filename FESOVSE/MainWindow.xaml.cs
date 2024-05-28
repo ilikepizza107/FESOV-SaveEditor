@@ -1186,7 +1186,14 @@ namespace FESOVSE
             int currentIndex = unitList.SelectedIndex; //get the index of the selected character
             var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
             int charBlockStartAddress = character.StartAddress - 3; //get the start address of the char block (the "15" byte)
-            
+
+            if (character.Name == "Alm" || character.Name == "Celica") //make sure the character isn't Alm or Celica
+            {
+                System.Windows.MessageBox.Show("Cannot remove Alm or Celica");
+                bindEvents();
+                return;
+            }
+
             //now we grab the character block start and end
             byte[] charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
             int charBlockEndLength = charBlockEnd.Length;
@@ -1238,13 +1245,10 @@ namespace FESOVSE
 
             //reload everything
             loadUnits();
-            if (currentIndex >= unitList.Items.Count)
+            if (currentIndex > 0)
             {
-                unitList.SelectedIndex = unitList.Items.Count - 1; //select the previous character
-            }
-            if (unitList.SelectedIndex != -1)
-            {
-                unitList.SelectedItem = unitList.Items[unitList.SelectedIndex];
+                unitList.SelectedIndex = currentIndex - 1; // Select the previous character
+                updateDescription(this, null);
             }
 
             bindEvents();
