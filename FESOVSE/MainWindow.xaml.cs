@@ -277,11 +277,6 @@ namespace FESOVSE
 
             }
 
-            public void openShortcut (Object sender, RoutedEventArgs e)
-            {
-                openFile_Click((object)sender, e);
-            }
-
             private void saveFile_Click(object sender, RoutedEventArgs e)
             {
                 if (path == null)
@@ -303,7 +298,12 @@ namespace FESOVSE
 
             #region Keyboard Shortcuts 
 
-            public void saveShortcut(Object sender, ExecutedRoutedEventArgs e)
+            private void openShortcut(Object sender, RoutedEventArgs e)
+            {
+                openFile_Click((object)sender, e);
+            }
+
+            private void saveShortcut(Object sender, ExecutedRoutedEventArgs e)
             {
                 saveFile_Click((object)sender, e);
             }
