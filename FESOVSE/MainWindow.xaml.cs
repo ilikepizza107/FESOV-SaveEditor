@@ -597,7 +597,7 @@ namespace FESOVSE
                 var allUnits = unitDB.getAll();
                 cbUnits.ItemsSource = allUnits;
                 cbUnits.DisplayMemberPath = "Name";
-                cbUnits.SelectedValuePath = "Hex";
+                cbUnits.SelectedValuePath = "CharID";
             }
 
             private int aGMarkAddress;
@@ -1010,6 +1010,19 @@ namespace FESOVSE
                 bindEvents();
             }
 
+        private void unitChanged(object sender, EventArgs e)
+        {
+            unBindEvents();
+
+            Data.Character selectedUnit = (Data.Character)cbUnits.SelectedItem;
+            if (selectedUnit != null)
+            {
+                cbUnits.SelectedItem = selectedUnit;
+            }
+
+            bindEvents();
+        }
+
         private void markChanged(object sender, EventArgs e)
         {
             unBindEvents();
@@ -1085,6 +1098,7 @@ namespace FESOVSE
                 cnItem.SelectionChanged -= convoyItemBoxChanged;
                 itemList.SelectionChanged -= convoyUpdateDescription;
                 cnForge.SelectionChanged -= convoyForgeBoxChanged;
+                cbUnits.SelectionChanged -= unitChanged;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
                     x.ValueChanged -= statChanged;
@@ -1104,6 +1118,7 @@ namespace FESOVSE
                 cnItem.SelectionChanged += convoyItemBoxChanged;
                 itemList.SelectionChanged += convoyUpdateDescription;
                 cnForge.SelectionChanged += convoyForgeBoxChanged;
+                cbUnits.SelectionChanged += unitChanged;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
                     x.ValueChanged += statChanged;

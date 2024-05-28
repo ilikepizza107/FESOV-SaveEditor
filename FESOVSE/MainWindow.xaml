@@ -89,9 +89,9 @@
                 </Border>
             </StackPanel>
             <StackPanel VerticalAlignment="Bottom">
-                <ComboBox x:Name="cbUnits" Width="169.5" BorderBrush="Black" BorderThickness="0.5" Height="20" Margin="0,0,0,10"/>
-                <Button x:Name="cbAdd" Width="169.5" Height="20" Content="Add Unit" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,10"/>
-                <Button x:Name="cbRem" Width="169.5" Height="20" Content="Remove Selected Unit" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
+                <ComboBox x:Name="cbUnits" Width="169.5" Height="25" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
+                <Button x:Name="cbAdd" Width="169.5" Height="25" Content="Add Unit" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
+                <Button x:Name="cbRem" Width="169.5" Height="25" Content="Remove Selected Unit" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
             </StackPanel>
             <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="1">
                 <!-- Unit Description Panel -->
