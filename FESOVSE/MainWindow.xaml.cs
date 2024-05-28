@@ -461,6 +461,89 @@ namespace FESOVSE
                 cSMarkAddress = staticCSMarkAddress;
             }
 
+            private static byte[] DeleteBytes(byte[] original, int address, int count)
+            {
+                if (address < 0 || address >= original.Length || count < 0 || address + count > original.Length)
+                {
+                    throw new ArgumentOutOfRangeException("Invalid address or count.");
+                }
+
+                int newLength = original.Length - count;
+                byte[] result = new byte[newLength];
+
+                // Copy the part before the address
+                Array.Copy(original, 0, result, 0, address);
+
+                // Copy the part after the address + count
+                Array.Copy(original, address + count, result, address, original.Length - address - count);
+
+                return result;
+            }
+
+            private static readonly byte[][] TargetByteArrays = 
+            {
+                new byte[] { 0x54, 0x4F, 0x50, 0x53 }, // "TOPS"
+                new byte[] { 0x54, 0x49, 0x4E, 0x55 }, // "TINU"
+                new byte[] { 0x4E, 0x41, 0x52, 0x54 }, // "NART"
+                new byte[] { 0x49, 0x46, 0x45, 0x52 }, // "IFER"
+                new byte[] { 0x49, 0x4C, 0x45, 0x52 }  // "ILER"
+            };
+            private static readonly int[] PointerAddressOffsets = { 0xC8, 0xCC, 0xD0, 0xD4, 0xD8 };
+
+            private static int SearchByteArray(byte[] byteArray, byte[] targetByteArray)
+            {
+                for (int i = 0; i <= byteArray.Length - targetByteArray.Length; i++)
+                {
+                    bool match = true;
+                    for (int j = 0; j < targetByteArray.Length; j++)
+                    {
+                        if (byteArray[i + j] != targetByteArray[j])
+                        {
+                            match = false;
+                            break;
+                        }
+                    }
+
+                    if (match)
+                    {
+                        return i;
+                    }
+                }
+
+                return -1;
+            }
+
+            private static void CorrectPointers(byte[] byteArray)
+            {
+                for (int i = 0; i < TargetByteArrays.Length; i++)
+                {
+                    byte[] targetByteArray = TargetByteArrays[i];
+                    int pointerOffset = PointerAddressOffsets[i];
+
+                    // Search for the target byte array in the byte array
+                    int byteArrayIndex = SearchByteArray(byteArray, targetByteArray);
+                    if (byteArrayIndex == -1)
+                    {
+                      continue;
+                    }
+
+                    // Extract the pointer address from the byte array
+                    int pointerAddress = BitConverter.ToUInt16(byteArray, pointerOffset);
+
+                    // Check if the pointer address matches the byte array address
+                    if (pointerAddress != byteArrayIndex)
+                    {
+                        // Correct the pointer address
+                        byteArray[pointerOffset] = (byte)(byteArrayIndex & 0xFF);
+                        byteArray[pointerOffset + 1] = (byte)((byteArrayIndex >> 8) & 0xFF);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+
             #endregion
 
             #region Setup Functions
@@ -1095,17 +1178,12 @@ namespace FESOVSE
         {
             unBindEvents();
 
-            //getting the pointer to character stored at 0xCC
-            int charBlockAddress = 0;
-            for (int i = 0; i < 4; i++)
-            {
-                charBlockAddress = (_saveFile[0xCC + i] << (i * 8)) | charBlockAddress;
-            }
-            int unitTotal = _saveFile[charBlockAddress + 6]; //save this for later, we'll need to edit it
             if (unitList.SelectedItem == null)
             {
                 bindEvents();
+                return;
             }
+            int currentIndex = unitList.SelectedIndex; //get the index of the selected character
             var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
             int charBlockStartAddress = character.StartAddress - 3; //get the start address of the char block (the "15" byte)
             
@@ -1129,6 +1207,44 @@ namespace FESOVSE
                     charBlockEndAddress = i + 2; //+2 because I want it to end on the third "00" and not the "15"
                     break;
                 }
+            }
+            int charBlockLength = charBlockEndAddress - charBlockStartAddress + 1; //grab the total length of the character block
+
+            //delete the character block, and then correct the pointers if necessary
+            byte[] original = _saveFile;
+            int address = charBlockStartAddress;
+            int count = charBlockLength;
+
+            byte[] removed = DeleteBytes(original, address, count);
+            _saveFile = removed;
+
+            CorrectPointers(_saveFile);
+
+            //getting the pointer to the character block stored at 0xCC
+            int charBlockAddress = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                charBlockAddress = (_saveFile[0xCC + i] << (i * 8)) | charBlockAddress;
+            }
+            int unitTotal = _saveFile[charBlockAddress + 6]; //save this for later, we'll need to edit it
+
+            //remove one from the unit count
+            int unitNewTotal = unitTotal - 1;
+            if (unitNewTotal < 0 || unitNewTotal > 255)
+            {
+                throw new ArgumentOutOfRangeException(nameof(unitNewTotal), "Value must be between 0 and 255.");
+            }
+            _saveFile[charBlockAddress + 6] = (byte)unitNewTotal;
+
+            //reload everything
+            loadUnits();
+            if (currentIndex >= unitList.Items.Count)
+            {
+                unitList.SelectedIndex = unitList.Items.Count - 1; //select the previous character
+            }
+            if (unitList.SelectedIndex != -1)
+            {
+                unitList.SelectedItem = unitList.Items[unitList.SelectedIndex];
             }
 
             bindEvents();
