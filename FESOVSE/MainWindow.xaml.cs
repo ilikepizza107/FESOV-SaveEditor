@@ -521,6 +521,9 @@ namespace FESOVSE
                         currentUnits.Add(c);
                     }
                 }
+
+                currentUnits = currentUnits.OrderBy(units => units.StartAddress).ToList();
+
                 //enabling data source for the control
                 unitList.ItemsSource = currentUnits;
                 unitList.DisplayMemberPath = "Name";
@@ -1088,6 +1091,21 @@ namespace FESOVSE
                 bindEvents();
             }
 
+        private void removeUnit(object sender, EventArgs e)
+        {
+            unBindEvents();
+
+            //getting the pointer to character stored at 0xCC
+            int charBlockAddress = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                charBlockAddress = (_saveFile[0xCC + i] << (i * 8)) | charBlockAddress;
+            }
+            int unitTotal = _saveFile[charBlockAddress + 6];
+
+
+            bindEvents();
+        }
 
             private void unBindEvents()
             {
@@ -1099,6 +1117,7 @@ namespace FESOVSE
                 itemList.SelectionChanged -= convoyUpdateDescription;
                 cnForge.SelectionChanged -= convoyForgeBoxChanged;
                 cbUnits.SelectionChanged -= unitChanged;
+                cbRem.Click -= removeUnit;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
                     x.ValueChanged -= statChanged;
@@ -1119,6 +1138,7 @@ namespace FESOVSE
                 itemList.SelectionChanged += convoyUpdateDescription;
                 cnForge.SelectionChanged += convoyForgeBoxChanged;
                 cbUnits.SelectionChanged += unitChanged;
+                cbRem.Click += removeUnit;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
                     x.ValueChanged += statChanged;
