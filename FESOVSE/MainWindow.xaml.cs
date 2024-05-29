@@ -1176,23 +1176,22 @@ namespace FESOVSE
 
         private void removeUnit(object sender, EventArgs e)
         {
-            unBindEvents();
-
+            var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
             if (unitList.SelectedItem == null)
             {
-                bindEvents();
                 return;
             }
-            int currentIndex = unitList.SelectedIndex; //get the index of the selected character
-            var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
-            int charBlockStartAddress = character.StartAddress - 3; //get the start address of the char block (the "15" byte)
-
             if (character.Name == "Alm" || character.Name == "Celica") //make sure the character isn't Alm or Celica
             {
                 System.Windows.MessageBox.Show("Cannot remove Alm or Celica");
-                bindEvents();
                 return;
             }
+
+            unBindEvents();
+
+            int currentIndex = unitList.SelectedIndex; //get the index of the selected character
+            int charBlockStartAddress = character.StartAddress - 3; //get the start address of the char block (the "15" byte)
+                      
 
             //now we grab the character block start and end
             byte[] charBlockEnd;
@@ -1251,6 +1250,8 @@ namespace FESOVSE
             }
             _saveFile[charBlockAddress + 6] = (byte)unitNewTotal;
 
+            bindEvents();
+
             //reload everything
             loadUnits();
             if (currentIndex > 0)
@@ -1259,7 +1260,6 @@ namespace FESOVSE
                 updateDescription(this, null);
             }
 
-            bindEvents();
         }
 
             private void unBindEvents()
