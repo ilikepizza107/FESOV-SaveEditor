@@ -8,12 +8,14 @@ namespace FESOVSE.Data
     class CharacterDatabase
     {
         XDocument data;
+        CharacterClassDatabase classDatabase;
 
-        public CharacterDatabase()
+        public CharacterDatabase(CharacterClassDatabase classDb)
         {
             string xml = Properties.Resources.Characters; //load the xml file from resource
             System.IO.StringReader myXml = new System.IO.StringReader(xml); //parse xml filename to string
             data = XDocument.Load(myXml);
+            classDatabase = classDb;
         }
 
         private Character FromElement(XElement row)
@@ -32,13 +34,24 @@ namespace FESOVSE.Data
             {
                 ms.Add(Int32.Parse(xa.Value));
             }
+
+            // Check if the "class" element exists
+            var classElement = row.Element("class");
+            CharacterClass defaultClass = null;
+            if (classElement != null) 
+            {
+                var classID = classElement.Attribute("id").Value;
+                defaultClass = classDatabase.getAll().FirstOrDefault(c => c.ClassID == classID);
+            }
+
             return new Character
             {
                 Name = name,
                 CharID = charID,
                 StartAddress = -1,
                 BaseStats = bs,
-                MaxStats = ms
+                MaxStats = ms,
+                DefaultClass = defaultClass
             };
         }
 
