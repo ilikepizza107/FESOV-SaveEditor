@@ -56,5 +56,22 @@ namespace FESOVSE.Data
 
             return chars;
         }
+
+        public List<Character> getMost()
+        {
+            IEnumerable<XElement> elements = (from x in data.Root.Descendants("character")
+                                              where x.Attribute("name").Value != "Alm" && x.Attribute("name").Value != "Celica"
+                                              select x).OrderBy(y => y.Attribute("name").Value);
+
+
+            List<Character> chars = new List<Character>();
+            foreach (XElement e in elements)
+            {
+                chars.Add(FromElement(e));
+            }
+
+            return chars;
+        }
+
     }
 }

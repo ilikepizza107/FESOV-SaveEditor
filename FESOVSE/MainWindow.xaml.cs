@@ -680,7 +680,7 @@ namespace FESOVSE
                 cbAdd.IsHitTestVisible = true;
                 cbRem.IsHitTestVisible = true;
                 var unitDB = new Data.CharacterDatabase();
-                var allUnits = unitDB.getAll();
+                var allUnits = unitDB.getMost();
                 cbUnits.ItemsSource = allUnits;
                 cbUnits.DisplayMemberPath = "Name";
                 cbUnits.SelectedValuePath = "CharID";
@@ -1174,6 +1174,94 @@ namespace FESOVSE
                 bindEvents();
             }
 
+        private void addUnit(object sender, EventArgs e)
+        {
+            var character = (Data.Character)cbUnits.SelectedItem; //get the currently selected character
+            if (cbUnits.SelectedItem == null)
+            {
+                return;
+            }
+            if (character.Name == "Alm" || character.Name == "Celica") //make sure the character isn't Alm or Celica
+            {
+                System.Windows.MessageBox.Show("Cannot add Alm or Celica");
+                return;
+            }
+
+            unBindEvents();
+
+            /* int currentIndex = unitList.SelectedIndex; //get the index of the selected character
+            int charBlockStartAddress = character.StartAddress - 3; //get the start address of the char block (the "15" byte)
+
+
+            //now we grab the character block start and end
+            byte[] charBlockEnd;
+            if (currentIndex == unitList.Items.Count - 1) //if selected unit is the last one on the list
+            {
+                charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0xFF, 0x4E, 0x41, 0x52, 0x54 }; //pattern before the next pointer, signaling end of character block entirely
+            }
+            else
+            {
+                charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
+            }
+            int charBlockEndLength = charBlockEnd.Length;
+            int charBlockEndAddress = -1;
+            for (int i = charBlockStartAddress; i <= _saveFile.Length - charBlockEndLength; i++)
+            {
+                bool match = true;
+                for (int j = 0; j < charBlockEndLength; j++)
+                {
+                    if (_saveFile[i + j] != charBlockEnd[j])
+                    {
+                        match = false;
+                        break;
+                    }
+                }
+                if (match)
+                {
+                    charBlockEndAddress = i + 2; //+2 because I want it to end on the third "00" and not the "15"
+                    break;
+                }
+            }
+            int charBlockLength = charBlockEndAddress - charBlockStartAddress + 1; //grab the total length of the character block
+
+            //delete the character block, and then correct the pointers if necessary
+            byte[] original = _saveFile;
+            int address = charBlockStartAddress;
+            int count = charBlockLength;
+
+            byte[] removed = DeleteBytes(original, address, count);
+            _saveFile = removed; */
+
+            CorrectPointers(_saveFile);
+
+            //getting the pointer to the character block stored at 0xCC
+            int charBlockAddress = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                charBlockAddress = (_saveFile[0xCC + i] << (i * 8)) | charBlockAddress;
+            }
+            int unitTotal = _saveFile[charBlockAddress + 6]; //save this for later, we'll need to edit it
+
+            //remove one from the unit count
+            int unitNewTotal = unitTotal + 1;
+            if (unitNewTotal < 0 || unitNewTotal > 255)
+            {
+                throw new ArgumentOutOfRangeException(nameof(unitNewTotal), "Value must be between 0 and 255.");
+            }
+            _saveFile[charBlockAddress + 6] = (byte)unitNewTotal;
+
+            bindEvents();
+
+            //reload everything
+            loadUnits();
+            /* if (currentIndex > 0)
+            {
+                unitList.SelectedIndex = currentIndex + 1; // Select the previous character
+                updateDescription(this, null);
+            } */
+
+        }
+
         private void removeUnit(object sender, EventArgs e)
         {
             var character = (Data.Character)unitList.SelectedItem; //get the currently selected character
@@ -1272,6 +1360,7 @@ namespace FESOVSE
                 itemList.SelectionChanged -= convoyUpdateDescription;
                 cnForge.SelectionChanged -= convoyForgeBoxChanged;
                 cbUnits.SelectionChanged -= unitChanged;
+                cbAdd.Click -= addUnit;
                 cbRem.Click -= removeUnit;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
@@ -1293,6 +1382,7 @@ namespace FESOVSE
                 itemList.SelectionChanged += convoyUpdateDescription;
                 cnForge.SelectionChanged += convoyForgeBoxChanged;
                 cbUnits.SelectionChanged += unitChanged;
+                cbAdd.Click += addUnit;
                 cbRem.Click += removeUnit;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
