@@ -480,6 +480,28 @@ namespace FESOVSE
                 return result;
             }
 
+            private static byte[] AddBytes(byte[] original, int address, byte[] bytesToAdd)
+            {
+                if (address < 0 || address > original.Length)
+                {
+                    throw new ArgumentOutOfRangeException("Invalid address.");
+                }
+
+                int newLength = original.Length + bytesToAdd.Length;
+                byte[] result = new byte[newLength];
+
+                // Copy the part before the address
+                Array.Copy(original, 0, result, 0, address);
+
+                // Copy the inserted bytes
+                Array.Copy(bytesToAdd, 0, result, address, bytesToAdd.Length);
+
+                // Copy the part after the address
+                Array.Copy(original, address, result, address + bytesToAdd.Length, original.Length - address);
+
+                return result;
+            }
+
             private static readonly byte[][] TargetByteArrays = 
             {
                 new byte[] { 0x54, 0x4F, 0x50, 0x53 }, // "TOPS"
@@ -1178,7 +1200,7 @@ namespace FESOVSE
 
         private void addUnit(object sender, EventArgs e)
         {
-            var character = (Data.Character)cbUnits.SelectedItem; //get the currently selected character
+            var character = (Data.Character)cbUnits.SelectedItem; //get the currently selected character in combo box
             if (cbUnits.SelectedItem == null)
             {
                 return;
@@ -1191,50 +1213,57 @@ namespace FESOVSE
 
             unBindEvents();
 
-            /* int currentIndex = unitList.SelectedIndex; //get the index of the selected character
-            int charBlockStartAddress = character.StartAddress - 3; //get the start address of the char block (the "15" byte)
+            //get Alm and Celica's start address
+            int almAddress = 0;
+            byte[] almBytes = hexToBytes("CDE7C2253782C205"); //Alm CharID
+            int almBlockIDAddress = hasData(_saveFile.Length - almAddress, almBytes, 0);
+            int almBlockStartAddress = almBlockIDAddress - 3;
+            int celicaAddress = 0;
+            byte[] celicaBytes = hexToBytes("C7D28D28D9CA2207"); //Celica CharID
+            int celicaBlockIDAddress = hasData(_saveFile.Length - celicaAddress, celicaBytes, 0);
+            int celicaBlockStartAddress = celicaBlockIDAddress - 3;
 
+            //get Alm and Celica's end address
+            byte[] pattern1 = new byte[] { 0x00, 0x00, 0x00, 0xFF, 0x4E, 0x41, 0x52, 0x54 }; //pattern before the next pointer, signaling end of character block entirely
+            byte[] pattern2 = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
+            int pattern1Length = pattern1.Length;
+            int pattern2Length = pattern2.Length;
+            int almBlockEndAddress = addFindBlockEndAddress(almBlockStartAddress);
+            int celicaBlockEndAddress = addFindBlockEndAddress(celicaBlockStartAddress);
 
-            //now we grab the character block start and end
-            byte[] charBlockEnd;
-            if (currentIndex == unitList.Items.Count - 1) //if selected unit is the last one on the list
+            //get selected unit, and if they're after Alm, add new unit after Alm. If they're after Celica, add new unit after Celica
+            var unitListCharacter = (Data.Character)unitList.SelectedItem; //get the currently selected character
+            int characterStartAddress = -1;
+
+            if (unitListCharacter.StartAddress > almBlockStartAddress && unitListCharacter.StartAddress < celicaBlockStartAddress)
             {
-                charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0xFF, 0x4E, 0x41, 0x52, 0x54 }; //pattern before the next pointer, signaling end of character block entirely
+                characterStartAddress = almBlockEndAddress + 1;
+            }
+            else if (unitListCharacter.StartAddress > celicaBlockStartAddress)
+            {
+                characterStartAddress = celicaBlockEndAddress + 1;
+            }
+
+            //build the character block
+            byte[] start = { 0x15, 0x01, 0x00 };
+            byte[] characterID = hexToBytes(character.CharID);
+            if (character.DefaultClass != null) 
+            {
+                byte[] characterClass = hexToBytes(character.DefaultClass.ClassID);
             }
             else
             {
-                charBlockEnd = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
+                byte[] characterClass = hexToBytes("C51B98DC5787885C"); //default to Villager (M) if no specified default class
             }
-            int charBlockEndLength = charBlockEnd.Length;
-            int charBlockEndAddress = -1;
-            for (int i = charBlockStartAddress; i <= _saveFile.Length - charBlockEndLength; i++)
-            {
-                bool match = true;
-                for (int j = 0; j < charBlockEndLength; j++)
-                {
-                    if (_saveFile[i + j] != charBlockEnd[j])
-                    {
-                        match = false;
-                        break;
-                    }
-                }
-                if (match)
-                {
-                    charBlockEndAddress = i + 2; //+2 because I want it to end on the third "00" and not the "15"
-                    break;
-                }
-            }
-            int charBlockLength = charBlockEndAddress - charBlockStartAddress + 1; //grab the total length of the character block
+            
 
-            //delete the character block, and then correct the pointers if necessary
+            //insert the character block, and then correct the pointers if necessary
             byte[] original = _saveFile;
-            int address = charBlockStartAddress;
-            int count = charBlockLength;
+            int address = characterStartAddress;
+            byte[] bytesToAdd = characterBlock;
 
-            byte[] removed = DeleteBytes(original, address, count);
-            _saveFile = removed; */
-
-            CorrectPointers(_saveFile);
+            byte[] removed = AddBytes(original, address, bytesToAdd);
+            _saveFile = removed;
 
             //getting the pointer to the character block stored at 0xCC
             int charBlockAddress = 0;
@@ -1244,7 +1273,7 @@ namespace FESOVSE
             }
             int unitTotal = _saveFile[charBlockAddress + 6]; //save this for later, we'll need to edit it
 
-            //remove one from the unit count
+            //add one to the unit count
             int unitNewTotal = unitTotal + 1;
             if (unitNewTotal < 0 || unitNewTotal > 255)
             {
@@ -1256,11 +1285,31 @@ namespace FESOVSE
 
             //reload everything
             loadUnits();
-            /* if (currentIndex > 0)
+
+
+            // helper functions
+            bool addMatchPattern(byte[] file, int start, byte[] pattern)
             {
-                unitList.SelectedIndex = currentIndex + 1; // Select the previous character
-                updateDescription(this, null);
-            } */
+                for (int j = 0; j < pattern.Length; j++)
+                {
+                    if (file[start + j] != pattern[j])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            int addFindBlockEndAddress(int startAddress)
+            {
+                for (int i = startAddress; i <= _saveFile.Length - Math.Min(pattern1Length, pattern2Length); i++)
+                {
+                    if (addMatchPattern(_saveFile, i, pattern1) || addMatchPattern(_saveFile, i, pattern2))
+                    {
+                        return i + 2; // +2 because I want it to end on the third "00" and not the "15"
+                    }
+                }
+                return -1;
+            }
 
         }
 
