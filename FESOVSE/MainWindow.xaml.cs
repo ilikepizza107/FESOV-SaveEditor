@@ -908,7 +908,7 @@ namespace FESOVSE
                     cbItem.SelectedValue = itemHex; //update the item combo box with unit's item
                     if (cbItem.SelectedValue == null) //disable combobox if item is not in database
                     {                                 //will remove once resource is complete
-                        cbItem.IsHitTestVisible = false;
+                        cbItem.Text = "No Item";
                         cbForge.IsHitTestVisible = false;
                     }
                     else
@@ -1062,6 +1062,37 @@ namespace FESOVSE
 
                 Data.Character character = (Data.Character)unitList.SelectedItem;
                 Data.Item currentItem = (Data.Item)cbItem.SelectedItem;
+                string oldItemName = cbItem.Text;
+                string newItemName = currentItem.Name;
+                if (oldItemName == "No Item") 
+                {
+                    _saveFile[character.ItemAddress + 1] = 0x01; //replace "00" with "01"
+                    byte[] bytesToAdd = new byte[12]; //11 bytes of 00 (3 for the itemMiddleHex, 8 for the itemHex)
+                    Array.Fill(bytesToAdd, (byte)0x00); //fill it with 00s
+                    bytesToAdd[11] = 0x02; //insert 0x02 at the end
+                    _saveFile = AddBytes(_saveFile, character.ItemAddress + 2, bytesToAdd); //add the bytes
+                    CorrectPointers(_saveFile); //correct the pointers
+                    loadUnits(); //reset to update addresses
+                    var currentUnits = (List<Data.Character>)unitList.ItemsSource;
+                    var reselectedCharacter = currentUnits.FirstOrDefault(c => c.CharID == character.CharID);
+                    unitList.SelectedItem = reselectedCharacter;
+                }
+                else if (newItemName == "No Item")
+                {
+                    _saveFile[character.ItemAddress + 1] = 0x00; //replace "01" with "00"
+                    byte[] original = _saveFile;
+                    int address = character.ItemAddress + 2;
+                    int count = 12;
+                    _saveFile = DeleteBytes(_saveFile, address, count);
+                    CorrectPointers(_saveFile);
+                    loadUnits(); //reset to update addresses
+                    updateDescription(this, null);
+                    var currentUnits = (List<Data.Character>)unitList.ItemsSource;
+                    var reselectedCharacter = currentUnits.FirstOrDefault(c => c.CharID == character.CharID);
+                    unitList.SelectedItem = reselectedCharacter;
+                    bindEvents();
+                    return;
+                }
                 byte[] itemHex = hexToBytes(currentItem.Hex);
                 byte[] itemID = hexToBytes(currentItem.ItemID);
                 byte[] itemMiddleHex;
@@ -1304,8 +1335,7 @@ namespace FESOVSE
             int address = characterStartAddress;
             byte[] bytesToAdd = hexToBytes(character.DefaultBlock);
 
-            byte[] added = AddBytes(original, address, bytesToAdd);
-            _saveFile = added;
+            _saveFile = AddBytes(original, address, bytesToAdd);
 
             //getting the pointer to the character block stored at 0xCC
             int charBlockAddress = 0;
@@ -1328,9 +1358,14 @@ namespace FESOVSE
 
             //reload everything
             loadUnits();
-            if (currentIndex > 0)
+            if (currentIndex == 2)
             {
                 unitList.SelectedIndex = currentIndex - 1; // Select the previous character
+                updateDescription(this, null);
+            }
+            else
+            {
+                unitList.SelectedIndex = currentIndex;
                 updateDescription(this, null);
             }
 
@@ -1415,8 +1450,7 @@ namespace FESOVSE
             int address = charBlockStartAddress;
             int count = charBlockLength;
 
-            byte[] removed = DeleteBytes(original, address, count);
-            _saveFile = removed;
+            _saveFile = DeleteBytes(original, address, count);
 
             CorrectPointers(_saveFile);
 
