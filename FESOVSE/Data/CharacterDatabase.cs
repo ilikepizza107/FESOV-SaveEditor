@@ -20,6 +20,7 @@ namespace FESOVSE.Data
         {
             var name = row.Attribute("name").Value;
             var charID = row.Attribute("id").Value;
+            var defaultBlock = row.Attribute("block").Value;
             IEnumerable<XAttribute> baseStats = row.Element("base").Attributes();
             IEnumerable<XAttribute> maxStats = row.Element("max").Attributes();
             List<int> bs = new List<int>();
@@ -38,7 +39,8 @@ namespace FESOVSE.Data
                 CharID = charID,
                 StartAddress = -1,
                 BaseStats = bs,
-                MaxStats = ms
+                MaxStats = ms,
+                DefaultBlock = defaultBlock
             };
         }
 

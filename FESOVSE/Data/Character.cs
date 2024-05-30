@@ -10,5 +10,6 @@ namespace FESOVSE.Data
         public int ItemAddress { get; set; }
         public List<int> BaseStats { get; set; }
         public List<int> MaxStats { get; set; }
+        public string DefaultBlock {  get; set; }
     }
 }

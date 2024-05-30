@@ -414,9 +414,57 @@ namespace FESOVSE
             return indices; // Return list of indices where data is found
         }
 
+        private int hasDataItem(int blockSize, List<byte[]> bytePatterns, int start = 0)
+        {
+            // Check if start index is within bounds
+            if (start < 0 || start >= _saveFile.Length)
+            {
+                return -1; // Invalid start index
+            }
+
+            // Calculate max length
+            int maxLength = start + blockSize;
+
+            // Ensure maxLength does not exceed array length
+            if (maxLength > _saveFile.Length)
+            {
+                maxLength = _saveFile.Length;
+            }
+
+            // Loop through the search space
+            for (int i = start; i < maxLength; i++)
+            {
+                foreach (var data in bytePatterns)
+                {
+                    bool isSame = true;
+                    // Loop through the data to check
+                    for (int j = 0; j < data.Length; j++)
+                    {
+                        // Check if index is within bounds
+                        if (i + j >= _saveFile.Length || _saveFile[i + j] != data[j])
+                        {
+                            isSame = false;
+                            break;
+                        }
+                    }
+                    if (isSame)
+                    {
+                        // Check if the found pattern is the noItem
+                        if (data.SequenceEqual(new byte[] { 1, 0, 2, 0 }))
+                        {
+                            return i + 2; // Add 2 to the result if noItem is found
+                        }
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+
         /* converts a string of hex into byte array */
         private byte[] hexToBytes(string hexStr)
             {
+                hexStr = hexStr.Replace(" ", "");
                 byte[] byteVal = new byte[hexStr.Length / 2];
                 for (int i = 0; i < byteVal.Length; i++)
                 {
@@ -444,10 +492,11 @@ namespace FESOVSE
             private int findItemAddress(int charIDStart)
             {
                 byte[] itemByte = { 2, 1 }; //items are labelled with 02 01
+                byte[] noItem = { 1, 0, 2, 0 }; //if the character isn't holding an item, it'll have this pattern
                 int charBlockSize = 184; //search space for a character block, char block changes depending on skills,supports etc
                                          //so this is just an assumable, if character's block is smaller it will get the next block's
                                          //works well if each character holds an item
-                return hasData(charBlockSize, itemByte, charIDStart);
+                return hasDataItem(charBlockSize, new List<byte[]> { itemByte, noItem }, charIDStart);
             }
 
             private void resetMarkAddress()
@@ -1210,7 +1259,11 @@ namespace FESOVSE
             }
 
             unBindEvents();
-
+            int currentIndex = unitList.SelectedIndex; //get the index of the selected character
+            if (currentIndex == -1)
+            {
+                currentIndex = 2;
+            }
             //get Alm and Celica's start address
             int almAddress = 0;
             byte[] almBytes = hexToBytes("CDE7C2253782C205"); //Alm CharID
@@ -1233,7 +1286,11 @@ namespace FESOVSE
             var unitListCharacter = (Data.Character)unitList.SelectedItem; //get the currently selected character
             int characterStartAddress = -1;
 
-            if (unitListCharacter.StartAddress > almBlockStartAddress && unitListCharacter.StartAddress < celicaBlockStartAddress)
+            if (unitListCharacter == null)
+            {
+                characterStartAddress = almBlockEndAddress + 1;
+            }
+            else if (unitListCharacter.StartAddress > almBlockStartAddress && unitListCharacter.StartAddress < celicaBlockStartAddress)
             {
                 characterStartAddress = almBlockEndAddress + 1;
             }
@@ -1241,27 +1298,14 @@ namespace FESOVSE
             {
                 characterStartAddress = celicaBlockEndAddress + 1;
             }
-
-            //build the character block
-            byte[] start = { 0x15, 0x01, 0x00 };
-            byte[] characterID = hexToBytes(character.CharID);
-            if (character.DefaultClass != null) 
-            {
-                byte[] characterClass = hexToBytes(character.DefaultClass.ClassID);
-            }
-            else
-            {
-                byte[] characterClass = hexToBytes("C51B98DC5787885C"); //default to Villager (M) if no specified default class
-            }
             
-
             //insert the character block, and then correct the pointers if necessary
             byte[] original = _saveFile;
             int address = characterStartAddress;
-            byte[] bytesToAdd = characterBlock;
+            byte[] bytesToAdd = hexToBytes(character.DefaultBlock);
 
-            byte[] removed = AddBytes(original, address, bytesToAdd);
-            _saveFile = removed;
+            byte[] added = AddBytes(original, address, bytesToAdd);
+            _saveFile = added;
 
             //getting the pointer to the character block stored at 0xCC
             int charBlockAddress = 0;
@@ -1273,9 +1317,10 @@ namespace FESOVSE
 
             //add one to the unit count
             int unitNewTotal = unitTotal + 1;
-            if (unitNewTotal < 0 || unitNewTotal > 255)
+            if (unitNewTotal < 1 || unitNewTotal > 64)
             {
-                throw new ArgumentOutOfRangeException(nameof(unitNewTotal), "Value must be between 0 and 255.");
+                System.Windows.MessageBox.Show("Cannot have more than 64 units!");
+                throw new ArgumentOutOfRangeException(nameof(unitNewTotal), "Cannot have more than 64 units!");
             }
             _saveFile[charBlockAddress + 6] = (byte)unitNewTotal;
 
@@ -1283,7 +1328,11 @@ namespace FESOVSE
 
             //reload everything
             loadUnits();
-
+            if (currentIndex > 0)
+            {
+                unitList.SelectedIndex = currentIndex - 1; // Select the previous character
+                updateDescription(this, null);
+            }
 
             // helper functions
             bool addMatchPattern(byte[] file, int start, byte[] pattern)
@@ -1381,9 +1430,10 @@ namespace FESOVSE
 
             //remove one from the unit count
             int unitNewTotal = unitTotal - 1;
-            if (unitNewTotal < 0 || unitNewTotal > 255)
+            if (unitNewTotal < 1 || unitNewTotal > 64)
             {
-                throw new ArgumentOutOfRangeException(nameof(unitNewTotal), "Value must be between 0 and 255.");
+                System.Windows.MessageBox.Show("Cannot have less than 1 unit!");
+                throw new ArgumentOutOfRangeException(nameof(unitNewTotal), "Cannot have less than 1 unit!");
             }
             _saveFile[charBlockAddress + 6] = (byte)unitNewTotal;
 
