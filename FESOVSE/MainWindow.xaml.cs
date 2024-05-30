@@ -612,8 +612,7 @@ namespace FESOVSE
                     //its just 2 bytes but I take 4 anyway
                 }
 
-                var classDB = new Data.CharacterClassDatabase();
-                var charDB = new Data.CharacterDatabase(classDB); //init database of characters from xml file
+                var charDB = new Data.CharacterDatabase(); //init database of characters from xml file
                 var units = charDB.getAll(); //list of all units
                 var currentUnits = new List<Data.Character>(); //units that are currently available in game
                 foreach (Data.Character c in units)
@@ -702,8 +701,7 @@ namespace FESOVSE
                 cbUnits.IsHitTestVisible = true;
                 cbAdd.IsHitTestVisible = true;
                 cbRem.IsHitTestVisible = true;
-                var classDB = new Data.CharacterClassDatabase();
-                var unitDB = new Data.CharacterDatabase(classDB);
+                var unitDB = new Data.CharacterDatabase();
                 var allUnits = unitDB.getMost();
                 cbUnits.ItemsSource = allUnits;
                 cbUnits.DisplayMemberPath = "Name";

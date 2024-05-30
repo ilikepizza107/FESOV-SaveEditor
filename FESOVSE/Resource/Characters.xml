@@ -197,321 +197,268 @@
     <text displayName ="Alm (Child)"/>
     <base hp="18" atk="6" skl="4" spd="3" lck="7" def="3" res="4"/>
     <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40"/>
-	<class id="F7F99AE449837761" name="Boy"/>  
   </character>
   <character id ="15D36D6A03847337" name="Celica (Child)">
     <text displayName ="Celica (Child)"/>
     <base hp="15" atk="4" skl="5" spd="4" lck="8" def="2" res="7"/>
     <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40"/>
-	<class id="B5F89AE419827761" name="Girl"/>
   </character>
   <character id ="15D36D6A03847337" name="Gray (Child)">
     <text displayName ="Gray (Child)"/>
     <base hp="17" atk="4" skl="3" spd="43" lck="2" def="3" res="2"/>
     <max hp="52" atk="42" skl="39" spd="40" lck="40" def="39" res="40"/>
-	<class id="F7F99AE449837761" name="Boy"/>
   </character>
   <character id ="09328C53E7172E2C" name="Tobin (Child)">
     <text displayName ="Tobin (Child)"/>
     <base hp="16" atk="5" skl="2" spd="4" lck="4" def="2" res="4"/>
     <max hp="52" atk="39" skl="42" spd="39" lck="40" def="40" res="40"/>
-	<class id="F7F99AE449837761" name="Boy"/>
   </character>
   <character id ="F3A71669216ACA36" name="Kliff (Child)">
     <text displayName ="Kliff (Child)"/>
     <base hp="16" atk="5" skl="1" spd="2" lck="10" def="2" res="8"/>
     <max hp="52" atk="40" skl="39" spd="41" lck="39" def="41" res="40"/>
-	<class id="F7F99AE449837761" name="Boy"/>
   </character>
   <character id ="845C5368D2336B36" name="Faye (Child)">
     <text displayName ="Faye (Child)"/>
     <base hp="14" atk="4" skl="1" spd="2" lck="6" def="2" res="6"/>
     <max hp="52" atk="41" skl="39" spd="40" lck="39" def="41" res="40"/>
-	<class id="B5F89AE419827761" name="Girl"/>
   </character>
   <!--amiibo-->
   <character id ="D59DC046F1672D1E" name="Marth (amiibo)">
     <text displayName ="Marth (amiibo)"/>
     <base hp="32" atk="15" skl="16" spd="15" lck="12" def="10" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="9742C34037AEFAD2" name="Lord (Marth)"/>
   </character>
   <character id ="479D10406398E21A" name="Ike (amiibo)">
     <text displayName ="Ike (amiibo)"/>
     <base hp="36" atk="17" skl="11" spd="9" lck="7" def="16" res="2"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="0942133AA9DEAFCF" name="Hero (Ike)"/>
   </character>
   <character id ="2D12BC2B9104DE10" name="Lucina (amiibo)">
     <text displayName ="Lucina (amiibo)"/>
     <base hp="28" atk="12" skl="15" spd="17" lck="11" def="7" res="10"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="EFB6BE25D74AABC5" name="Lord (Lucina)"/>
   </character>
   <character id ="38E7BC2BDC99DE10" name="Robin (amiibo)">
     <text displayName ="Robin (amiibo)"/>
     <base hp="29" atk="13" skl="12" spd="10" lck="3" def="8" res="7"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="FA8BBF2522E0ABC5" name="Tactician (Robin)"/>
   </character>
   <character id ="8601B504847150A3" name="Roy (amiibo)">
     <text displayName ="Roy (amiibo)"/>
     <base hp="34" atk="16" skl="12" spd="11" lck="6" def="11" res="4"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="185A06A44A912675" name="Lord (Roy)"/>
   </character>
   <character id ="DE2D6DE37603FABD" name="Corrin (M) (amiibo)">
     <text displayName ="Corrin (M) (amiibo)"/>
     <base hp="31" atk="14" skl="15" spd="12" lck="9" def="8" res="3"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="503F90DB3CD08E74" name="Lord (CorrinM)"/>
   </character>
   <character id ="9C2C6DE34602FABD" name="Corrin (F) (amiibo)">
     <text displayName ="Corrin (F) (amiibo)"/>
     <base hp="30" atk="15" skl="13" spd="14" lck="8" def="7" res="5"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="0E3E90DB0CCF8E74" name="Lord (CorrinF)"/>
   </character>
   <!--Boss Characters-->
   <character id ="1CA3034A2E615B32" name="Berkut (Boss)">
     <text displayName ="Berkut (Boss)"/>
     <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="89A60099B78ACB0C" name="Paladin (M)"/>
   </character>
   <character id ="CEAD034AB0685B32" name="Berkut (Duma)">
     <text displayName ="Berkut (Duma)"/>
     <base hp="52" atk="24" skl="16" spd="15" lck="0" def="18" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="BD41DF7E3385F1C6" name="Gold Knight (M)"/>
   </character>
   <character id ="906B2A5466B25817" name="Brigand Boss">
     <text displayName ="Brigand Boss"/>
     <base hp="29" atk="8" skl="1" spd="2" lck="0" def="2" res="0"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="0D0D28E04D0CA05D" name="Brigand"/>
   </character>
   <character id ="6DC3B630776D9E51" name="Fernand (Boss)">
     <text displayName ="Fernand (Boss)"/>
     <base hp="25" atk="10" skl="7" spd="7" lck="2" def="6" res="5"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="4AC058885C6D1EBF" name="Cavalier (M)"/>
   </character>
   <character id ="658D222A4B24EB07" name="Desaix">
     <text displayName ="Desaix"/>
     <base hp="40" atk="22" skl="6" spd="4" lck="0" def="18" res="7"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="F6DB920958FF7BF2" name="Baron"/>
   </character>
   <character id ="87E01C272DC16D06" name="Grieth">
     <text displayName ="Grieth"/>
     <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="52CF17AB9A7B8DCA" name="Dread Fighter"/>
   </character>
   <character id ="52351E2AAC17E807" name="Dolth">
     <text displayName ="Dolth"/>
     <base hp="42" atk="17" skl="12" spd="12" lck="0" def="10" res="9"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="9037EFA118C296D4" name="Cantor"/>
   </character>
   <character id ="EC51E31A54E01457" name="Nuibaba">
     <text displayName ="Nuibaba"/>
     <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="08815A5FAE0AD095" name="Witch"/>
   </character>
   <character id ="83E159B6DF9F36C2" name="Rudolf">
     <text displayName ="Rudolf"/>
     <base hp="52" atk="28" skl="17" spd="22" lck="0" def="23" res="8"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="BD41DF7E3385F1C6" name="Gold Knight (M)"/>
   </character>
   <character id ="4CED3728A671F806" name="Jedah">
     <text displayName ="Jedah"/>
     <base hp="52" atk="21" skl="17" spd="16" lck="0" def="15" res="9"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="9037EFA118C296D4" name="Cantor"/>
   </character>
   <character id ="552AF4DC7D0DEE0F" name="Magnus">
     <text displayName ="Magnus"/>
     <base hp="51" atk="27" skl="11" spd="7" lck="0" def="23" res="7"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="F6DB920958FF7BF2" name="Baron"/>
   </character>
   <character id ="D2315C39AC1D46E2" name="Jerome">
     <text displayName ="Jerome"/>
     <base hp="45" atk="20" skl="9" spd="14" lck="0" def="15" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="BD41DF7E3385F1C6" name="Gold Knight (M)"/>
   </character>
   <character id ="1DA045B06B680B9F" name="Mueller">
     <text displayName ="Mueller"/>
     <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="38B628F2D6A2A4F3" name="Bow Knight"/>
   </character>
   <character id ="E88C792C8E281209" name="Marla (Act 4)">
     <text displayName ="Marla (Act 4)"/>
     <base hp="28" atk="14" skl="14" spd="10" lck="0" def="6" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="08815A5FAE0AD095" name="Witch"/>
   </character>
   <character id ="4EB417733E18576B" name="Marla (Act 5)">
     <text displayName ="Marla (Act 5)"/>
     <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="08815A5FAE0AD095" name="Witch"/>
   </character>
   <character id ="7EA30429F0435E07" name="Tatarrah">
     <text displayName ="Tatarrah"/>
     <base hp="39" atk="13" skl="9" spd="9" lck="0" def="10" res="8"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="BE0BFAD1864030EB" name="Arcanist"/>
   </character>
   <character id ="8FFE1D8A89ECEC7E" name="Delthea (Witch)">
     <text displayName ="Delthea (Witch)"/>
     <base hp="24" atk="11" skl="13" spd="9" lck="5" def="5" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="9B0DAFB1133ECFCC" name="Mage (F)"/>
   </character>
   <character id ="CB5CDB12EBD5862A" name="Jamil">
     <text displayName ="Jamil"/>
     <base hp="47" atk="17" skl="13" spd="13" lck="0" def="14" res="8"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="BE0BFAD1864030EB" name="Arcanist"/>
   </character>
   <character id ="9239E5261C7A5206" name="Gazelle">
     <text displayName ="Gazelle"/>
     <base hp="40" atk="16" skl="8" spd="8" lck="0" def="10" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="38B628F2D6A2A4F3" name="Bow Knight"/>
   </character>
   <character id ="8A2CACF71A83E6CB" name="Zakson">
     <text displayName ="Zakson"/>
     <base hp="39" atk="18" skl="4" spd="4" lck="0" def="14" res="1"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="A612F3C21E68886D" name="Knight"/>
   </character>
   <character id ="5B9BF6AB770C2FC6" name="Slayde">
     <text displayName ="Slayde"/>
     <base hp="28" atk="12" skl="5" spd="8" lck="0" def="8" res="5"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="89A60099B78ACB0C" name="Paladin (M)"/>
   </character>
   <character id ="A0585275A0538D44" name="Mikhail">
     <text displayName ="Mikhail"/>
     <base hp="36" atk="14" skl="10" spd="9" lck="0" def="8" res="9"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="9037EFA118C296D4" name="Cantor"/>
   </character>
   <character id ="151E0477A1B85575" name="Lawson">
     <text displayName ="Lawson"/>
     <base hp="35" atk="14" skl="7" spd="10" lck="0" def="10" res="5"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="89A60099B78ACB0C" name="Paladin (M)"/>
   </character>
   <character id ="B85221295A6B6C07" name="Barth">
     <text displayName ="Barth"/>
     <base hp="37" atk="11" skl="5" spd="6" lck="0" def="6" res="1"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="0D0D28E04D0CA05D" name="Brigand"/>
   </character>
   <character id ="E45FE52646955206" name="Garth">
     <text displayName ="Garth"/>
     <base hp="37" atk="11" skl="5" spd="6" lck="0" def="6" res="1"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="0D0D28E04D0CA05D" name="Brigand"/>
   </character>
   <character id ="D2EE912BAC419F08" name="Blake">
     <text displayName ="Blake"/>
     <base hp="30" atk="11" skl="11" spd="14" lck="0" def="7" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="66F4C9C39A01F651" name="Myrmidon"/>
   </character>
   <character id ="8C2D1E6854322B7D" name="Wolff">
     <text displayName ="Wolff"/>
     <base hp="32" atk="13" skl="7" spd="7" lck="0" def="7" res="2"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="B28F72B8D40E4C9A" name="Sniper"/>
   </character>
   <character id ="B5C598E875352CB0" name="Garcia">
     <text displayName ="Garcia"/>
     <base hp="36" atk="14" skl="10" spd="9" lck="0" def="8" res="9"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="9037EFA118C296D4" name="Cantor"/>
   </character>
   <character id ="CD73CF2BDF79BE08" name="Hestia (Act 4)">
     <text displayName ="Hestia (Act 4)"/>
     <base hp="31" atk="16" skl="15" spd="11" lck="0" def="7" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="08815A5FAE0AD095" name="Witch"/>
   </character>
   <character id ="E3091A150F59E82E" name="Hestia (Act 5)">
     <text displayName ="Hestia (Act 5)"/>
     <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="08815A5FAE0AD095" name="Witch"/>
   </character>
   <character id ="3DBF835D99496596" name="Xaizor">
     <text displayName ="Xaizor"/>
     <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="52CF17AB9A7B8DCA" name="Dread Fighter"/>
   </character>
   <character id ="6495E526D6BA5206" name="Gharn">
     <text displayName ="Gharn"/>
     <base hp="47" atk="17" skl="13" spd="13" lck="0" def="14" res="8"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="BE0BFAD1864030EB" name="Arcanist"/>
   </character>
   <character id ="B79CFBBE2B7D645F" name="Aurum">
     <text displayName ="Aurum"/>
     <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="38B628F2D6A2A4F3" name="Bow Knight"/>
   </character>
   <character id ="D9F3D17AF51E11F6" name="Argentum">
     <text displayName ="Argentum"/>
     <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="38B628F2D6A2A4F3" name="Bow Knight"/>
   </character>
   <character id ="16F7EA2A58F24D08" name="Hades">
     <text displayName ="Hades"/>
     <base hp="51" atk="23" skl="12" spd="17" lck="0" def="18" res="7"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-    <class id="BD41DF7E3385F1C6" name="Gold Knight (M)"/>
   </character>
   <character id ="8BDF3EE573DDABB8" name="Cerberus">
     <text displayName ="Cerberus"/>
     <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="52CF17AB9A7B8DCA" name="Dread Fighter"/>
   </character>
   <character id ="E71065CAAFA9A1FC" name="Naberius">
     <text displayName ="Naberius"/>
     <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="52CF17AB9A7B8DCA" name="Dread Fighter"/>
   </character>
   <character id ="804756116202B3FB" name="Rinea">
     <text displayName ="Rinea"/>
     <base hp="40" atk="20" skl="19" spd="16" lck="0" def="10" res="16"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
-	<class id="08815A5FAE0AD095" name="Witch"/>
   </character>
   <character id ="1702212AED3BEA07" name="Duma">
     <text displayName ="Duma"/>
     <base hp="182" atk="30" skl="10" spd="10" lck="0" def="20" res="20"/>
     <max hp="200" atk="32" skl="15" spd="10" lck="0" def="20" res="20"/>
-	<class id="9A19565FB2A7CD95" name="Fell God"/>
   </character>
   <character id ="82BC3519FEB25A19" name="The Creation">
     <text displayName ="The Creation"/>
     <base hp="180" atk="20" skl="20" spd="20" lck="0" def="15" res="15"/>
     <max hp="185" atk="22" skl="22" spd="22" lck="0" def="17" res="15"/>
-	<class id="F119565FDFA7CD95" name="Fell Dragon"/>
   </character>
   <!--Modded Characters-->
   <character id ="681E69CA0082A4FC" name="Berkut">
