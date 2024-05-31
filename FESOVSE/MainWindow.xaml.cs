@@ -727,10 +727,11 @@ namespace FESOVSE
             {
                 var itemDB = new Data.ItemDatabase();
                 var items = itemDB.getAll();
+                var itemsNo = itemDB.getMost();
                 cbItem.ItemsSource = items;
                 cbItem.DisplayMemberPath = "Name";
                 cbItem.SelectedValuePath = "Hex";
-                cnItem.ItemsSource = items;
+                cnItem.ItemsSource = itemsNo; //remove "No Item" from convoy item select
                 cnItem.DisplayMemberPath = "Name";
                 cnItem.SelectedValuePath = "Hex";
             }
