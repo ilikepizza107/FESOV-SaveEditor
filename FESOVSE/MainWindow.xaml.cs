@@ -1340,6 +1340,8 @@ namespace FESOVSE
 
             _saveFile = AddBytes(original, address, bytesToAdd);
 
+            CorrectPointers(_saveFile);
+
             //getting the pointer to the character block stored at 0xCC
             int charBlockAddress = 0;
             for (int i = 0; i < 4; i++)

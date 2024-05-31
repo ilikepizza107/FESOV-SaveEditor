@@ -300,9 +300,9 @@
     <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
-  <character id ="83E159B6DF9F36C2" name="Rudolf" block="15 01 00 A2 F9 DB 4E 3A 15 A7 0F BD 41 DF 7E 33 85 F1 C6 00 2B 7A EB 75 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 71 73 7D 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
+  <character id ="83E159B6DF9F36C2" name="Rudolf" block="15 14 00 83 E1 59 B6 DF 9F 36 C2 BD 41 DF 7E 33 85 F1 C6 00 BE B5 02 51 00 00 00 00 00 00 00 00 34 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 65 01 6E 63 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Rudolf"/>
-    <base hp="52" atk="28" skl="17" spd="22" lck="0" def="23" res="8"/>
+    <base hp="52" atk="30" skl="26" spd="24" lck="13" def="25" res="16"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
   <character id ="4CED3728A671F806" name="Jedah" block="15 14 00 4C ED 37 28 A6 71 F8 06 90 37 EF A1 18 C2 96 D4 00 C1 DF 12 79 00 00 00 00 00 00 00 00 34 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 7C 84 80 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
