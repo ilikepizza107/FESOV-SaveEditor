@@ -1360,16 +1360,25 @@ namespace FESOVSE
 
             //reload everything
             loadUnits();
-            if (currentIndex == 2)
+
+            //find index of the new character, then select them
+            int newIndex = -1;
+            for (int i = 0; i < unitList.Items.Count; i++) 
             {
-                unitList.SelectedIndex = currentIndex - 1; // Select the previous character
-                updateDescription(this, null);
+                var listItem = (Data.Character)unitList.Items[i];
+                if (listItem.Name == character.Name)
+                {
+                    newIndex = i;
+                    break;
+                }
             }
-            else
+
+            if (newIndex != -1)
             {
-                unitList.SelectedIndex = currentIndex;
-                updateDescription(this, null);
+                unitList.SelectedIndex = newIndex;
             }
+
+            updateDescription(this, null);
 
             // helper functions
             bool addMatchPattern(byte[] file, int start, byte[] pattern)
