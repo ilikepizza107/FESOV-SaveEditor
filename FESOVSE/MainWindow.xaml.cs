@@ -1075,6 +1075,7 @@ namespace FESOVSE
                     _saveFile = AddBytes(_saveFile, character.ItemAddress + 2, bytesToAdd); //add the bytes
                     CorrectPointers(_saveFile); //correct the pointers
                     loadUnits(); //reset to update addresses
+                    loadConvoy();
                     updateDescription(this, null);
                     var currentUnits = (List<Data.Character>)unitList.ItemsSource;
                     var reselectedCharacter = currentUnits.FirstOrDefault(c => c.CharID == character.CharID);
@@ -1089,6 +1090,7 @@ namespace FESOVSE
                     _saveFile = DeleteBytes(_saveFile, address, count);
                     CorrectPointers(_saveFile);
                     loadUnits(); //reset to update addresses
+                    loadConvoy();
                     updateDescription(this, null);
                     updateForgeBox(currentItem.MaxForges);
                     var currentUnits = (List<Data.Character>)unitList.ItemsSource;
@@ -1364,6 +1366,7 @@ namespace FESOVSE
 
             //reload everything
             loadUnits();
+            loadConvoy();
 
             //find index of the new character, then select them
             int newIndex = -1;
@@ -1490,6 +1493,7 @@ namespace FESOVSE
 
             //reload everything
             loadUnits();
+            loadConvoy();
             if (currentIndex > 0)
             {
                 unitList.SelectedIndex = currentIndex - 1; // Select the previous character
