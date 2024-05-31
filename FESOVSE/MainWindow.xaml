@@ -242,10 +242,16 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="0">
-                <ListBox x:Name="itemList">
-                </ListBox>
-            </Border>
+            <StackPanel>
+                <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="0">
+                    <ListBox x:Name="itemList" VerticalAlignment="Top" Height="300"/>
+                </Border>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom">
+                <ComboBox x:Name="cnItems" Width="169.5" Height="25" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
+                <Button x:Name="cnAdd" Width="169.5" Height="25" Content="Add Item" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
+                <Button x:Name="cnRem" Width="169.5" Height="25" Content="Remove Selected Item" BorderBrush="Black" BorderThickness="0.5" Margin="0,0,0,5"/>
+            </StackPanel>
 
             <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="1">
                 <!-- Item Properties Panel -->
