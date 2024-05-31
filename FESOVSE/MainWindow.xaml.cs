@@ -492,7 +492,7 @@ namespace FESOVSE
             private int findItemAddress(int charIDStart)
             {
                 byte[] itemByte = { 2, 1 }; //items are labelled with 02 01
-                byte[] noItem = { 1, 0, 2, 0 }; //if the character isn't holding an item, it'll have this pattern
+                byte[] noItem = { 2, 0, 2, 0, 0, 0 }; //if the character isn't holding an item, it'll have this pattern
                 int charBlockSize = 184; //search space for a character block, char block changes depending on skills,supports etc
                                          //so this is just an assumable, if character's block is smaller it will get the next block's
                                          //works well if each character holds an item
@@ -696,7 +696,7 @@ namespace FESOVSE
             }
 
             var itemDB = new Data.ItemDatabase(); // Init database of items from XML file
-            var items = itemDB.getAll(); // List of all items
+            var items = itemDB.getMost(); // List of most items (don't want No Item)
             var currentItems = new List<Data.Item>(); // Items that are currently in the convoy
 
             foreach (Data.Item c in items)
@@ -910,6 +910,7 @@ namespace FESOVSE
                     {                                 //will remove once resource is complete
                         cbItem.Text = "No Item";
                         cbForge.IsHitTestVisible = false;
+                        cbForge.SelectedIndex = -1;
                     }
                     else
                     {
@@ -1087,6 +1088,7 @@ namespace FESOVSE
                     CorrectPointers(_saveFile);
                     loadUnits(); //reset to update addresses
                     updateDescription(this, null);
+                    updateForgeBox(currentItem.MaxForges);
                     var currentUnits = (List<Data.Character>)unitList.ItemsSource;
                     var reselectedCharacter = currentUnits.FirstOrDefault(c => c.CharID == character.CharID);
                     unitList.SelectedItem = reselectedCharacter;

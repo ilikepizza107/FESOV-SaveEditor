@@ -46,5 +46,20 @@ namespace FESOVSE.Data
             }
             return items;
         }
+
+        public List<Item> getMost()
+        {
+            var xml = (from x in data.Root.Descendants("item")
+                       where x.Attribute("name").Value != "No Item"
+                       select x).OrderBy(y => y.Attribute("name").Value);
+
+
+            List<Item> items = new List<Item>();
+            foreach (XElement i in xml)
+            {
+                items.Add(FromElement(i));
+            }
+            return items;
+        }
     }
 }

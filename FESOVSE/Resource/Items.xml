@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <item id="00" hex="" name="No Item">
+  <item id="02" hex="000000" name="No Item">
 	<description maxStars="0" isDLC="false"/>
   </item>
   <item id="03" hex="8AD38FE22E1C0C74"  name="Iron Sword">
