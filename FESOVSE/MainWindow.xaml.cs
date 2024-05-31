@@ -1519,6 +1519,58 @@ namespace FESOVSE
 
         }
 
+        private void addItem(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void removeItem(object sender, EventArgs e) 
+        {
+            var item = (Data.Item)itemList.SelectedItem; //get the currently selected item
+            if (itemList.SelectedItem == null)
+            {
+                return;
+            }
+
+            unBindEvents();
+            int currentIndex = itemList.SelectedIndex; // get the index of the selected item
+            int itemStartAddress = item.ConvoyItemAddress; //get the start address of the item (the "02" byte)
+            int itemEndAddress = item.ConvoyItemAddress + 13; //get the end address of the item (last digit of item hex)
+            int itemLength = itemEndAddress - itemStartAddress + 1;
+            byte[] noItemByte = hexToBytes("0200"); //pattern for no item
+            int start = itemStartAddress;
+            foreach (byte b in noItemByte)
+            {
+                _saveFile[start] = b; //insert the new value in file
+                start++;
+            }
+            //delete the item, and then correct the pointers if necessary
+            byte[] original = _saveFile;
+            int address = itemStartAddress + 2;
+            int count = itemLength - 2;
+
+            _saveFile = DeleteBytes(original, address, count);
+
+            CorrectPointers(_saveFile);
+
+            bindEvents();
+
+            //reload everything
+            loadConvoy();
+            loadUnits();
+            if (currentIndex > 0)
+            {
+                itemList.SelectedIndex = currentIndex - 1; //select the previous item
+            }
+            else
+            {
+                itemList.SelectedIndex = 0;
+            }
+            convoyUpdateDescription(this, null);
+
+        }
+
+
             private void unBindEvents()
             {
                 cbItem.SelectionChanged -= itemBoxChanged;
