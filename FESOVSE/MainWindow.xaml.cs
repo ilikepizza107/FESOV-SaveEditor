@@ -692,13 +692,19 @@ namespace FESOVSE
 
         private void loadConvoy()
         {
-            // Getting the pointer to character stored at 0xD0
+            //getting the convoy address and the other section's address
             int convoyBlockAddress = 0;
+            int iferBlockAddress = 0;
             for (int i = 0; i < 4; i++)
             {
                 convoyBlockAddress = (_saveFile[0xD0 + i] << (i * 8)) | convoyBlockAddress;
-                // It's just 2 bytes but I take 4 anyway
+                iferBlockAddress = (_saveFile[0xD4 + i] << (i * 8)) | iferBlockAddress;
             }
+
+            byte[] pattern = new byte[] { 0x64, 0x00 };
+            List<int> patternAddresses = FindPattern(_saveFile, convoyBlockAddress, iferBlockAddress, pattern);
+            int almConvoyAddress = patternAddresses[0];
+            int celicaConvoyAddress = patternAddresses[1];
 
             var itemDB = new Data.ItemDatabase(); // Init database of items from XML file
             var items = itemDB.getMost(); // List of most items (don't want No Item)
@@ -726,6 +732,30 @@ namespace FESOVSE
             itemList.ItemsSource = currentItems;
             itemList.DisplayMemberPath = "Name";
             itemList.SelectedValuePath = "Hex";
+
+            //helper function
+            List<int> FindPattern(byte[] byteArray, int startAddress, int endAddress, byte[] pattern)
+            {
+                List<int> addresses = new List<int>();
+                for (int i = startAddress; i <= endAddress - pattern.Length; i++)
+                {
+                    bool match = true;
+                    for (int j = 0; j < pattern.Length; j++)
+                    {
+                        if (byteArray[i + j] != pattern[j])
+                        {
+                            match = false;
+                            break;
+                        }
+                    }
+                    if (match)
+                    {
+                        addresses.Add(i);
+                        i += pattern.Length - 1;
+                    }
+                }
+                return addresses;
+            }
         }
 
             private void loadItems()
@@ -1521,7 +1551,120 @@ namespace FESOVSE
 
         private void addItem(object sender, EventArgs e)
         {
-            //
+            var newItem = (Data.Item)cnItems.SelectedItem; //get the currently selected item in combo box
+            var oldItem = (Data.Item)itemList.SelectedItem;
+            if (cnItems.SelectedItem == null)
+            {
+                return;
+            }
+            if (itemList.Items.Count == 200)
+            {
+                System.Windows.MessageBox.Show("Convoy is full");
+                return;
+            }
+
+            unBindEvents();
+
+            //getting the convoy address and the other section's address
+            int convoyBlockAddress = 0;
+            int iferBlockAddress = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                convoyBlockAddress = (_saveFile[0xD0 + i] << (i * 8)) | convoyBlockAddress;
+                iferBlockAddress = (_saveFile[0xD4 + i] << (i * 8)) | iferBlockAddress;
+            }
+
+            byte[] pattern = new byte[] { 0x02, 0x00 };
+            int patternAddress;
+            if (itemList.SelectedIndex == -1)
+            {
+                patternAddress = FindPattern(_saveFile, convoyBlockAddress, iferBlockAddress, pattern);
+            }
+            else
+            {
+                int startAddress = oldItem.ConvoyItemAddress;
+                patternAddress = FindPattern(_saveFile, startAddress, iferBlockAddress, pattern);
+            }
+            
+            if (patternAddress == -1)
+            {
+                System.Windows.MessageBox.Show("Character convoy is full. Try adding the item in another convoy.");
+            }
+
+            //change the "02 00" to "02 01"
+            byte[] itemByte = hexToBytes("0201"); //pattern for no item
+            int start = patternAddress;
+            foreach (byte b in itemByte)
+            {
+                _saveFile[start] = b; //insert the new value in file
+                start++;
+            }
+
+            //build out the item
+            byte[] itemHex = hexToBytes(newItem.Hex);
+            byte[] itemID = hexToBytes(newItem.ItemID);
+            byte[] itemMiddleHex;
+            if (newItem.isDLC) itemMiddleHex = hexToBytes("010008"); //I see this pattern if its a dlc
+            else itemMiddleHex = hexToBytes("000000"); //default value, no forges, etc.
+            IEnumerable<byte> itemVal = itemID.Concat(itemMiddleHex).Concat(itemHex); //combine the bytes to form 12 bytes of item value
+
+            //insert the character block, and then correct the pointers if necessary
+            byte[] original = _saveFile;
+            int address = patternAddress + 2;
+            byte[] bytesToAdd = itemVal.ToArray();
+
+            _saveFile = AddBytes(original, address, bytesToAdd);
+
+            newItem.ConvoyItemAddress = patternAddress;
+
+            CorrectPointers(_saveFile);
+
+            bindEvents();
+
+            //reload everything
+            loadConvoy();
+            loadUnits();
+
+            //find index of the new item, then select it
+            int newIndex = -1;
+            for (int i = 0; i < itemList.Items.Count; i++)
+            {
+                var listItem = (Data.Item)itemList.Items[i];
+                if (listItem.Name == newItem.Name && listItem.ConvoyItemAddress == newItem.ConvoyItemAddress)
+                {
+                    newIndex = i;
+                    break;
+                }
+            }
+
+            if (newIndex != -1)
+            {
+                itemList.SelectedIndex = newIndex;
+            }
+
+            convoyUpdateDescription(this, null);
+
+            //helper functions
+            int FindPattern(byte[] byteArray, int startAddress, int endAddress, byte[] pattern)
+            {
+                for (int i = startAddress; i <= endAddress - pattern.Length; i++)
+                {
+                    bool match = true;
+                    for (int j = 0; j < pattern.Length; j++)
+                    {
+                        if (byteArray[i + j] != pattern[j])
+                        {
+                            match = false;
+                            break;
+                        }
+                    }
+                    if (match)
+                    {
+                        return i;
+                    }
+                }
+                return -1;
+            }
         }
 
         private void removeItem(object sender, EventArgs e) 
@@ -1533,7 +1676,7 @@ namespace FESOVSE
             }
 
             unBindEvents();
-            int currentIndex = itemList.SelectedIndex; // get the index of the selected item
+            int currentIndex = itemList.SelectedIndex; //get the index of the selected item
             int itemStartAddress = item.ConvoyItemAddress; //get the start address of the item (the "02" byte)
             int itemEndAddress = item.ConvoyItemAddress + 13; //get the end address of the item (last digit of item hex)
             int itemLength = itemEndAddress - itemStartAddress + 1;
