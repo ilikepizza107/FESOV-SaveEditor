@@ -1075,6 +1075,7 @@ namespace FESOVSE
                     _saveFile = AddBytes(_saveFile, character.ItemAddress + 2, bytesToAdd); //add the bytes
                     CorrectPointers(_saveFile); //correct the pointers
                     loadUnits(); //reset to update addresses
+                    updateDescription(this, null);
                     var currentUnits = (List<Data.Character>)unitList.ItemsSource;
                     var reselectedCharacter = currentUnits.FirstOrDefault(c => c.CharID == character.CharID);
                     unitList.SelectedItem = reselectedCharacter;
