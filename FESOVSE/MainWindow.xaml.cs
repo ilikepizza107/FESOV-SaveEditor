@@ -1531,6 +1531,8 @@ namespace FESOVSE
                 cbUnits.SelectionChanged -= unitChanged;
                 cbAdd.Click -= addUnit;
                 cbRem.Click -= removeUnit;
+                cnAdd.Click -= addItem;
+                cnRem.Click -= removeItem;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
                     x.ValueChanged -= statChanged;
@@ -1553,6 +1555,8 @@ namespace FESOVSE
                 cbUnits.SelectionChanged += unitChanged;
                 cbAdd.Click += addUnit;
                 cbRem.Click += removeUnit;
+                cnAdd.Click += addItem;
+                cnRem.Click += removeItem;
                 foreach (IntegerUpDown x in statUpDowns)
                 {
                     x.ValueChanged += statChanged;
