@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:wpfExt="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:sp="clr-namespace:FESOVSE.XMLProperties"
+        xmlns:local="clr-namespace:FESOVSE"
         mc:Ignorable="d"
         Title="FE SOV Save Editor" Height="520" Width="720" ResizeMode="CanMinimize"
         Style="{DynamicResource CustomWindowStyle}">
@@ -15,6 +16,15 @@
             <RoutedUICommand x:Key="Save"/>
             <RoutedUICommand x:Key="Max"/>
             <RoutedUICommand x:Key="Min"/>
+            <DataTemplate x:Key="HeaderTemplate">
+                <TextBlock FontWeight="Bold" Text="{Binding}" />
+            </DataTemplate>
+            <DataTemplate x:Key="ItemTemplate">
+                <TextBlock Text="{Binding Name}" />
+            </DataTemplate>
+            <local:ConvoyTemplateSelector x:Key="ConvoyTemplateSelector"
+                                      HeaderTemplate="{StaticResource HeaderTemplate}"
+                                      ItemTemplate="{StaticResource ItemTemplate}" />
         </ResourceDictionary>
     </Window.Resources>
     <Window.InputBindings>
@@ -244,7 +254,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel>
                 <Border BorderBrush="Black" BorderThickness="0.5" Margin="5" Grid.Column="0">
-                    <ListBox x:Name="itemList" VerticalAlignment="Top" Height="300"/>
+                    <ListBox x:Name="itemList" VerticalAlignment="Top" Height="300" ItemTemplateSelector="{StaticResource ConvoyTemplateSelector}"/>
                 </Border>
             </StackPanel>
             <StackPanel VerticalAlignment="Bottom">

@@ -18,6 +18,26 @@ namespace FESOVSE
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    public class ConvoyTemplateSelector : DataTemplateSelector
+    {
+        public DataTemplate HeaderTemplate { get; set; }
+        public DataTemplate ItemTemplate { get; set; }
+
+        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        {
+            if (item is string)
+            {
+                return HeaderTemplate;
+            }
+            else if (item is Data.Item)
+            {
+                return ItemTemplate;
+            }
+            return base.SelectTemplate(item, container);
+        }
+    }
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -708,7 +728,8 @@ namespace FESOVSE
 
             var itemDB = new Data.ItemDatabase(); // Init database of items from XML file
             var items = itemDB.getMost(); // List of most items (don't want No Item)
-            var currentItems = new List<Data.Item>(); // Items that are currently in the convoy
+            var almItems = new List<Data.Item>(); // Items in Alm's convoy
+            var celicaItems = new List<Data.Item>(); // Items in Celica's convoy
 
             foreach (Data.Item c in items)
             {
@@ -722,16 +743,28 @@ namespace FESOVSE
                         Hex = c.Hex,
                         ConvoyItemAddress = match - 6
                     };
-                    currentItems.Add(newItem);
+
+                    if (newItem.ConvoyItemAddress > almConvoyAddress && newItem.ConvoyItemAddress < celicaConvoyAddress)
+                    {
+                        almItems.Add(newItem);
+                    }
+                    else if (newItem.ConvoyItemAddress > celicaConvoyAddress)
+                    {
+                        celicaItems.Add(newItem);
+                    }
                 }
             }
 
-            currentItems = currentItems.OrderBy(item => item.ConvoyItemAddress).ToList();
+            almItems = almItems.OrderBy(item => item.ConvoyItemAddress).ToList();
+            celicaItems = celicaItems.OrderBy(item => item.ConvoyItemAddress).ToList();
+            var currentItems = new List<object>();
+            currentItems.Add("Alm's Convoy");
+            currentItems.AddRange(almItems);
+            currentItems.Add("Celica's Convoy");
+            currentItems.AddRange(celicaItems);
 
             // Enabling data source for the control
             itemList.ItemsSource = currentItems;
-            itemList.DisplayMemberPath = "Name";
-            itemList.SelectedValuePath = "Hex";
 
             //helper function
             List<int> FindPattern(byte[] byteArray, int startAddress, int endAddress, byte[] pattern)
@@ -987,12 +1020,14 @@ namespace FESOVSE
         {
             unBindEvents();
 
-            cnItem.IsHitTestVisible = true;
-            var item = (Data.Item)itemList.SelectedItem;
-
-            if (item != null)
+            if (itemList.SelectedItem is string header)
             {
-                itemList.SelectedItem = item;
+                itemList.SelectedItem = null;
+                bindEvents();
+            }
+            if (itemList.SelectedItem is Data.Item item)
+            {
+                cnItem.IsHitTestVisible = true;
                 if (item.ConvoyItemAddress != -1)
                 {
                     string itemHex = getBytesValue(item.ConvoyItemAddress + 6, 8);
@@ -1017,6 +1052,7 @@ namespace FESOVSE
                     cnItem.IsHitTestVisible = false;
                     cnForge.IsHitTestVisible = false;
                 }
+
                 bindEvents();
             }
         }
