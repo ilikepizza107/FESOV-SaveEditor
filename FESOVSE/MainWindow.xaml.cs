@@ -1025,7 +1025,7 @@ namespace FESOVSE
                 itemList.SelectedItem = null;
                 bindEvents();
             }
-            if (itemList.SelectedItem is Data.Item item)
+            else if (itemList.SelectedItem is Data.Item item)
             {
                 cnItem.IsHitTestVisible = true;
                 if (item.ConvoyItemAddress != -1)
@@ -1203,7 +1203,7 @@ namespace FESOVSE
             private void convoyItemBoxChanged(object sender, EventArgs e)
             {
                 unBindEvents();
-
+                
                 Data.Item oldItem = (Data.Item)itemList.SelectedItem;
                 Data.Item currentItem = (Data.Item)cnItem.SelectedItem;
                 currentItem.ConvoyItemAddress = oldItem.ConvoyItemAddress;
@@ -1223,6 +1223,24 @@ namespace FESOVSE
                 convoyUpdateForgeBox(currentItem.MaxForges); //disable/enable forge box depending on current item
 
                 loadConvoy();
+
+                int newIndex = -1;
+                for (int i = 0; i < itemList.Items.Count; i++)
+                {
+                    if (itemList.Items[i] is Data.Item listItem)
+                    {
+                        if (listItem.Name == currentItem.Name && listItem.ConvoyItemAddress == currentItem.ConvoyItemAddress)
+                        {
+                            newIndex = i;
+                            break;
+                        }
+                    }
+                }
+
+                if (newIndex != -1)
+                {
+                    itemList.SelectedIndex = newIndex;
+                }
 
                 bindEvents();
             }
@@ -1665,11 +1683,13 @@ namespace FESOVSE
             int newIndex = -1;
             for (int i = 0; i < itemList.Items.Count; i++)
             {
-                var listItem = (Data.Item)itemList.Items[i];
-                if (listItem.Name == newItem.Name && listItem.ConvoyItemAddress == newItem.ConvoyItemAddress)
+                if (itemList.Items[i] is Data.Item listItem)
                 {
-                    newIndex = i;
-                    break;
+                    if (listItem.Name == newItem.Name && listItem.ConvoyItemAddress == newItem.ConvoyItemAddress)
+                    {
+                        newIndex = i;
+                        break;
+                    }
                 }
             }
 
