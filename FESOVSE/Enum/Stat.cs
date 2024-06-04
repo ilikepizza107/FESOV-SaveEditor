@@ -10,6 +10,7 @@
         Speed,
         Luck,
         Defense,
-        Resistance
+        Resistance,
+        Movement
     }
 }

@@ -224,6 +224,16 @@
                                 <wpfExt:IntegerUpDown  x:Name="Resistance" sp:StatProperty.Stat="Resistance"
                             Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
                             </Grid>
+                            <!-- Movement Panel-->
+                            <Grid Margin="5 5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Movement" FontWeight="DemiBold"/>
+                                <wpfExt:IntegerUpDown  x:Name="Movement" sp:StatProperty.Stat="Movement"
+                            Increment="1"  Grid.Column="1" ClipValueToMinMax="True" AllowSpin="True"/>
+                            </Grid>
                         </StackPanel>
 
                         <!-- Class Panel -->

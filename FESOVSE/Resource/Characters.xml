@@ -2,473 +2,473 @@
 <root>
   <character id ="CDE7C2253782C205" name="Alm" block="15 01 00 CD E7 C2 25 37 82 C2 05 92 F2 26 DE 6E 78 A1 5D 00 2C E0 C1 62 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 31 63 61 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Alm"/>
-    <base hp="28" atk="10" skl="7" spd="6" lck="7" def="5" res="4"/>
-    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40"/>
+    <base hp="28" atk="10" skl="7" spd="6" lck="7" def="5" res="4" mov="0"/>
+    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40" mov="2"/>
   </character>
   <character id ="07EF94FDE3950E05" name="Lukas" block="15 02 00 07 EF 94 FD E3 95 0E 05 0F FE 1B 4A A1 75 77 6F 00 5C 96 30 02 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 81 D1 61 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Lukas"/>
-    <base hp="22" atk="10" skl="4" spd="4" lck="2" def="5" res="2"/>
-    <max hp="52" atk="40" skl="40" spd="38" lck="40" def="42" res="40"/>
+    <base hp="22" atk="10" skl="4" spd="4" lck="2" def="5" res="2" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="38" lck="40" def="42" res="40" mov="2"/>
   </character>
   <character id ="174B5327C9CF8706" name="Gray" block="15 05 00 17 4B 53 27 C9 CF 87 06 C5 1B 98 DC 57 87 88 5C 00 E7 77 88 13 00 00 00 00 00 00 00 00 18 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 81 D1 61 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Gray"/>
-    <base hp="24" atk="9" skl="4" spd="4" lck="2" def="4" res="2"/>
-    <max hp="52" atk="42" skl="39" spd="40" lck="40" def="39" res="40"/>
+    <base hp="24" atk="9" skl="4" spd="4" lck="2" def="4" res="2" mov="0"/>
+    <max hp="52" atk="42" skl="39" spd="40" lck="40" def="39" res="40" mov="2"/>
   </character>
   <character id ="BB31AC11BD5EDDFB" name="Tobin" block="15 02 00 BB 31 AC 11 BD 5E DD FB C5 1B 98 DC 57 87 88 5C 00 02 5E BD 0B 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 BA 00 00 00 2A C1 88 66 54 23 6B 39 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 82 D1 61 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Tobin"/>
-    <base hp="22" atk="7" skl="2" spd="6" lck="4" def="3" res="4"/>
-    <max hp="52" atk="39" skl="42" spd="39" lck="40" def="40" res="40"/>
+    <base hp="22" atk="7" skl="2" spd="6" lck="4" def="3" res="4" mov="0"/>
+    <max hp="52" atk="39" skl="42" spd="39" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="365C7326A87A1A06" name="Faye" block="15 01 00 A5 A7 36 27 F7 B0 79 06 C5 1B 98 DC 57 87 88 5C 00 21 F7 94 60 00 00 00 00 00 00 00 00 14 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 BE 00 00 00 92 4B EF 44 B8 B6 E9 2D 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 88 EC 61 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Faye"/>
-    <base hp="19" atk="8" skl="1" spd="2" lck="6" def="3" res="6"/>
-    <max hp="52" atk="41" skl="39" spd="40" lck="39" def="41" res="40"/>
+    <base hp="19" atk="8" skl="1" spd="2" lck="6" def="3" res="6" mov="0"/>
+    <max hp="52" atk="41" skl="39" spd="40" lck="39" def="41" res="40" mov="2"/>
   </character>
   <character id ="A5A73627F7B07906" name="Kliff" block="15 01 00 36 5C 73 26 A8 7A 1A 06 83 1A 98 DC 27 86 88 5C 00 D9 1F 90 66 00 00 00 00 00 00 00 00 13 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 B6 00 00 00 B4 71 B4 F0 EE 74 8F 10 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 54 E3 61 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Kliff"/>
-    <base hp="20" atk="7" skl="1" spd="2" lck="10" def="3" res="8"/>
-    <max hp="52" atk="40" skl="39" spd="41" lck="39" def="41" res="40"/>
+    <base hp="20" atk="7" skl="1" spd="2" lck="10" def="3" res="8" mov="0"/>
+    <max hp="52" atk="40" skl="39" spd="41" lck="39" def="41" res="40" mov="2"/>
   </character>
   <character id ="60741B289A70EA06" name="Silque" block="15 01 00 60 74 1B 28 9A 70 EA 06 69 70 5A 3B 5F 51 80 C6 00 9B 83 F3 30 00 00 00 00 00 00 00 00 12 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 0F 74 B2 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Silque"/>
-    <base hp="18" atk="8" skl="3" spd="4" lck="4" def="1" res="11"/>
-    <max hp="52" atk="40" skl="40" spd="39" lck="41" def="40" res="40"/>
+    <base hp="18" atk="8" skl="3" spd="4" lck="4" def="1" res="11" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="39" lck="41" def="40" res="40" mov="2"/>
   </character>
   <character id ="24B2362746B87906" name="Clair" block="15 01 00 24 B2 36 27 46 B8 79 06 9C 62 D7 13 50 DE 57 9C 00 C9 86 5F 51 00 00 00 00 00 00 00 00 14 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 0C 23 B4 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Clair"/>
-    <base hp="20" atk="8" skl="4" spd="7" lck="11" def="4" res="8"/>
-    <max hp="52" atk="40" skl="40" spd="41" lck="41" def="38" res="40"/>
+    <base hp="20" atk="8" skl="4" spd="7" lck="11" def="4" res="8" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="41" lck="41" def="38" res="40" mov="2"/>
   </character>
   <character id ="3B907DB3F728EC4E" name="Clive" block="15 06 00 3B 90 7D B3 F7 28 EC 4E 4A C0 58 88 5C 6D 1E BF 00 EC 25 57 37 00 00 00 00 00 00 00 00 1A FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 02 B3 89 A2 93 3B 51 E6 F6 00 8C 10 BB 8F 22 FA F4 F6 00 02 01 16 00 00 00 CD B1 57 CE A7 CC 10 6C 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 A1 26 B5 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Clive"/>
-    <base hp="26" atk="12" skl="7" spd="7" lck="6" def="7" res="1"/>
-    <max hp="52" atk="42" skl="40" spd="39" lck="40" def="39" res="40"/>
+    <base hp="26" atk="12" skl="7" spd="7" lck="6" def="7" res="1" mov="0"/>
+    <max hp="52" atk="42" skl="40" spd="39" lck="40" def="39" res="40" mov="2"/>
   </character>
   <character id ="5772CA7B27137033" name="Forsyth" block="15 04 00 57 72 CA 7B 27 13 70 33 0F FE 1B 4A A1 75 77 6F 00 D8 E1 BD 70 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 6C 13 B9 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Forsyth"/>
-    <base hp="28" atk="11" skl="4" spd="5" lck="3" def="7" res="5"/>
-    <max hp="52" atk="40" skl="39" spd="41" lck="40" def="40" res="40"/>
+    <base hp="28" atk="11" skl="4" spd="5" lck="3" def="7" res="5" mov="0"/>
+    <max hp="52" atk="40" skl="39" spd="41" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="624F88176AC0935F" name="Python" block="15 03 00 62 4F 88 17 6A C0 93 5F E3 E9 01 23 21 FF 77 26 00 0F 5B FE 5C 00 00 00 00 00 00 00 00 18 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 49 B2 C2 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Python"/>
-    <base hp="24" atk="10" skl="3" spd="4" lck="2" def="5" res="4"/>
-    <max hp="52" atk="40" skl="39" spd="42" lck="39" def="40" res="40"/>
+    <base hp="24" atk="10" skl="3" spd="4" lck="2" def="5" res="4" mov="0"/>
+    <max hp="52" atk="40" skl="39" spd="42" lck="39" def="40" res="40" mov="2"/>
   </character>
   <character id ="AF47959C9B2644CE" name="Luthier" block="15 07 00 AF 47 95 9C 9B 26 44 CE DD 0E AF B1 43 3F CF CC 00 97 E7 BA 71 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 C4 00 00 00 C8 8E B6 19 04 2B 7E DB 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 95 64 C4 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Luthier"/>
-    <base hp="28" atk="12" skl="9" spd="7" lck="2" def="5" res="8"/>
-    <max hp="52" atk="38" skl="43" spd="40" lck="40" def="39" res="40"/>
+    <base hp="28" atk="12" skl="9" spd="7" lck="2" def="5" res="8" mov="0"/>
+    <max hp="52" atk="38" skl="43" spd="40" lck="40" def="39" res="40" mov="2"/>
   </character>
   <character id ="07B0D5DE8F5CDA10" name="Mathilda" block="15 01 00 07 B0 D5 DE 8F 5C DA 10 47 A5 00 99 87 89 CB 0C 00 09 C4 CC 7F 00 00 00 00 00 00 00 00 1A FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 D5 28 C6 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Mathilda"/>
-    <base hp="26" atk="12" skl="14" spd="12" lck="13" def="7" res="10"/>
-    <max hp="52" atk="39" skl="40" spd="41" lck="41" def="39" res="40"/>
+    <base hp="26" atk="12" skl="14" spd="12" lck="13" def="7" res="10" mov="0"/>
+    <max hp="52" atk="39" skl="40" spd="41" lck="41" def="39" res="40" mov="2"/>
   </character>
   <character id ="6974020975121F44" name="Delthea" block="15 03 00 69 74 02 09 75 12 1F 44 9B 0D AF B1 13 3E CF CC 00 09 49 E0 60 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 92 00 00 00 64 01 BD 3C 4E 1A 54 AC 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 7C BF C7 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Delthea"/>
-    <base hp="22" atk="11" skl="8" spd="10" lck="15" def="3" res="15"/>
-    <max hp="52" atk="43" skl="38" spd="41" lck="40" def="37" res="40"/>
+    <base hp="22" atk="11" skl="8" spd="10" lck="15" def="3" res="15" mov="0"/>
+    <max hp="52" atk="43" skl="38" spd="41" lck="40" def="37" res="40" mov="2"/>
   </character>
   <character id ="867D31856A31A019" name="Tatiana" block="15 01 00 86 7D 31 85 6A 31 A0 19 F9 03 57 5F EB 1E CE 95 00 39 40 E8 4E 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 6C 16 C9 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Tatiana"/>
-    <base hp="28" atk="14" skl="12" spd="10" lck="2" def="3" res="18"/>
-    <max hp="52" atk="42" skl="40" spd="40" lck="37" def="41" res="40"/>
+    <base hp="28" atk="14" skl="12" spd="10" lck="2" def="3" res="18" mov="0"/>
+    <max hp="52" atk="42" skl="40" spd="40" lck="37" def="41" res="40" mov="2"/>
   </character>
   <character id ="E7D93A282DACFA06" name="Zeke" block="15 03 00 E7 D9 3A 28 2D AC FA 06 BD 41 DF 7E 33 85 F1 C6 00 2C 90 48 68 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 26 1E CA 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Zeke"/>
-    <base hp="40" atk="20" skl="13" spd="14" lck="4" def="14" res="6"/>
-    <max hp="52" atk="41" skl="40" spd="41" lck="40" def="38" res="40"/>
+    <base hp="40" atk="20" skl="13" spd="14" lck="4" def="14" res="6" mov="0"/>
+    <max hp="52" atk="41" skl="40" spd="41" lck="40" def="38" res="40" mov="2"/>
   </character>
   <character id ="E5AE9CDB35BB440F" name="Mycen" block="15 07 00 E5 AE 9C DB 35 BB 44 0F BD 41 DF 7E 33 85 F1 C6 00 A0 FD 3D 71 00 00 00 00 00 00 00 00 2C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 71 90 CB 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Mycen"/>
-    <base hp="44" atk="22" skl="14" spd="11" lck="3" def="18" res="8"/>
-    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40"/>
+    <base hp="44" atk="22" skl="14" spd="11" lck="3" def="18" res="8" mov="0"/>
+    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40" mov="2"/>
   </character>
   <character id ="C7D28D28D9CA2207" name="Celica" block="15 01 00 C7 D2 8D 28 D9 CA 22 07 27 FC DB EA 45 53 E3 63 00 8F 4A F7 13 00 00 00 00 00 00 00 00 14 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 02 75 E2 BA 8F 75 0E A4 33 00 9E 25 06 76 3E F0 F2 EA 00 02 01 0D 00 00 00 11 D2 EB 9D 4B 41 83 D5 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 DC A0 CC 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Celica"/>
-    <base hp="20" atk="8" skl="6" spd="6" lck="8" def="4" res="7"/>
-    <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40"/>
+    <base hp="20" atk="8" skl="6" spd="6" lck="8" def="4" res="7" mov="0"/>
+    <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40" mov="2"/>
   </character>
   <character id ="86B994FD52700E05" name="Mae" block="15 01 00 86 B9 94 FD 52 70 0E 05 9B 0D AF B1 13 3E CF CC 00 40 39 12 1F 00 00 00 00 00 00 00 00 14 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 C8 00 00 00 49 C7 27 6B 9B 6D A1 CB 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 B5 EF CD 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Mae"/>
-    <base hp="20" atk="9" skl="1" spd="7" lck="5" def="2" res="10"/>
-    <max hp="52" atk="42" skl="40" spd="40" lck="40" def="38" res="40"/>
+    <base hp="20" atk="9" skl="1" spd="7" lck="5" def="2" res="10" mov="0"/>
+    <max hp="52" atk="42" skl="40" spd="40" lck="40" def="38" res="40" mov="2"/>
   </character>
   <character id ="C05B402C46FAF508" name="Boey" block="15 01 00 C0 5B 40 2C 46 FA F5 08 DD 0E AF B1 43 3F CF CC 00 7E 13 F7 33 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 B0 00 00 00 16 43 0B AB 3C CA 52 5C 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 7B 24 CF 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Boey"/>
-    <base hp="22" atk="8" skl="2" spd="4" lck="9" def="4" res="7"/>
-    <max hp="52" atk="40" skl="41" spd="40" lck="39" def="40" res="40"/>
+    <base hp="22" atk="8" skl="2" spd="4" lck="9" def="4" res="7" mov="0"/>
+    <max hp="52" atk="40" skl="41" spd="40" lck="39" def="40" res="40" mov="2"/>
   </character>
   <character id ="F071A328AC724235" name="Genny" block="15 01 00 F0 71 A3 28 AC 72 42 35 69 70 5A 3B 5F 51 80 C6 00 5D 28 39 2D 00 00 00 00 00 00 00 00 12 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 C6 00 00 00 AD 51 88 69 AD BB 76 FE 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 B0 1C E6 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Genny"/>
-    <base hp="18" atk="7" skl="2" spd="5" lck="7" def="1" res="13"/>
-    <max hp="52" atk="41" skl="41" spd="39" lck="40" def="39" res="40"/>
+    <base hp="18" atk="7" skl="2" spd="5" lck="7" def="1" res="13" mov="0"/>
+    <max hp="52" atk="41" skl="41" spd="39" lck="40" def="39" res="40" mov="2"/>
   </character>
   <character id ="238581ED8B73B3D1" name="Saber" block="15 01 00 23 85 81 ED 8B 73 B3 D1 5A 40 29 08 62 B1 04 70 00 47 AC B3 04 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 A4 8F E9 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Saber"/>
-    <base hp="22" atk="9" skl="9" spd="10" lck="6" def="4" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="39" def="41" res="40"/>
+    <base hp="22" atk="9" skl="9" spd="10" lck="6" def="4" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="39" def="41" res="40" mov="2"/>
   </character>
   <character id ="1664E62A60BC4A08" name="Valbar" block="15 01 00 16 64 E6 2A 60 BC 4A 08 A6 12 F3 C2 1E 68 88 6D 00 A8 5D 65 0A 00 00 00 00 00 00 00 00 1E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 D2 A9 EA 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Valbar"/>
-    <base hp="30" atk="14" skl="5" spd="2" lck="1" def="12" res="0"/>
-    <max hp="52" atk="41" skl="40" spd="38" lck="38" def="42" res="40"/>
+    <base hp="30" atk="14" skl="5" spd="2" lck="1" def="12" res="0" mov="0"/>
+    <max hp="52" atk="41" skl="40" spd="38" lck="38" def="42" res="40" mov="2"/>
   </character>
   <character id ="360EC426382D4106" name="Kamui" block="15 03 00 36 0E C4 26 38 2D 41 06 5A 40 29 08 62 B1 04 70 00 79 C3 02 01 00 00 00 00 00 00 00 00 18 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 0A 96 ED 59 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Kamui"/>
-    <base hp="24" atk="10" skl="5" spd="8" lck="2" def="6" res="2"/>
-    <max hp="52" atk="41" skl="39" spd="41" lck="39" def="40" res="40"/>
+    <base hp="24" atk="10" skl="5" spd="8" lck="2" def="6" res="2" mov="0"/>
+    <max hp="52" atk="41" skl="39" spd="41" lck="39" def="40" res="40" mov="2"/>
   </character>
   <character id ="5FF494FDA3990E05" name="Leon" block="15 04 00 5F F4 94 FD A3 99 0E 05 E3 E9 01 23 21 FF 77 26 00 C4 68 1D 65 00 00 00 00 00 00 00 00 17 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 01 2E DA 10 2B 2A AE 16 05 00 02 01 26 00 00 00 4C D4 8F E2 F6 1C 0C 74 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 A7 3E 13 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Leon"/>
-    <base hp="23" atk="11" skl="5" spd="6" lck="5" def="4" res="1"/>
-    <max hp="52" atk="39" skl="42" spd="40" lck="40" def="39" res="40"/>
+    <base hp="23" atk="11" skl="5" spd="6" lck="5" def="4" res="1" mov="0"/>
+    <max hp="52" atk="39" skl="42" spd="40" lck="40" def="39" res="40" mov="2"/>
   </character>
   <character id ="23F4062B2D9C5B08" name="Palla" block="15 08 00 23 F4 06 2B 2D 9C 5B 08 9C 62 D7 13 50 DE 57 9C 00 B4 31 D5 7C 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 18 00 00 00 2D D5 F1 C1 DB 5F A0 65 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 3C 2F 17 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Palla"/>
-    <base hp="28" atk="12" skl="9" spd="10" lck="4" def="6" res="5"/>
-    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="40" res="40"/>
+    <base hp="28" atk="12" skl="9" spd="10" lck="4" def="6" res="5" mov="0"/>
+    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="40" res="40" mov="2"/>
   </character>
   <character id ="C8C77167F877FC86" name="Catria" block="15 05 00 C8 C7 71 67 F8 77 FC 86 9C 62 D7 13 50 DE 57 9C 00 9B BB FD 5C 00 00 00 00 00 00 00 00 18 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 8F 00 00 00 EF 63 70 F3 09 13 AC AF 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 C8 6A 18 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Catria"/>
-    <base hp="24" atk="11" skl="12" spd="12" lck="12" def="5" res="9"/>
-    <max hp="52" atk="40" skl="41" spd="41" lck="39" def="39" res="40"/>
+    <base hp="24" atk="11" skl="12" spd="12" lck="12" def="5" res="9" mov="0"/>
+    <max hp="52" atk="40" skl="41" spd="41" lck="39" def="39" res="40" mov="2"/>
   </character>
   <character id ="C924DD07511647AB" name="Atlas" block="15 0A 00 C9 24 DD 07 51 16 47 AB C5 1B 98 DC 57 87 88 5C 00 76 A2 73 4B 00 00 00 00 00 00 00 00 1E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 56 E3 19 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Atlas"/>
-    <base hp="30" atk="14" skl="3" spd="3" lck="4" def="5" res="4"/>
-    <max hp="52" atk="42" skl="40" spd="39" lck="40" def="39" res="40"/>
+    <base hp="30" atk="14" skl="3" spd="3" lck="4" def="5" res="4" mov="0"/>
+    <max hp="52" atk="42" skl="40" spd="39" lck="40" def="39" res="40" mov="2"/>
   </character>
   <character id ="FC06A32898274235" name="Jesse" block="15 06 00 FC 06 A3 28 98 27 42 35 5A 40 29 08 62 B1 04 70 00 94 A8 26 45 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 10 5A 1B 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Jesse"/>
-    <base hp="28" atk="11" skl="10" spd="12" lck="9" def="5" res="7"/>
-    <max hp="52" atk="39" skl="40" spd="40" lck="43" def="39" res="40"/>
+    <base hp="28" atk="11" skl="10" spd="12" lck="9" def="5" res="7" mov="0"/>
+    <max hp="52" atk="39" skl="40" spd="40" lck="43" def="39" res="40" mov="2"/>
   </character>
   <character id ="80B2CB28B2424207" name="Sonya" block="15 05 00 80 B2 CB 28 B2 42 42 07 9B 0D AF B1 13 3E CF CC 00 15 79 2B 10 00 00 00 00 00 00 00 00 18 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 01 B4 85 44 75 BE A9 45 8D 00 02 01 83 00 00 00 81 B1 57 CE 67 CC 10 6C 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 88 40 1C 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Sonya"/>
-    <base hp="24" atk="13" skl="11" spd="12" lck="4" def="5" res="12"/>
-    <max hp="52" atk="41" skl="42" spd="39" lck="38" def="40" res="40"/>
+    <base hp="24" atk="13" skl="11" spd="12" lck="4" def="5" res="12" mov="0"/>
+    <max hp="52" atk="41" skl="42" spd="39" lck="38" def="40" res="40" mov="2"/>
   </character>
   <character id ="845D1F1EE06B864E" name="Deen" block="15 05 00 84 5D 1F 1E E0 6B 86 4E 66 F4 C9 C3 9A 01 F6 51 00 E8 29 BB 21 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 02 74 A3 52 C3 EA D1 B2 4D 00 BD 8A A2 93 09 52 E6 F6 00 02 01 06 00 00 00 20 18 E4 D1 60 27 2E 71 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 E5 12 1F 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Deen"/>
-    <base hp="32" atk="13" skl="17" spd="17" lck="6" def="9" res="4"/>
-    <max hp="52" atk="41" skl="40" spd="39" lck="38" def="41" res="40"/>
+    <base hp="32" atk="13" skl="17" spd="17" lck="6" def="9" res="4" mov="0"/>
+    <max hp="52" atk="41" skl="40" spd="39" lck="38" def="41" res="40" mov="2"/>
   </character>
   <character id ="9FC67226B1111A06" name="Est" block="15 03 00 9F C6 72 26 B1 11 1A 06 9C 62 D7 13 50 DE 57 9C 00 BB 5F 8D 77 00 00 00 00 00 00 00 00 14 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 7F 2B 22 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Est"/>
-    <base hp="20" atk="9" skl="5" spd="11" lck="5" def="4" res="12"/>
-    <max hp="52" atk="41" skl="40" spd="39" lck="41" def="39" res="40"/>
+    <base hp="20" atk="9" skl="5" spd="11" lck="5" def="4" res="12" mov="0"/>
+    <max hp="52" atk="41" skl="40" spd="39" lck="41" def="39" res="40" mov="2"/>
   </character>
   <character id ="CCFEAF2A72B13008" name="Nomah" block="15 07 00 CC FE AF 2A 72 B1 30 08 39 DC 3B C6 D5 C0 29 53 00 D6 3B 1F 07 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 CE 2A 23 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Nomah"/>
-    <base hp="28" atk="12" skl="16" spd="8" lck="1" def="6" res="14"/>
-    <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40"/>
+    <base hp="28" atk="12" skl="16" spd="8" lck="1" def="6" res="14" mov="0"/>
+    <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40" mov="2"/>
   </character>
   <character id ="0544223A1727BCFF" name="Conrad" block="15 07 00 05 44 22 3A 17 27 BC FF 89 A6 00 99 B7 8A CB 0C 00 F1 19 37 4C 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 1A 00 00 00 30 1F 6C 44 A4 E0 16 97 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 7D 62 27 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Conrad"/>
-    <base hp="32" atk="15" skl="18" spd="16" lck="8" def="10" res="12"/>
-    <max hp="52" atk="37" skl="43" spd="39" lck="39" def="42" res="40"/>
+    <base hp="32" atk="15" skl="18" spd="16" lck="8" def="10" res="12" mov="0"/>
+    <max hp="52" atk="37" skl="43" spd="39" lck="39" def="42" res="40" mov="2"/>
   </character>
   <!--DLC Characters-->
   <character id ="96DC98FDD2571105" name="Emma" block="15 01 00 96 DC 98 FD D2 57 11 05 D7 42 65 C1 A1 94 D8 9A 00 DA 32 E0 26 00 00 00 00 00 00 00 00 1F FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 01 13 06 49 D0 3B D0 FE 00 00 02 01 9F 01 00 08 F6 9D F3 90 EE EF 7E 4E 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 97 B7 AE 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Emma"/>
-    <base hp="31" atk="11" skl="12" spd="13" lck="13" def="8" res="14"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="31" atk="11" skl="12" spd="13" lck="13" def="8" res="14" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="452635116FBCA1FB" name="Randal" block="15 05 00 45 26 35 11 6F BC A1 FB 89 A6 00 99 B7 8A CB 0C 00 0B FD D8 0E 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 01 BA A5 F5 73 18 0B E6 47 00 02 01 A0 01 00 08 C0 40 31 7E 1A 99 91 E6 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 06 B9 AE 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Randal"/>
-    <base hp="32" atk="13" skl="15" spd="15" lck="3" def="9" res="7"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="32" atk="13" skl="15" spd="15" lck="3" def="9" res="7" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="59D494FD2D830E05" name="Yuzu" block="15 01 00 59 D4 94 FD 2D 83 0E 05 20 FD DB EA F6 53 E3 63 00 6A F2 18 4F 00 00 00 00 00 00 00 00 1A FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 01 A6 0C ED 80 16 D6 70 1D 00 02 01 A1 01 00 08 8D 66 69 96 85 BD 87 46 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 1E 35 B6 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Yuzu"/>
-    <base hp="26" atk="15" skl="13" spd="16" lck="9" def="7" res="9"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="26" atk="15" skl="13" spd="16" lck="9" def="7" res="9" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="EFC0B48F4FA55B00" name="Shade" block="15 03 00 EF C0 B4 8F 4F A5 5B 00 F9 03 57 5F EB 1E CE 95 00 48 14 F8 18 00 00 00 00 00 00 00 00 1E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 84 38 B6 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Shade"/>
-    <base hp="30" atk="12" skl="11" spd="11" lck="7" def="8" res="13"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="30" atk="12" skl="11" spd="11" lck="7" def="8" res="13" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <!--Begin Chars that are normally inaccessable in the main game-->
   <!--Prologue Chars-->
   <character id ="1BE8A267613B1336" name="Alm (Child)" block="15 01 00 1B E8 A2 67 61 3B 13 36 F7 F9 9A E4 49 83 77 61 00 A4 5A F1 4F 00 00 00 00 00 00 00 00 12 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B D4 9F 8D 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Alm (Child)"/>
-    <base hp="18" atk="6" skl="4" spd="3" lck="7" def="3" res="4"/>
-    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40"/>
+    <base hp="18" atk="6" skl="4" spd="3" lck="7" def="3" res="4" mov="0"/>
+    <max hp="52" atk="41" skl="41" spd="39" lck="39" def="41" res="40" mov="2"/>
   </character>
   <character id ="15D36D6A03847337" name="Celica (Child)" block="15 01 00 15 D3 6D 6A 03 84 73 37 B5 F8 9A E4 19 82 77 61 00 3D 39 31 2B 00 00 00 00 00 00 00 00 0F FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 02 75 E2 BA 8F 75 0E A4 33 00 9E 25 06 76 3E F0 F2 EA 00 02 01 0D 00 00 00 11 D2 EB 9D 4B 41 83 D5 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 9A 37 8E 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Celica (Child)"/>
-    <base hp="15" atk="4" skl="5" spd="4" lck="8" def="2" res="7"/>
-    <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40"/>
+    <base hp="15" atk="4" skl="5" spd="4" lck="8" def="2" res="7" mov="0"/>
+    <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40" mov="2"/>
   </character>
   <character id ="15D36D6A03847337" name="Gray (Child)" block="15 01 00 65 4B 33 69 F3 88 D8 36 F7 F9 9A E4 49 83 77 61 00 E9 4E 50 2E 00 00 00 00 00 00 00 00 11 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 7F 31 90 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Gray (Child)"/>
-    <base hp="17" atk="4" skl="3" spd="43" lck="2" def="3" res="2"/>
-    <max hp="52" atk="42" skl="39" spd="40" lck="40" def="39" res="40"/>
+    <base hp="17" atk="4" skl="3" spd="43" lck="2" def="3" res="2" mov="0"/>
+    <max hp="52" atk="42" skl="39" spd="40" lck="40" def="39" res="40" mov="2"/>
   </character>
   <character id ="09328C53E7172E2C" name="Tobin (Child)" block="15 01 00 09 32 8C 53 E7 17 2E 2C F7 F9 9A E4 49 83 77 61 00 B6 32 81 15 00 00 00 00 00 00 00 00 10 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 96 01 91 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Tobin (Child)"/>
-    <base hp="16" atk="5" skl="2" spd="4" lck="4" def="2" res="4"/>
-    <max hp="52" atk="39" skl="42" spd="39" lck="40" def="40" res="40"/>
+    <base hp="16" atk="5" skl="2" spd="4" lck="4" def="2" res="4" mov="0"/>
+    <max hp="52" atk="39" skl="42" spd="39" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="F3A71669216ACA36" name="Kliff (Child)" block="15 01 00 F3 A7 16 69 21 6A CA 36 F7 F9 9A E4 49 83 77 61 00 D8 6E 60 50 00 00 00 00 00 00 00 00 10 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 18 AC 91 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Kliff (Child)"/>
-    <base hp="16" atk="5" skl="1" spd="2" lck="10" def="2" res="8"/>
-    <max hp="52" atk="40" skl="39" spd="41" lck="39" def="41" res="40"/>
+    <base hp="16" atk="5" skl="1" spd="2" lck="10" def="2" res="8" mov="0"/>
+    <max hp="52" atk="40" skl="39" spd="41" lck="39" def="41" res="40" mov="2"/>
   </character>
   <character id ="845C5368D2336B36" name="Faye (Child)" block="15 01 00 84 5C 53 68 D2 33 6B 36 B5 F8 9A E4 19 82 77 61 00 38 5D 3A 72 00 00 00 00 00 00 00 00 0E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 5B CE 92 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Faye (Child)"/>
-    <base hp="14" atk="4" skl="1" spd="2" lck="6" def="2" res="6"/>
-    <max hp="52" atk="41" skl="39" spd="40" lck="39" def="41" res="40"/>
+    <base hp="14" atk="4" skl="1" spd="2" lck="6" def="2" res="6" mov="0"/>
+    <max hp="52" atk="41" skl="39" spd="40" lck="39" def="41" res="40" mov="2"/>
   </character>
   <!--amiibo-->
   <character id ="D59DC046F1672D1E" name="Marth (amiibo)" block="15 01 00 D5 9D C0 46 F1 67 2D 1E 97 42 C3 40 37 AE FA D2 00 53 5F 7C 11 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 30 00 00 00 14 1E 9F 96 B2 D2 0A 40 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B DF 29 95 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Marth (amiibo)"/>
-    <base hp="32" atk="15" skl="16" spd="15" lck="12" def="10" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="32" atk="15" skl="16" spd="15" lck="12" def="10" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="479D10406398E21A" name="Ike (amiibo)" block="15 01 00 47 9D 10 40 63 98 E2 1A 09 42 13 3A A9 DE AF CF 00 D9 13 0F 31 00 00 00 00 00 00 00 00 24 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 32 00 00 00 2C E2 18 54 3E 19 A2 6E 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B BB 8F 9E 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Ike (amiibo)"/>
-    <base hp="36" atk="17" skl="11" spd="9" lck="7" def="16" res="2"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="36" atk="17" skl="11" spd="9" lck="7" def="16" res="2" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="2D12BC2B9104DE10" name="Lucina (amiibo)" block="15 01 00 2D 12 BC 2B 91 04 DE 10 EF B6 BE 25 D7 4A AB C5 00 9A D2 7F 64 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 31 00 00 00 F8 92 4A 66 4C 9D 53 60 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 21 76 A1 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Lucina (amiibo)"/>
-    <base hp="28" atk="12" skl="15" spd="17" lck="11" def="7" res="10"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="28" atk="12" skl="15" spd="17" lck="11" def="7" res="10" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="38E7BC2BDC99DE10" name="Robin (amiibo)" block="15 01 00 38 E7 BC 2B DC 99 DE 10 FA 8B BF 25 22 E0 AB C5 00 08 E3 30 69 00 00 00 00 00 00 00 00 1D FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B F2 A7 A4 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Robin (amiibo)"/>
-    <base hp="29" atk="13" skl="12" spd="10" lck="3" def="8" res="7"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="29" atk="13" skl="12" spd="10" lck="3" def="8" res="7" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="8601B504847150A3" name="Roy (amiibo)" block="15 01 00 86 01 B5 04 84 71 50 A3 18 5A 06 A4 4A 91 26 75 00 BA BF 45 1A 00 00 00 00 00 00 00 00 22 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 33 00 00 00 E9 A9 79 64 D9 04 B7 3A 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 48 E2 A5 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Roy (amiibo)"/>
-    <base hp="34" atk="16" skl="12" spd="11" lck="6" def="11" res="4"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="34" atk="16" skl="12" spd="11" lck="6" def="11" res="4" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="DE2D6DE37603FABD" name="Corrin (M) (amiibo)" block="15 01 00 DE 2D 6D E3 76 03 FA BD 50 3F 90 DB 3C D0 8E 74 00 F0 F6 1D 53 00 00 00 00 00 00 00 00 1F FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 34 00 00 00 37 64 2A E3 AB 8C 5B 73 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 87 2E A8 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Corrin (M) (amiibo)"/>
-    <base hp="31" atk="14" skl="15" spd="12" lck="9" def="8" res="3"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="31" atk="14" skl="15" spd="12" lck="9" def="8" res="3" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="9C2C6DE34602FABD" name="Corrin (F) (amiibo)" block="15 01 00 9C 2C 6D E3 46 02 FA BD 0E 3E 90 DB 0C CF 8E 74 00 0B 05 EC 49 00 00 00 00 00 00 00 00 1E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 01 34 00 00 00 37 64 2A E3 AB 8C 5B 73 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 97 AD A9 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Corrin (F) (amiibo)"/>
-    <base hp="30" atk="15" skl="13" spd="14" lck="8" def="7" res="5"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="30" atk="15" skl="13" spd="14" lck="8" def="7" res="5" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <!--Boss Characters-->
   <character id ="1CA3034A2E615B32" name="Berkut (Boss)" block="15 01 00 1C A3 03 4A 2E 61 5B 32 89 A6 00 99 B7 8A CB 0C 00 72 FF B9 42 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B F9 2E 94 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Berkut (Boss)"/>
-    <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="32" atk="14" skl="7" spd="9" lck="5" def="10" res="4" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="CEAD034AB0685B32" name="Berkut (Duma)" block="15 12 00 CE AD 03 4A B0 68 5B 32 BD 41 DF 7E 33 85 F1 C6 00 BD 6D 6C 41 00 00 00 00 00 00 00 00 34 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B D8 34 89 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Berkut (Duma)"/>
-    <base hp="52" atk="24" skl="16" spd="15" lck="0" def="18" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="52" atk="24" skl="16" spd="15" lck="0" def="18" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="906B2A5466B25817" name="Brigand Boss" block="15 02 00 90 6B 2A 54 66 B2 58 17 0D 0D 28 E0 4D 0C A0 5D 00 F6 8D 3B 34 00 00 00 00 00 00 00 00 1D FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 63 CF 28 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Brigand Boss"/>
-    <base hp="29" atk="8" skl="1" spd="2" lck="0" def="2" res="0"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="29" atk="8" skl="1" spd="2" lck="0" def="2" res="0" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="6DC3B630776D9E51" name="Fernand (Boss)" block="15 05 00 6C C3 B6 30 76 6D 9E 51 4A C0 58 88 5C 6D 1E BF 00 90 72 B1 5E 00 00 00 00 00 00 00 00 19 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B F7 6D 93 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Fernand (Boss)"/>
-    <base hp="25" atk="10" skl="7" spd="7" lck="2" def="6" res="5"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="25" atk="10" skl="7" spd="7" lck="2" def="6" res="5" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="658D222A4B24EB07" name="Desaix" block="15 01 00 65 8D 22 2A 4B 24 EB 07 F6 DB 92 09 58 FF 7B F2 00 4D 6C 56 29 00 00 00 00 00 00 00 00 2A FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 EE D1 29 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Desaix"/>
-    <base hp="40" atk="22" skl="6" spd="4" lck="0" def="18" res="7"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="40" atk="22" skl="6" spd="4" lck="0" def="18" res="7" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="87E01C272DC16D06" name="Grieth" block="15 01 00 87 E0 1C 27 2D C1 6D 06 52 CF 17 AB 9A 7B 8D CA 00 17 D3 D9 68 00 00 00 00 00 00 00 00 24 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B E7 06 75 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Grieth"/>
-    <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="52351E2AAC17E807" name="Dolth" block="15 01 00 52 35 1E 2A AC 17 E8 07 90 37 EF A1 18 C2 96 D4 00 45 BC 9A 0D 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B B0 EE 7E 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Dolth"/>
-    <base hp="42" atk="17" skl="12" spd="12" lck="0" def="10" res="9"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="42" atk="17" skl="12" spd="12" lck="0" def="10" res="9" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="EC51E31A54E01457" name="Nuibaba" block="15 01 00 EC 51 E3 1A 54 E0 14 57 08 81 5A 5F AE 0A D0 95 00 D5 2A A2 17 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 26 CF 78 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Nuibaba"/>
-    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="83E159B6DF9F36C2" name="Rudolf" block="15 14 00 83 E1 59 B6 DF 9F 36 C2 BD 41 DF 7E 33 85 F1 C6 00 BE B5 02 51 00 00 00 00 00 00 00 00 34 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 65 01 6E 63 B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Rudolf"/>
-    <base hp="52" atk="30" skl="26" spd="24" lck="13" def="25" res="16"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="52" atk="30" skl="26" spd="24" lck="13" def="25" res="16" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="4CED3728A671F806" name="Jedah" block="15 14 00 4C ED 37 28 A6 71 F8 06 90 37 EF A1 18 C2 96 D4 00 C1 DF 12 79 00 00 00 00 00 00 00 00 34 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 7C 84 80 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Jedah"/>
-    <base hp="52" atk="21" skl="17" spd="16" lck="0" def="15" res="9"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="52" atk="21" skl="17" spd="16" lck="0" def="15" res="9" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="552AF4DC7D0DEE0F" name="Magnus" block="15 01 00 55 2A F4 DC 7D 0D EE 0F F6 DB 92 09 58 FF 7B F2 00 11 37 C4 16 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B E5 04 7B 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Magnus"/>
-    <base hp="51" atk="27" skl="11" spd="7" lck="0" def="23" res="7"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="51" atk="27" skl="11" spd="7" lck="0" def="23" res="7" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="D2315C39AC1D46E2" name="Jerome" block="15 01 00 D2 31 5C 39 AC 1D 46 E2 BD 41 DF 7E 33 85 F1 C6 00 61 84 3D 6C 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B F2 74 79 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Jerome"/>
-    <base hp="45" atk="20" skl="9" spd="14" lck="0" def="15" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="45" atk="20" skl="9" spd="14" lck="0" def="15" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="1DA045B06B680B9F" name="Mueller" block="15 01 00 1D A0 45 B0 6B 68 0B 9F 38 B6 28 F2 D6 A2 A4 F3 00 68 F6 75 75 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 16 C2 7C 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Mueller"/>
-    <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="E88C792C8E281209" name="Marla (Act 4)" block="15 01 00 E8 8C 79 2C 8E 28 12 09 08 81 5A 5F AE 0A D0 95 00 8B 45 8A 37 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 8A E2 77 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Marla (Act 4)"/>
-    <base hp="28" atk="14" skl="14" spd="10" lck="0" def="6" res="14"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="28" atk="14" skl="14" spd="10" lck="0" def="6" res="14" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="4EB417733E18576B" name="Marla (Act 5)" block="15 01 00 4E B4 17 73 3E 18 57 6B 08 81 5A 5F AE 0A D0 95 00 A9 86 91 68 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 3C BB 8A 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Marla (Act 5)"/>
-    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="7EA30429F0435E07" name="Tatarrah" block="15 01 00 7E A3 04 29 F0 43 5E 07 BE 0B FA D1 86 40 30 EB 00 F9 0C F0 46 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 5B 12 71 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Tatarrah"/>
-    <base hp="39" atk="13" skl="9" spd="9" lck="0" def="10" res="8"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="39" atk="13" skl="9" spd="9" lck="0" def="10" res="8" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="8FFE1D8A89ECEC7E" name="Delthea (Witch)" block="15 01 00 8F FE 1D 8A 89 EC EC 7E 9B 0D AF B1 13 3E CF CC 00 9A 08 C3 44 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 82 F4 71 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Delthea (Witch)"/>
-    <base hp="24" atk="11" skl="13" spd="9" lck="5" def="5" res="14"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="24" atk="11" skl="13" spd="9" lck="5" def="5" res="14" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="CB5CDB12EBD5862A" name="Jamil" block="15 01 00 CB 5C DB 12 EB D5 86 2A BE 0B FA D1 86 40 30 EB 00 28 CD 06 57 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B F8 CA 7F 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Jamil"/>
-    <base hp="47" atk="17" skl="13" spd="13" lck="0" def="14" res="8"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="47" atk="17" skl="13" spd="13" lck="0" def="14" res="8" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="9239E5261C7A5206" name="Gazelle" block="15 01 00 92 39 E5 26 1C 7A 52 06 38 B6 28 F2 D6 A2 A4 F3 00 C5 8D 19 4F 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B BF 33 70 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Gazelle"/>
-    <base hp="40" atk="16" skl="8" spd="8" lck="0" def="10" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="40" atk="16" skl="8" spd="8" lck="0" def="10" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="8A2CACF71A83E6CB" name="Zakson" block="15 01 00 8A 2C AC F7 1A 83 E6 CB A6 12 F3 C2 1E 68 88 6D 00 10 2D D9 4B 00 00 00 00 00 00 00 00 22 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B A3 56 6E 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Zakson"/>
-    <base hp="39" atk="18" skl="4" spd="4" lck="0" def="14" res="1"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="39" atk="18" skl="4" spd="4" lck="0" def="14" res="1" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="AE4FF400882D4911" name="Slayde" block="15 01 00 AE 4F F4 00 88 2D 49 11 89 A6 00 99 B7 8A CB 0C 00 3A 33 E9 57 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 22 B2 2A 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Slayde"/>
-    <base hp="28" atk="12" skl="5" spd="8" lck="0" def="8" res="5"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="28" atk="12" skl="5" spd="8" lck="0" def="8" res="5" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="A0585275A0538D44" name="Mikhail" block="15 01 00 A0 58 52 75 A0 53 8D 44 90 37 EF A1 18 C2 96 D4 00 98 18 A0 7B 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 41 72 76 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Mikhail"/>
-    <base hp="36" atk="14" skl="10" spd="9" lck="0" def="8" res="9"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="36" atk="14" skl="10" spd="9" lck="0" def="8" res="9" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="151E0477A1B85575" name="Lawson" block="15 01 00 15 1E 04 77 A1 B8 55 75 89 A6 00 99 B7 8A CB 0C 00 22 14 F7 51 00 00 00 00 00 00 00 00 1E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 94 51 6F 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Lawson"/>
-    <base hp="35" atk="14" skl="7" spd="10" lck="0" def="10" res="5"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="35" atk="14" skl="7" spd="10" lck="0" def="10" res="5" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="B85221295A6B6C07" name="Barth" block="15 01 00 B8 52 21 29 5A 6B 6C 07 0D 0D 28 E0 4D 0C A0 5D 00 A7 40 E5 23 00 00 00 00 00 00 00 00 1A FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 D5 AD 2C 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Barth"/>
-    <base hp="37" atk="11" skl="5" spd="6" lck="0" def="6" res="1"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="37" atk="11" skl="5" spd="6" lck="0" def="6" res="1" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="E45FE52646955206" name="Garth" block="15 01 00 E4 5F E5 26 46 95 52 06 0D 0D 28 E0 4D 0C A0 5D 00 24 52 7C 2D 00 00 00 00 00 00 00 00 1A FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B EF 36 73 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Garth"/>
-    <base hp="37" atk="11" skl="5" spd="6" lck="0" def="6" res="1"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="37" atk="11" skl="5" spd="6" lck="0" def="6" res="1" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="D2EE912BAC419F08" name="Blake" block="15 01 00 D2 EE 91 2B AC 41 9F 08 66 F4 C9 C3 9A 01 F6 51 00 4E 91 02 34 00 00 00 00 00 00 00 00 1E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 13 C4 75 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Blake"/>
-    <base hp="30" atk="11" skl="11" spd="14" lck="0" def="7" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="30" atk="11" skl="11" spd="14" lck="0" def="7" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="8C2D1E6854322B7D" name="Wolff" block="15 01 00 8C 2D 1E 68 54 32 2B 7D B2 8F 72 B8 D4 0E 4C 9A 00 EB 95 08 2E 00 00 00 00 00 00 00 00 1E FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B E6 1C 74 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Wolff"/>
-    <base hp="32" atk="13" skl="7" spd="7" lck="0" def="7" res="2"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="32" atk="13" skl="7" spd="7" lck="0" def="7" res="2" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="B5C598E875352CB0" name="Garcia" block="15 01 00 B5 C5 98 E8 75 35 2C B0 90 37 EF A1 18 C2 96 D4 00 38 B7 A0 42 00 00 00 00 00 00 00 00 20 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 71 53 7E 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Garcia"/>
-    <base hp="36" atk="14" skl="10" spd="9" lck="0" def="8" res="9"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="36" atk="14" skl="10" spd="9" lck="0" def="8" res="9" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="CD73CF2BDF79BE08" name="Hestia (Act 4)" block="15 01 00 CD 73 CF 2B DF 79 BE 08 08 81 5A 5F AE 0A D0 95 00 5F 8E 07 73 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 2A D1 7B 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Hestia (Act 4)"/>
-    <base hp="31" atk="16" skl="15" spd="11" lck="0" def="7" res="14"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="31" atk="16" skl="15" spd="11" lck="0" def="7" res="14" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="E3091A150F59E82E" name="Hestia (Act 5)" block="15 01 00 E3 09 1A 15 0F 59 E8 2E 08 81 5A 5F AE 0A D0 95 00 A4 36 D1 0C 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B AA 56 8B 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Hestia (Act 5)"/>
-    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="37" atk="20" skl="17" spd="14" lck="0" def="10" res="14" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="3DBF835D99496596" name="Xaizor" block="15 01 00 3D BF 83 5D 99 49 65 96 52 CF 17 AB 9A 7B 8D CA 00 CA 6D ED 11 00 00 00 00 00 00 00 00 24 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 7F 27 77 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Xaizor"/>
-    <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="36" atk="15" skl="16" spd="18" lck="0" def="11" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="6495E526D6BA5206" name="Gharn" block="15 01 00 64 95 E5 26 D6 BA 52 06 BE 0B FA D1 86 40 30 EB 00 26 80 E1 68 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 3C DE 83 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Gharn"/>
-    <base hp="47" atk="17" skl="13" spd="13" lck="0" def="14" res="8"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="47" atk="17" skl="13" spd="13" lck="0" def="14" res="8" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="B79CFBBE2B7D645F" name="Aurum" block="15 01 00 B7 9C FB BE 2B 7D 64 5F 38 B6 28 F2 D6 A2 A4 F3 00 B4 55 EC 66 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 3B A8 82 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Aurum"/>
-    <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="D9F3D17AF51E11F6" name="Argentum" block="15 01 00 D9 F3 D1 7A F5 1E 11 F6 38 B6 28 F2 D6 A2 A4 F3 00 CC AB E2 07 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B D1 29 83 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Argentum"/>
-    <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="51" atk="21" skl="13" spd="11" lck="0" def="13" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="16F7EA2A58F24D08" name="Hades" block="15 01 00 16 F7 EA 2A 58 F2 4D 08 BD 41 DF 7E 33 85 F1 C6 00 96 39 E8 25 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 9A 95 88 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Hades"/>
-    <base hp="51" atk="23" skl="12" spd="17" lck="0" def="18" res="7"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="51" atk="23" skl="12" spd="17" lck="0" def="18" res="7" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="8BDF3EE573DDABB8" name="Cerberus" block="15 01 00 8B DF 3E E5 73 DD AB B8 52 CF 17 AB 9A 7B 8D CA 00 48 EA 03 33 00 00 00 00 00 00 00 00 24 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 89 CA 86 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Cerberus"/>
-    <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="E71065CAAFA9A1FC" name="Naberius" block="15 01 00 E7 10 65 CA AF A9 A1 FC 52 CF 17 AB 9A 7B 8D CA 00 69 58 C6 37 00 00 00 00 00 00 00 00 24 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 1C 7E 87 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Naberius"/>
-    <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="47" atk="20" skl="21" spd="23" lck="0" def="14" res="6" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="804756116202B3FB" name="Rinea" block="15 11 00 80 47 56 11 62 02 B3 FB 08 81 5A 5F AE 0A D0 95 00 72 9E 11 6D 00 00 00 00 00 00 00 00 28 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B EB 17 8A 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Rinea"/>
-    <base hp="40" atk="20" skl="19" spd="16" lck="0" def="10" res="16"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="40" atk="20" skl="19" spd="16" lck="0" def="10" res="16" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="1702212AED3BEA07" name="Duma" block="15 1E 00 17 02 21 2A ED 3B EA 07 9A 19 56 5F B2 A7 CD 95 00 AC BE 4C 3E 00 00 00 00 00 00 00 00 B6 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 56 9B 81 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Duma"/>
-    <base hp="182" atk="30" skl="10" spd="10" lck="0" def="20" res="20"/>
-    <max hp="200" atk="32" skl="15" spd="10" lck="0" def="20" res="20"/>
+    <base hp="182" atk="30" skl="10" spd="10" lck="0" def="20" res="20" mov="0"/>
+    <max hp="200" atk="32" skl="15" spd="10" lck="0" def="20" res="20" mov="2"/>
   </character>
   <character id ="82BC3519FEB25A19" name="The Creation" block="15 14 00 82 BC 35 19 FE B2 5A 19 F1 19 56 5F DF A7 CD 95 00 06 A3 F2 2E 00 00 00 00 00 00 00 00 B4 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 1C 5D 8C 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="The Creation"/>
-    <base hp="180" atk="20" skl="20" spd="20" lck="0" def="15" res="15"/>
-    <max hp="185" atk="22" skl="22" spd="22" lck="0" def="17" res="15"/>
+    <base hp="180" atk="20" skl="20" spd="20" lck="0" def="15" res="15" mov="0"/>
+    <max hp="185" atk="22" skl="22" spd="22" lck="0" def="17" res="15" mov="2"/>
   </character>
   <!--Modded Characters-->
   <character id ="681E69CA0082A4FC" name="Berkut" block="15 01 00 68 1E 69 CA 00 82 A4 FC 4A C0 58 88 5C 6D 1E BF 00 21 F7 94 60 00 00 00 00 00 00 00 00 16 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 D0 A1 14 5E B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Berkut"/>
-    <base hp="22" atk="11" skl="3" spd="6" lck="3" def="5" res="1"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="22" atk="11" skl="3" spd="6" lck="3" def="5" res="1" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
   <character id ="18FAC1CB269FEBAD" name="Fernand" block="15 01 00 18 FA C1 CB 26 9F EB AD 4A C0 58 88 5C 6D 1E BF 00 C9 86 5F 51 00 00 00 00 00 00 00 00 15 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 47 AB 14 5E B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Fernand"/>
-    <base hp="21" atk="9" skl="4" spd="4" lck="2" def="4" res="5"/>
-    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
+    <base hp="21" atk="9" skl="4" spd="4" lck="2" def="4" res="5" mov="0"/>
+    <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40" mov="2"/>
   </character>
 </root>

@@ -54,7 +54,8 @@ namespace FESOVSE
                 (IntegerUpDown)this.FindName("Speed"),
                 (IntegerUpDown)this.FindName("Luck"),
                 (IntegerUpDown)this.FindName("Defense"),
-                (IntegerUpDown)this.FindName("Resistance")
+                (IntegerUpDown)this.FindName("Resistance"),
+                (IntegerUpDown)this.FindName("Movement")
             };
             markUpDowns = new[]
             {
