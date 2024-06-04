@@ -360,7 +360,7 @@
     <base hp="39" atk="18" skl="4" spd="4" lck="0" def="14" res="1"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
   </character>
-  <character id ="5B9BF6AB770C2FC6" name="Slayde" block="15 01 00 AE 4F F4 00 88 2D 49 11 89 A6 00 99 B7 8A CB 0C 00 3A 33 E9 57 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 22 B2 2A 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
+  <character id ="AE4FF400882D4911" name="Slayde" block="15 01 00 AE 4F F4 00 88 2D 49 11 89 A6 00 99 B7 8A CB 0C 00 3A 33 E9 57 00 00 00 00 00 00 00 00 1C FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 63 65 44 ED 12 72 74 37 22 B2 2A 5A B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Slayde"/>
     <base hp="28" atk="12" skl="5" spd="8" lck="0" def="8" res="5"/>
     <max hp="52" atk="40" skl="40" spd="40" lck="40" def="40" res="40"/>
