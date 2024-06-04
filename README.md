@@ -4,6 +4,8 @@
   * Edit every character's class, inventory, and stats
   * Edit the convoy's contents
   * Edit both protagonists' silver and gold marks
+  * Remove or add units, including bosses and other normally un-recruitable units
+  * Remove or add items in the convoy
   
 ### How to use
   * Dump save file using a save manager (e.g. Checkpoint) Make a backup just in case
@@ -18,8 +20,7 @@ Or:
 
 ### Resources
 
-  * Hex Values of some items from these people:
-    * https://serenesforest.net/forums/index.php?/topic/71279-shadows-of-valentia-save-editingsave-bank/
+  * Hex Values of some items from these people: https://serenesforest.net/forums/index.php?/topic/71279-shadows-of-valentia-save-editingsave-bank/
 
   * Info on character blocks: https://gbatemp.net/threads/research-fe-sov-save-discussion.471890/
 
