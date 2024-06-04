@@ -1617,7 +1617,7 @@ namespace FESOVSE
             {
                 return;
             }
-            if (itemList.Items.Count == 200)
+            if (itemList.Items.Count == 202) //202 because the headers count as an item
             {
                 System.Windows.MessageBox.Show("Convoy is full");
                 return;
@@ -1644,11 +1644,6 @@ namespace FESOVSE
             {
                 int startAddress = oldItem.ConvoyItemAddress;
                 patternAddress = FindPattern(_saveFile, startAddress, iferBlockAddress, pattern);
-            }
-            
-            if (patternAddress == -1)
-            {
-                System.Windows.MessageBox.Show("Character convoy is full. Try adding the item in another convoy.");
             }
 
             //change the "02 00" to "02 01"
