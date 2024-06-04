@@ -6,6 +6,11 @@
   * Edit both protagonists' silver and gold marks
   * Remove or add units, including bosses and other normally un-recruitable units
   * Remove or add items in the convoy
+
+  * *Note on adding units*:
+    * Units default to being added right after Alm or right after Celica, depending on if the unit you've selected is after Alm or after Celica. If you have no unit selected, it defaults to adding the unit after Alm
+  * *Note on adding items*:
+    * Items default to being added at the end of Alm's convoy or at the end of Celica's convoy, depending on if the item you've selected is in Alm's or Celica's convoy. If you have no item selected, it defaults to adding the item in Alm's convoy
   
 ### How to use
   * Dump save file using a save manager (e.g. Checkpoint) Make a backup just in case
