@@ -1412,6 +1412,11 @@ namespace FESOVSE
             int celicaBlockIDAddress = hasData(_saveFile.Length - celicaAddress, celicaBytes, 0);
             int celicaBlockStartAddress = celicaBlockIDAddress - 3;
 
+            if (celicaBlockIDAddress == -1) //if Celica isn't found (Act 1), use Alm's address
+            {
+                celicaBlockStartAddress = almBlockStartAddress;
+            }
+
             //get Alm and Celica's end address
             byte[] pattern1 = new byte[] { 0x00, 0x00, 0x00, 0xFF, 0x4E, 0x41, 0x52, 0x54 }; //pattern before the next pointer, signaling end of character block entirely
             byte[] pattern2 = new byte[] { 0x00, 0x00, 0x00, 0x15 }; //looking for the pattern of 3 zeros and 0x15, signaling end of char block
