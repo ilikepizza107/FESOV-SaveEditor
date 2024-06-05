@@ -3,10 +3,9 @@
 ### Features
   * Edit every character's class, inventory, and stats
   * Edit the convoy's contents
-  * Edit both protagonists' silver and gold marks
+  * Edit both armies' silver and gold marks
   * Remove or add units, including bosses and other normally un-recruitable units
   * Remove or add items in the convoy
-
   * *Note on adding units*:
     * Units default to being added right after Alm or right after Celica, depending on if the unit you've selected is after Alm or after Celica. If you have no unit selected, it defaults to adding the unit after Alm
   * *Note on adding items*:
