@@ -15,15 +15,22 @@
     * If you ever got the "DLC is corrupted" message and then saved, there is a chance that editing marks will not work correctly. It's recommended to make backups of the save file you wish to edit in general, but especially so if you're editing the marks of a save file that has a "DLC is corrupted" message.
   
 ### How to use
-  * Dump save file using a save manager (e.g. Checkpoint) Make a backup just in case
+  * Dump save file using a save manager (e.g. Checkpoint). Make a backup just in case
 
 From here, you can either:
-  * Run program, Click File -> Open, select the file and edit stuff
+  * Run program, Click File -> Open, select the file and edit
 
 Or:
   * Use FEST to decompress the save file to get a "Chapter_dec" file. https://github.com/RainThunder/FEST
-  * Run program, Click File -> Open, select the decompressed file and edit stuff
+  * Run program, Click File -> Open, select the decompressed file and edit
   * Once finished, Click File -> Save and compress the file using FEST
+
+### Keyboard Shortcuts
+  * Ctrl+O = Open file
+  * Ctrl+S = Save file
+  * Ctrl+T = Change Theme
+  * Ctrl+M = Set value to maximum
+  * Ctrl+Shift+M = Set value to minimum
 
 ### Resources
 
