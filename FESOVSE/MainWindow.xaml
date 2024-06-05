@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="FE SOV Save Editor" Height="520" Width="720" ResizeMode="CanMinimize"
         Style="{DynamicResource CustomWindowStyle}">
-    
+
     <Window.Resources>
         <ResourceDictionary>
             <RoutedUICommand x:Key="Open"/>
@@ -25,6 +25,10 @@
             <local:ConvoyTemplateSelector x:Key="ConvoyTemplateSelector"
                                       HeaderTemplate="{StaticResource HeaderTemplate}"
                                       ItemTemplate="{StaticResource ItemTemplate}" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/ControlColours.xaml"/>
+                <ResourceDictionary Source="Themes/Controls.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <Window.InputBindings>
