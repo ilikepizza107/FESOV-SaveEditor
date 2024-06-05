@@ -43,7 +43,6 @@ namespace FESOVSE
         public MainWindow()
         {
             InitializeComponent();
-            initControls();
             statUpDowns = new[]
             {
                 (IntegerUpDown)this.FindName("Level"),
@@ -66,6 +65,7 @@ namespace FESOVSE
                 (IntegerUpDown)this.FindName("bSMarks"),
                 (IntegerUpDown)this.FindName("bGMarks")
             };
+            initControls();
         }
 
         private void cbMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -228,6 +228,7 @@ namespace FESOVSE
                     ChapterHexDataBytes[i] = Convert.ToByte(subStr, 16);
                 }
                 _saveFile = ChapterHexDataBytes;
+                cbMode.IsHitTestVisible = true;
                 loadUnits();
                 loadConvoy();
                 loadItems();
@@ -656,7 +657,8 @@ namespace FESOVSE
 
             private void initControls()
             {
-                cbItem.IsHitTestVisible = false; //disable controls at setup
+                cbMode.IsHitTestVisible = false; //disable controls at setup
+                cbItem.IsHitTestVisible = false;
                 cbForge.IsHitTestVisible = false;
                 cbClass.IsHitTestVisible = false;
                 cnItem.IsHitTestVisible = false;
@@ -667,19 +669,21 @@ namespace FESOVSE
                 cnItems.IsHitTestVisible = false;
                 cnAdd.IsHitTestVisible = false;
                 cnRem.IsHitTestVisible = false;
-                aGMarks.IsHitTestVisible = false;
-                aSMarks.IsHitTestVisible = false;
-                cGMarks.IsHitTestVisible = false;
-                cSMarks.IsHitTestVisible = false;
-                bGMarks.IsHitTestVisible = false;
-                bSMarks.IsHitTestVisible = false;
-                statUpDowns = this.FindVisualChildren<IntegerUpDown>();
-
+                foreach (IntegerUpDown x in statUpDowns)
+                {
+                    x.IsEnabled = false;
+                }
+                foreach (IntegerUpDown x in markUpDowns)
+                {
+                    x.IsEnabled = false;
+                }
             }
+
             /* reading file and loading database into controls*/
             private void loadFile()
             {
                 _saveFile = File.ReadAllBytes(path);
+                cbMode.IsHitTestVisible = true;
                 loadUnits();
                 loadConvoy();
                 loadItems();
@@ -883,12 +887,8 @@ namespace FESOVSE
                 int levelHexLength = 0;
                 if (startNumberByte == 0x36) //if the number after "start" is 6...
                 {
-                    aGMarks.IsHitTestVisible = false;
-                    aSMarks.IsHitTestVisible = false;
-                    cGMarks.IsHitTestVisible = false;
-                    cSMarks.IsHitTestVisible = false; //disable the individual editors, as they're together now
-                    bGMarks.IsHitTestVisible = true;
-                    bSMarks.IsHitTestVisible = true;
+                    bGMarks.IsEnabled = true; //disable the individual editors, as they're together now
+                    bSMarks.IsEnabled = true;
                     while (true) //only search for 5 consecutive 00s
                     {
                         if (startStringNumberAddress + 1 + levelHexLength + 5 >= _saveFile.Length) break; //prevent out of bounds
@@ -907,12 +907,10 @@ namespace FESOVSE
                 }
                 else if (startNumberByte == 0x31 || startNumberByte == 0x32) //if the number after "start" is 1 or 2...
                 {
-                    bGMarks.IsHitTestVisible = false;
-                    bSMarks.IsHitTestVisible = false; //disable the joint bank account, as they're seperate right now
-                    aGMarks.IsHitTestVisible = true;
-                    aSMarks.IsHitTestVisible = true;
-                    cGMarks.IsHitTestVisible = true;
-                    cSMarks.IsHitTestVisible = true;
+                    aGMarks.IsEnabled = true; //disable the joint bank account, as they're seperate now
+                    aSMarks.IsEnabled = true;
+                    cGMarks.IsEnabled = true;
+                    cSMarks.IsEnabled = true;
                     while (true)
                     {
                         if (startStringNumberAddress + 1 + levelHexLength + 9 >= _saveFile.Length) break; //prevent out of bounds
@@ -1021,6 +1019,11 @@ namespace FESOVSE
                     cbForge.SelectedIndex = -1;
                     cbItem.IsHitTestVisible = false;
                     cbForge.IsHitTestVisible = false;
+                }
+
+                foreach (IntegerUpDown x in statUpDowns)
+                {
+                    x.IsEnabled = true;
                 }
 
                 updateClassBox();
