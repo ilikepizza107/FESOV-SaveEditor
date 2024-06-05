@@ -203,7 +203,7 @@
     <base hp="15" atk="4" skl="5" spd="4" lck="8" def="2" res="7" mov="0"/>
     <max hp="52" atk="42" skl="40" spd="40" lck="39" def="39" res="40" mov="2"/>
   </character>
-  <character id ="15D36D6A03847337" name="Gray (Child)" block="15 01 00 65 4B 33 69 F3 88 D8 36 F7 F9 9A E4 49 83 77 61 00 E9 4E 50 2E 00 00 00 00 00 00 00 00 11 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 7F 31 90 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
+  <character id ="654B3369F388D836" name="Gray (Child)" block="15 01 00 65 4B 33 69 F3 88 D8 36 F7 F9 9A E4 49 83 77 61 00 E9 4E 50 2E 00 00 00 00 00 00 00 00 11 FF FF FF FF 00 01 00 00 00 00 FF 00 00 00 FF 00 00 00 00 01 00 02 00 02 00 00 00 03 01 00 00 00 00 C2 33 0D 00 F4 8B AB 9B 7F 31 90 5D B3 00 00 00 02 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
     <text displayName ="Gray (Child)"/>
     <base hp="17" atk="4" skl="3" spd="43" lck="2" def="3" res="2" mov="0"/>
     <max hp="52" atk="42" skl="39" spd="40" lck="40" def="39" res="40" mov="2"/>
