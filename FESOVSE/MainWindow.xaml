@@ -16,6 +16,7 @@
             <RoutedUICommand x:Key="Save"/>
             <RoutedUICommand x:Key="Max"/>
             <RoutedUICommand x:Key="Min"/>
+            <RoutedUICommand x:Key="Theme"/>
             <DataTemplate x:Key="HeaderTemplate">
                 <TextBlock FontWeight="Bold" Text="{Binding}" />
             </DataTemplate>
@@ -36,12 +37,14 @@
         <KeyBinding Modifiers="Ctrl" Key="S" Command="{StaticResource Save}"/>
         <KeyBinding Modifiers="Ctrl" Key="M" Command="{StaticResource Max}"/>
         <KeyBinding Modifiers="Ctrl+Shift" Key="M" Command="{StaticResource Min}"/>
+        <KeyBinding Modifiers="Ctrl" Key="T" Command="{StaticResource Theme}"/>
     </Window.InputBindings>
     <Window.CommandBindings>
         <CommandBinding Command="{StaticResource Open}" Executed="openShortcut"/>
         <CommandBinding Command="{StaticResource Save}" Executed="saveShortcut"/>
         <CommandBinding Command="{StaticResource Max}" Executed="maxShortcut"/>
         <CommandBinding Command="{StaticResource Min}" Executed="minShortcut"/>
+        <CommandBinding Command="{StaticResource Theme}" Executed="themeShortcut"/>
     </Window.CommandBindings>
 
     <StackPanel>

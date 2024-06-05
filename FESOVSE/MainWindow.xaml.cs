@@ -351,6 +351,19 @@ namespace FESOVSE
                 }
             }
 
+            private void themeShortcut(object sender, RoutedEventArgs e)
+            {
+                var currentTheme = ThemesController.CurrentTheme;
+                if (currentTheme == ThemeType.DarkTheme) 
+                {
+                    ThemesController.SetTheme(ThemeType.LightTheme);
+                }
+                else if (currentTheme == ThemeType.LightTheme)
+                {
+                ThemesController.SetTheme(ThemeType.DarkTheme);
+            }
+            }
+
             #endregion
 
             #region Utility Functions
