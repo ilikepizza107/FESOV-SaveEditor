@@ -35,7 +35,9 @@ Or:
  
   * Fire Emblem Wiki for Overclass max stat changes: https://fireemblemwiki.org/wiki/Class_change/Nintendo_3DS_games#Fire_Emblem_Echoes:_Shadows_of_Valentia
 
-  * Inspired by FeTwiddler by Soaprman: https://github.com/Soaprman/FEFTwiddler 
+  * Inspired by FeTwiddler by Soaprman: https://github.com/Soaprman/FEFTwiddler
+
+  * Built-in save decryption powered by FEST: https://github.com/RainThunder/FEST
 
   * Extended WPFToolkit for the numeric up downs: https://github.com/xceedsoftware/wpftoolkit
 
