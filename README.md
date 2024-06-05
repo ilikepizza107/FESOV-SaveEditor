@@ -11,6 +11,8 @@
     * Units default to being added right after Alm or right after Celica, depending on if the unit you've selected is after Alm or after Celica. If you have no unit selected, it defaults to adding the unit after Alm
   * *Note on adding items*:
     * Items default to being added at the end of Alm's convoy or at the end of Celica's convoy, depending on if the item you've selected is in Alm's or Celica's convoy. If you have no item selected, it defaults to adding the item in Alm's convoy
+  * *Note on editing marks*:
+    * If you ever got the "DLC is corrupted" message and then saved, there is a chance that editing marks will not work correctly. It's recommended to make backups of the save file you wish to edit in general, but especially so if you're editing the marks of a save file that has a "DLC is corrupted" message.
   
 ### How to use
   * Dump save file using a save manager (e.g. Checkpoint) Make a backup just in case
