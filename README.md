@@ -33,7 +33,7 @@ Or:
 
   * Serenes Forest for character base and max stats: https://serenesforest.net/fire-emblem-echoes-shadows-valentia/
  
-  * Fire Emblem Wiki for Overclass max stat changes: https://fireemblemwiki.org/wiki/Class_change/Nintendo_3DS_games#Fire_Emblem_Echoes:_Shadows_of_Valentia
+  * Fire Emblem Wiki for Overclass max stat data: https://fireemblemwiki.org/wiki/Class_change/Nintendo_3DS_games#Fire_Emblem_Echoes:_Shadows_of_Valentia
 
   * Inspired by FeTwiddler by Soaprman: https://github.com/Soaprman/FEFTwiddler
 
