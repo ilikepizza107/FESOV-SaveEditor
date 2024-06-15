@@ -59,7 +59,10 @@
   <class id="E5588604F5D2C4FE" name="Harrier (DLC)">
     <maxmod hp="0" atk="0" skl="1" spd="1" lck="2" def="0" res="2"/>
   </class>
-  <class id="398FBB505747C11F" name="Skogul (DLC)">
+  <class id="7B90BB508748C11F" name="Skogul (M) (DLC)">
+	<maxmod hp="0" atk="2" skl="1" spd="1" lck="2" def="2" res="0"/>
+  </class>
+  <class id="398FBB505747C11F" name="Skogul (F) (DLC)">
 	<maxmod hp="0" atk="2" skl="1" spd="1" lck="2" def="2" res="0"/>
   </class>
   <class id="D0537D79EED22FFD" name="Yasha (DLC)">
