@@ -306,14 +306,14 @@ namespace FESOVSE
                 {
                     System.Windows.MessageBox.Show("No File Found");
                 }
-                else if (path.Contains("Chapter")) 
-                {
-                    SaveChapterData();
-                    System.Windows.MessageBox.Show("File Saved Successfully");
-                }
                 else if (path.Contains("Chapter") && path.Contains("dec"))
                 {
                     File.WriteAllBytes(path, _saveFile);
+                    System.Windows.MessageBox.Show("File Saved Successfully");
+                }
+                else if (path.Contains("Chapter")) 
+                {
+                    SaveChapterData();
                     System.Windows.MessageBox.Show("File Saved Successfully");
                 }
                 else System.Windows.MessageBox.Show("No File Found");
